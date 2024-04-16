@@ -1,0 +1,72 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fuente myFont */
+@font-face {
+    font-family: 'myFont';
+    src: url('./fonts/Extrabold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Estilos del header */
+header {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffc49c; /* Color de fondo del header */
+    font-family: 'myFont', sans-serif; /* Aplica la fuente myFont */
+}
+
+/* Estilos del logo */
+.logo-bt img {
+    max-width: 140px; /* Tamaño máximo del logo */
+    padding: 5%;
+}
+
+/* Estilos del botón de pedir */
+.boton-pedir {
+    font-size: 30px; /* Tamaño de fuente */
+    justify-content: center;
+}
+
+.boton-pedir a {
+    text-decoration: none;
+    color: #333; /* Color de texto del botón */
+    font-weight: bold;
+    padding: 10px 20px; /* Espaciado interno */
+    border: 2px solid #333; /* Borde */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: all 0.3s; /* Transición de propiedades */
+}
+
+.boton-pedir a:hover {
+    background-color: #c46868; /* Color de fondo al pasar el mouse */
+    color: #fff; /* Cambio de color de texto al pasar el mouse */
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Cambia la dirección de los elementos a columna */
+        align-items: flex-start; /* Alinea los elementos a la izquierda */
+    }
+
+    .logo {
+        margin-bottom: 20px; /* Espacio entre el logo y el menú */
+    }
+
+    nav ul {
+        flex-direction: column; /* Cambia la dirección de los elementos del menú a columna */
+    }
+
+    nav ul li {
+        margin-right: 0; /* Elimina el margen derecho de los elementos del menú */
+        margin-bottom: 10px; /* Espacio entre elementos del menú */
+    }
+}
