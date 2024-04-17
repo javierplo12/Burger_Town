@@ -60,23 +60,60 @@ header {
     border: none;
 }
 
-/* Estilos responsive */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column; /* Cambia la dirección de los elementos a columna */
-        align-items: flex-start; /* Alinea los elementos a la izquierda */
-    }
+/* Estilos para el fondo negro que ocupa toda la página */
+body {
+    font-family: 'myFont';
+    background-color: rgba(12, 11, 11, 0.897);
+    color: rgb(255, 255, 255); /* Color del texto en el fondo negro */
+    margin: 0; /* Elimina el margen predeterminado del body */
+    padding: 0; /* Elimina el padding predeterminado del body */
+    height: 100%; /* Ocupa toda la altura disponible */
+}
 
-    .logo {
-        margin-bottom: 20px; /* Espacio entre el logo y el menú */
-    }
+/* Estilos para el contenido principal */
+.principal {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinea al inicio del contenedor principal */
+    height: 100vh; /* Ocupa toda la altura visible de la pantalla */
+    padding-top: 20px; /* Añade espacio superior */
+}
 
-    nav ul {
-        flex-direction: column; /* Cambia la dirección de los elementos del menú a columna */
-    }
+.content-container {
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    background-color: rgba(255, 255, 255, 0.1); /* Color de fondo del recuadro */
+    border-radius: 20px; /* Bordes redondeados */
+    overflow: hidden; /* Evita que el contenido se desborde del recuadro */
+    width: 80%; /* Ancho del contenedor */
+    max-width: 600px; /* Ancho máximo */
+}
 
-    nav ul li {
-        margin-right: 0; /* Elimina el margen derecho de los elementos del menú */
-        margin-bottom: 10px; /* Espacio entre elementos del menú */
-    }
+.image-text-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribuye los elementos horizontalmente */
+    padding: 20px;
+}
+
+.image-container {
+    flex: 1;
+}
+
+.image-container img {
+    max-width: 100%; /* La imagen ocupa el ancho máximo disponible */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.text-container {
+    flex: 1;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.novedad {
+    font-size: 20px; /* Tamaño de fuente para la novedad */
+    color: red; /* Color rojo */
+    text-align: center; /* Centrado */
+    margin-bottom: 10px; /* Espacio inferior */
 }
