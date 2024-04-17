@@ -45,9 +45,38 @@ header {
     transition: all 0.3s; /* Transición de propiedades */
 }
 
-.boton-pedir a:hover {
+.boton-pedir a:hover, .boton-sesion a:hover, .boton-carrito a:hover {
     background-color: #c46868; /* Color de fondo al pasar el mouse */
-    color: #fff; /* Cambio de color de texto al pasar el mouse */
+}
+
+.boton-sesion {
+    font-size: 30px; /* Tamaño de fuente */
+    justify-content: center;
+}
+
+.boton-sesion a {
+    text-decoration: none;
+    color: #333; /* Color de texto del botón */
+    font-weight: bold;
+    padding: 10px 20px; /* Espaciado interno */
+    border: 2px solid #333; /* Borde */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: all 0.3s; /* Transición de propiedades */
+}
+
+.boton-carrito {
+    font-size: 30px; /* Tamaño de fuente */
+    justify-content: center;
+}
+
+.boton-carrito a {
+    text-decoration: none;
+    color: #333; /* Color de texto del botón */
+    font-weight: bold;
+    padding: 10px 20px; /* Espaciado interno */
+    border: 2px solid #333; /* Borde */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: all 0.3s; /* Transición de propiedades */
 }
 
 /* Estilos responsive */
