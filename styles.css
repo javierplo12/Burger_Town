@@ -16,7 +16,7 @@
 /* Estilos del header */
 header {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     padding: 20px;
     background-color: #ffc49c; /* Color de fondo del header */
@@ -27,56 +27,37 @@ header {
 .logo-bt img {
     max-width: 140px; /* Tamaño máximo del logo */
     padding: 5%;
+    margin-left: 50px;
 }
 
 /* Estilos del botón de pedir */
-.boton-pedir {
-    font-size: 30px; /* Tamaño de fuente */
-    justify-content: center;
-}
-
-.boton-pedir a {
+.boton-pedir a, .boton-sesion a {
     text-decoration: none;
     color: #333; /* Color de texto del botón */
+    font-size: 30px;
     font-weight: bold;
     padding: 10px 20px; /* Espaciado interno */
     border: 2px solid #333; /* Borde */
     border-radius: 5px; /* Bordes redondeados */
     transition: all 0.3s; /* Transición de propiedades */
+    display: inline-block;
 }
 
-.boton-pedir a:hover, .boton-sesion a:hover, .boton-carrito a:hover {
+.boton-pedir a:hover, .boton-sesion a:hover {
     background-color: #c46868; /* Color de fondo al pasar el mouse */
 }
 
-.boton-sesion {
-    font-size: 30px; /* Tamaño de fuente */
-    justify-content: center;
+/* Estilos para centrar la imagen del carrito */
+.boton-carrito img {
+    display: block;
+    margin-right: 50px; /* Centra la imagen horizontalmente */
+    max-height: 100%; /* Asegura que la imagen no exceda el tamaño del contenedor */
+    height: 60px;
 }
 
-.boton-sesion a {
-    text-decoration: none;
-    color: #333; /* Color de texto del botón */
-    font-weight: bold;
-    padding: 10px 20px; /* Espaciado interno */
-    border: 2px solid #333; /* Borde */
-    border-radius: 5px; /* Bordes redondeados */
-    transition: all 0.3s; /* Transición de propiedades */
-}
-
-.boton-carrito {
-    font-size: 30px; /* Tamaño de fuente */
-    justify-content: center;
-}
-
+/* Elimina el borde del botón del carrito */
 .boton-carrito a {
-    text-decoration: none;
-    color: #333; /* Color de texto del botón */
-    font-weight: bold;
-    padding: 10px 20px; /* Espaciado interno */
-    border: 2px solid #333; /* Borde */
-    border-radius: 5px; /* Bordes redondeados */
-    transition: all 0.3s; /* Transición de propiedades */
+    border: none;
 }
 
 /* Estilos responsive */
