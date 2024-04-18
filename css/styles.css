@@ -8,7 +8,7 @@
 /* Fuente myFont */
 @font-face {
     font-family: 'myFont';
-    src: url('./fonts/Extrabold.otf') format('opentype');
+    src: url('../fonts/PatuaOne-Regular.ttf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -18,13 +18,13 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffc49c; /* Color de fondo del header */
+    background-color: rgb(0, 0, 0); /* Color de fondo del header */
     font-family: 'myFont', sans-serif; /* Aplica la fuente myFont */
 }
 
 /* Estilos del logo */
 .logo-bt img {
-    max-width: 140px; /* Tamaño máximo del logo */
+    max-width: 200px; /* Tamaño máximo del logo */
     padding: 10%;
     margin-right: 80px;
 }
@@ -32,7 +32,7 @@ header {
 /* Estilos de los botones */
 .boton a {
     text-decoration: none;
-    color: #333; /* Color de texto del botón */
+    color: whitesmoke; /* Color de texto del botón */
     font-size: 20px;
     font-weight: bold;
     padding: 5px 15px; /* Espaciado interno */
@@ -40,11 +40,11 @@ header {
     border-radius: 15px; /* Bordes redondeados */
     transition: all 0.3s; /* Transición de propiedades */
     display: inline-block;
-    margin-right: 80px;
+    margin-right: 150px;
 }
 
 .boton a:hover {
-    background-color: #ff7e4b91; /* Color de fondo al pasar el mouse */
+    background-color: rgba(255, 0, 0, 0.671); /* Color de fondo al pasar el mouse */
 }
 
 /* Estilos para centrar la imagen del carrito */
@@ -91,7 +91,7 @@ body {
 /* Estilos para el contenido */
 .contenido {
     position: absolute;
-    width: 50%; /* Tamaño de la mitad izquierda */
+    width: 45%; /* Tamaño de la mitad izquierda */
     height: 100%;
     display: flex;
     justify-content: center;
@@ -122,7 +122,7 @@ body {
 .footer {
   position: relative;
   width: 100%;
-  background: #ffc49c;
+  background: rgba(0, 0, 0, 0.993);
   min-height: 100px;
   padding: 20px 50px;
   display: flex;
@@ -147,7 +147,7 @@ body {
 
 .social-icon__link {
   font-size: 2rem;
-  color: #000000;
+  color: whitesmoke;
   margin: 0 10px;
   display: inline-block;
   transition: 0.5s;
@@ -159,7 +159,7 @@ body {
 
 .menu__link {
   font-size: 1.2rem;
-  color: #000000;
+  color: whitesmoke;
   margin: 0 10px;
   transition: 0.5s;
   text-decoration: none;
@@ -172,7 +172,7 @@ body {
 }
 
 .footer p {
-  color: #000000;
+  color: whitesmoke;
   margin: 15px 0 10px 0;
   font-size: 1rem;
   font-weight: 300;
