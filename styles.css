@@ -61,58 +61,59 @@ header {
 
 /* Estilos para el fondo negro que ocupa toda la página */
 body {
-    font-family: 'myFont';
-    background-color: rgba(12, 11, 11, 0.897);
+    font-family: sans-serif; /* Se eliminó la fuente myFont */
+    background-color: rgba(0, 0, 0, 0); /* Cambiado a transparente */
     color: rgb(255, 255, 255); /* Color del texto en el fondo negro */
     margin: 0; /* Elimina el margen predeterminado del body */
     padding: 0; /* Elimina el padding predeterminado del body */
     height: 100%; /* Ocupa toda la altura disponible */
 }
 
-/* Estilos para el contenido principal */
-.principal {
+/* Estilos para el contenedor del video */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ajustado a la altura de la pantalla */
+    overflow: hidden;
+}
+
+/* Estilos para el video de fondo */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Coloca el video detrás de otros elementos */
+}
+
+/* Estilos para el contenido */
+.contenido {
+    position: absolute;
+    width: 50%; /* Tamaño de la mitad izquierda */
+    height: 100%;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Alinea al inicio del contenedor principal */
-    height: 100vh; /* Ocupa toda la altura visible de la pantalla */
-    padding-top: 20px; /* Añade espacio superior */
-}
-
-.content-container {
-    display: flex;
-    flex-direction: column; /* Apila los elementos verticalmente */
-    background-color: rgba(255, 255, 255, 0.1); /* Color de fondo del recuadro */
-    border-radius: 20px; /* Bordes redondeados */
-    overflow: hidden; /* Evita que el contenido se desborde del recuadro */
-    width: 80%; /* Ancho del contenedor */
-    max-width: 600px; /* Ancho máximo */
-}
-
-.image-text-container {
-    display: flex;
     align-items: center;
-    justify-content: space-between; /* Distribuye los elementos horizontalmente */
+    background: rgba(0, 0, 0, 0.514); /* Fondo difuminado */
+}
+
+/* Estilos para el texto */
+.texto {
+    text-align: center;
+    color: #fff;
     padding: 20px;
 }
 
-.image-container {
-    flex: 1;
+/* Estilos para el texto del título */
+.texto h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
 }
 
-.image-container img {
-    max-width: 100%; /* La imagen ocupa el ancho máximo disponible */
-    border-radius: 10px; /* Bordes redondeados */
-}
-
-.text-container {
-    flex: 1;
-    text-align: left;
-    padding-left: 20px;
-}
-
-.novedad {
-    font-size: 20px; /* Tamaño de fuente para la novedad */
-    color: red; /* Color rojo */
-    text-align: center; /* Centrado */
-    margin-bottom: 10px; /* Espacio inferior */
+/* Estilos para el texto del párrafo */
+.texto p {
+    font-size: 24px;
+    margin: 0;
 }
