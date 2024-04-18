@@ -16,7 +16,7 @@
 /* Estilos del header */
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background-color: #ffc49c; /* Color de fondo del header */
     font-family: 'myFont', sans-serif; /* Aplica la fuente myFont */
@@ -26,7 +26,7 @@ header {
 .logo-bt img {
     max-width: 140px; /* Tamaño máximo del logo */
     padding: 10%;
-    margin-left: 50px;
+    margin-right: 80px;
 }
 
 /* Estilos de los botones */
@@ -40,6 +40,7 @@ header {
     border-radius: 15px; /* Bordes redondeados */
     transition: all 0.3s; /* Transición de propiedades */
     display: inline-block;
+    margin-right: 80px;
 }
 
 .boton a:hover {
@@ -49,7 +50,6 @@ header {
 /* Estilos para centrar la imagen del carrito */
 .boton-carrito img {
     display: block;
-    margin-right: 50px; /* Centra la imagen horizontalmente */
     max-height: 100%; /* Asegura que la imagen no exceda el tamaño del contenedor */
     height: 35px;
 }
@@ -104,6 +104,7 @@ body {
     text-align: center;
     color: #fff;
     padding: 20px;
+    font-family: 'myFont', sans-serif; /* Aplica la fuente myFont */
 }
 
 /* Estilos para el texto del título */
@@ -131,8 +132,7 @@ body {
 }
 
 
-.social-icon,
-.menu {
+.social-icon, .menu {
   position: relative;
   display: flex;
   justify-content: center;
@@ -141,8 +141,7 @@ body {
   flex-wrap: wrap;
 }
 
-.social-icon__item,
-.menu__item {
+.social-icon__item, .menu__item {
   list-style: none;
 }
 
@@ -153,6 +152,7 @@ body {
   display: inline-block;
   transition: 0.5s;
 }
+
 .social-icon__link:hover {
   transform: translateY(-10px);
 }
@@ -177,9 +177,3 @@ body {
   font-size: 1rem;
   font-weight: 300;
 }
-
-
-
-
-
-
