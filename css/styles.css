@@ -1,0 +1,179 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fuente myFont */
+@font-face {
+    font-family: 'myFont';
+    src: url('./fonts/Extrabold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Estilos del header */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffc49c; /* Color de fondo del header */
+    font-family: 'myFont', sans-serif; /* Aplica la fuente myFont */
+}
+
+/* Estilos del logo */
+.logo-bt img {
+    max-width: 140px; /* Tamaño máximo del logo */
+    padding: 10%;
+    margin-right: 80px;
+}
+
+/* Estilos de los botones */
+.boton a {
+    text-decoration: none;
+    color: #333; /* Color de texto del botón */
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 15px; /* Espaciado interno */
+    border: 0px solid #333; /* Borde */
+    border-radius: 15px; /* Bordes redondeados */
+    transition: all 0.3s; /* Transición de propiedades */
+    display: inline-block;
+    margin-right: 80px;
+}
+
+.boton a:hover {
+    background-color: #ff7e4b91; /* Color de fondo al pasar el mouse */
+}
+
+/* Estilos para centrar la imagen del carrito */
+.boton-carrito img {
+    display: block;
+    max-height: 100%; /* Asegura que la imagen no exceda el tamaño del contenedor */
+    height: 35px;
+}
+
+/* Elimina el borde del botón del carrito */
+.boton-carrito a {
+    border: none;
+}
+
+/* Estilos para el fondo negro que ocupa toda la página */
+body {
+    font-family: sans-serif; /* Se eliminó la fuente myFont */
+    background-color: rgba(0, 0, 0, 0); /* Cambiado a transparente */
+    color: rgb(255, 255, 255); /* Color del texto en el fondo negro */
+    margin: 0; /* Elimina el margen predeterminado del body */
+    padding: 0; /* Elimina el padding predeterminado del body */
+    height: 100%; /* Ocupa toda la altura disponible */
+}
+
+/* Estilos para el contenedor del video */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 87vh; /* Ajustado a la altura de la pantalla */
+    overflow: hidden;
+}
+
+/* Estilos para el video de fondo */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Coloca el video detrás de otros elementos */
+}
+
+/* Estilos para el contenido */
+.contenido {
+    position: absolute;
+    width: 50%; /* Tamaño de la mitad izquierda */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.514); /* Fondo difuminado */
+}
+
+/* Estilos para el texto */
+.texto {
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    font-family: 'myFont', sans-serif; /* Aplica la fuente myFont */
+}
+
+/* Estilos para el texto del título */
+.texto h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el texto del párrafo */
+.texto p {
+    font-size: 24px;
+    margin: 0;
+}
+/* Empieza el css del footer */
+.footer {
+  position: relative;
+  width: 100%;
+  background: #ffc49c;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.social-icon, .menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.social-icon__item, .menu__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  font-size: 2rem;
+  color: #000000;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  color: #000000;
+  margin: 0 10px;
+  transition: 0.5s;
+  text-decoration: none;
+  font-weight: 300;
+  font-family: 'myFont', sans-serif; /* Aplica la fuente myFont */
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+.footer p {
+  color: #000000;
+  margin: 15px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
