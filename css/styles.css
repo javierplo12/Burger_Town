@@ -61,7 +61,7 @@ header {
 
 /* Estilos para el fondo negro que ocupa toda la página */
 body {
-    font-family: sans-serif; /* Se eliminó la fuente myFont */
+    font-family: 'myFont';
     background-color: rgba(0, 0, 0, 0); /* Cambiado a transparente */
     color: rgb(255, 255, 255); /* Color del texto en el fondo negro */
     margin: 0; /* Elimina el margen predeterminado del body */
@@ -118,6 +118,7 @@ body {
     font-size: 24px;
     margin: 0;
 }
+
 /* Empieza el css del footer */
 .footer {
   position: relative;
@@ -130,7 +131,6 @@ body {
   align-items: center;
   flex-direction: column;
 }
-
 
 .social-icon, .menu {
   position: relative;
@@ -176,4 +176,80 @@ body {
   margin: 15px 0 10px 0;
   font-size: 1rem;
   font-weight: 300;
+}
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  display: flex;
+}
+
+.carousel-item {
+  width: 33.33%; /* Divide en tres partes */
+  padding: 0 10px;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: darkred;
+}
+
+.carousel-item img {
+  width: 80%;
+  height: auto;
+}
+
+.carousel-item h2 {
+  margin: 10px 0;
+}
+
+.carousel-item .btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carousel-item .btn:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column; /* Cambia la dirección de los elementos a columna */
+    align-items: center; /* Alinea los elementos a la izquierda */
+  }
+
+  .logo-bt img {
+    margin-right: 0; /* Elimina el margen derecho del logo */
+    margin-bottom: 10px; /* Añade margen inferior al logo */
+  }
+
+  .boton-carrito img {
+    margin-bottom: 20px;
+  }
+
+  .boton a {
+    margin-right: 0; /* Elimina el margen derecho de los botones */
+    margin-bottom: 10px; /* Añade margen inferior a los botones */
+  }
+
+  .footer {
+    padding: 20px 10px; /* Ajusta el padding del footer */
+  }
+
+  .social-icon, .menu {
+    flex-direction: column; /* Cambia la dirección de los elementos a columna */
+    align-items: center; /* Alinea los elementos al centro */
+  }
+
+  .social-icon__link, .menu__link {
+    margin: 5px 0; /* Ajusta el margen entre los enlaces */
+  }
+  
 }
