@@ -1,122 +1,122 @@
 /* Reset de estilos */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Fuente myFont */
 @font-face {
-    font-family: 'myFont';
-    src: url('../fonts/PatuaOne-Regular.ttf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'myFont';
+  src: url('../fonts/PatuaOne-Regular.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* Estilos del header */
 header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(0, 0, 0); /* Color de fondo del header */
-    font-family: 'myFont', sans-serif; /* Aplica la fuente myFont */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 0, 0); /* Color de fondo del header */
+  font-family: 'myFont', sans-serif; /* Aplica la fuente myFont */
 }
 
 /* Estilos del logo */
 .logo-bt img {
-    max-width: 200px; /* Tamaño máximo del logo */
-    padding: 10%;
-    margin-right: 80px;
+  max-width: 200px; /* Tamaño máximo del logo */
+  padding: 10%;
+  margin-right: 80px;
 }
 
 /* Estilos de los botones */
 .boton a {
-    text-decoration: none;
-    color: whitesmoke; /* Color de texto del botón */
-    font-size: 20px;
-    font-weight: bold;
-    padding: 5px 15px; /* Espaciado interno */
-    border: 0px solid #333; /* Borde */
-    border-radius: 15px; /* Bordes redondeados */
-    transition: all 0.3s; /* Transición de propiedades */
-    display: inline-block;
-    margin-right: 150px;
+  text-decoration: none;
+  color: whitesmoke; /* Color de texto del botón */
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px 15px; /* Espaciado interno */
+  border: 0px solid #333; /* Borde */
+  border-radius: 15px; /* Bordes redondeados */
+  transition: all 0.3s; /* Transición de propiedades */
+  display: inline-block;
+  margin-right: 150px;
 }
 
 .boton a:hover {
-    background-color: rgba(255, 0, 0, 0.671); /* Color de fondo al pasar el mouse */
+  background-color: rgba(255, 0, 0, 0.671); /* Color de fondo al pasar el mouse */
 }
 
 /* Estilos para centrar la imagen del carrito */
 .boton-carrito img {
-    display: block;
-    max-height: 100%; /* Asegura que la imagen no exceda el tamaño del contenedor */
-    height: 35px;
+  display: block;
+  max-height: 100%; /* Asegura que la imagen no exceda el tamaño del contenedor */
+  height: 35px;
 }
 
 /* Elimina el borde del botón del carrito */
 .boton-carrito a {
-    border: none;
+  border: none;
 }
 
 /* Estilos para el fondo negro que ocupa toda la página */
 body {
-    font-family: 'myFont';
-    background-color: rgba(0, 0, 0, 0); /* Cambiado a transparente */
-    color: rgb(255, 255, 255); /* Color del texto en el fondo negro */
-    margin: 0; /* Elimina el margen predeterminado del body */
-    padding: 0; /* Elimina el padding predeterminado del body */
-    height: 100%; /* Ocupa toda la altura disponible */
+  font-family: 'myFont', sans-serif;
+  background-color: rgba(0, 0, 0, 0); /* Cambiado a transparente */
+  color: whitesmoke; /* Color del texto en el fondo negro */
+  margin: 0; /* Elimina el margen predeterminado del body */
+  padding: 0; /* Elimina el padding predeterminado del body */
+  height: 100%; /* Ocupa toda la altura disponible */
 }
 
 /* Estilos para el contenedor del video */
 .video-container {
-    position: relative;
-    width: 100%;
-    height: 87vh; /* Ajustado a la altura de la pantalla */
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 87vh; /* Ajustado a la altura de la pantalla */
+  overflow: hidden;
 }
 
 /* Estilos para el video de fondo */
 .video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1; /* Coloca el video detrás de otros elementos */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Coloca el video detrás de otros elementos */
 }
 
 /* Estilos para el contenido */
 .contenido {
-    position: absolute;
-    width: 45%; /* Tamaño de la mitad izquierda */
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.514); /* Fondo difuminado */
+  position: absolute;
+  width: 45%; /* Tamaño de la mitad izquierda */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.514); /* Fondo difuminado */
 }
 
 /* Estilos para el texto */
 .texto {
-    text-align: center;
-    color: #fff;
-    padding: 20px;
-    font-family: 'myFont', sans-serif; /* Aplica la fuente myFont */
+  text-align: center;
+  color: whitesmoke;
+  padding: 20px;
+  font-family: 'myFont', sans-serif; /* Aplica la fuente myFont */
 }
 
 /* Estilos para el texto del título */
 .texto h1 {
-    font-size: 40px;
-    margin-bottom: 20px;
+  font-size: 40px;
+  margin-bottom: 20px;
 }
 
 /* Estilos para el texto del párrafo */
 .texto p {
-    font-size: 24px;
-    margin: 0;
+  font-size: 24px;
+  margin: 0;
 }
 
 /* Empieza el css del footer */
@@ -204,18 +204,30 @@ body {
   margin: 10px 0;
 }
 
-.carousel-item .btn {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+.boton-carrusel {
+  background-color: black;
+  border-radius: 100px;
+  box-shadow: rgba(169, 169, 169, .2) 0 -25px 18px -14px inset,rgba(169, 169, 169, .15) 0 1px 2px,rgba(169, 169, 169, .15) 0 2px 4px,rgba(169, 169, 169, .15) 0 4px 8px,rgba(169, 169, 169, .15) 0 8px 16px,rgba(169, 169, 169, .15) 0 16px 32px;
+  color: whitesmoke;
   cursor: pointer;
-  transition: background-color 0.3s;
+  display: inline-block;
+  font-family: 'myFont', sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
-.carousel-item .btn:hover {
-  background-color: #0056b3;
+.boton-carrusel:hover {
+  box-shadow: rgba(169, 169, 169,.35) 0 -25px 18px -14px inset,rgba(169, 169, 169,.25) 0 1px 2px,rgba(169, 169, 169,.25) 0 2px 4px,rgba(169, 169, 169,.25) 0 4px 8px,rgba(169, 169, 169,.25) 0 8px 16px,rgba(169, 169, 169,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
 }
 
 /* Estilos responsive */
