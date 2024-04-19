@@ -63,60 +63,40 @@ header {
 body {
   font-family: sans-serif; /* Se eliminó la fuente myFont */
   background-color: rgba(0, 0, 0, 0); /* Cambiado a transparente */
-  color: rgb(255, 255, 255); /* Color del texto en el fondo negro */
   margin: 0; /* Elimina el margen predeterminado del body */
   padding: 0; /* Elimina el padding predeterminado del body */
   height: 100%; /* Ocupa toda la altura disponible */
 }
 
-/* Estilos para el contenedor del video */
-.video-container {
-  position: relative;
-  width: 100%;
-  height: 87vh; /* Ajustado a la altura de la pantalla */
-  overflow: hidden;
+.menu {
+  background-color: rgb(88, 88, 88);
+  flex: 1; /* Para que ambos elementos ocupen el mismo espacio horizontal */
 }
 
-/* Estilos para el video de fondo */
-.video-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1; /* Coloca el video detrás de otros elementos */
-}
-
-/* Estilos para el contenido */
-.contenido {
-  position: absolute;
-  width: 50%; /* Tamaño de la mitad izquierda */
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.514); /* Fondo difuminado */
-}
-
-/* Estilos para el texto */
-.texto {
-  text-align: center;
-  color: #fff;
+.producto {
+  background-color: rgb(221, 0, 0);
   padding: 20px;
-  font-family: 'myFont', sans-serif; /* Aplica la fuente myFont */
+  border-radius: 10px;
+  margin: 20px;
+  text-align: center;
+  max-width: 300px;
 }
 
-/* Estilos para el texto del título */
-.texto h1 {
-  font-size: 40px;
-  margin-bottom: 20px;
+.producto img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
-/* Estilos para el texto del párrafo */
-.texto p {
-  font-size: 24px;
-  margin: 0;
+.producto h2 {
+  font-size: 1.5rem;
+  color: whitesmoke;
+  margin-bottom: 10px;
+}
+
+.producto p {
+  font-size: 1rem;
+  color: whitesmoke;
 }
 /* Empieza el css del footer */
 .footer {
@@ -137,7 +117,7 @@ position: relative;
 display: flex;
 justify-content: center;
 align-items: center;
-margin: 10px 0;
+
 flex-wrap: wrap;
 }
 

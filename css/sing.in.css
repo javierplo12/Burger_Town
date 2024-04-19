@@ -1,0 +1,259 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Fuente myFont */
+  @font-face {
+    font-family: 'myFont';
+    src: url('../fonts/PatuaOne-Regular.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* Estilos del header */
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0); /* Color de fondo del header */
+    font-family: 'myFont', sans-serif; /* Aplica la fuente myFont */
+  }
+  
+  /* Estilos del logo */
+  .logo-bt img {
+    max-width: 200px; /* Tamaño máximo del logo */
+    padding: 10%;
+    margin-right: 80px;
+  }
+  
+  /* Estilos de los botones */
+  .boton a {
+    text-decoration: none;
+    color: whitesmoke; /* Color de texto del botón */
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 15px; /* Espaciado interno */
+    border: 0px solid #333; /* Borde */
+    border-radius: 15px; /* Bordes redondeados */
+    transition: all 0.3s; /* Transición de propiedades */
+    display: inline-block;
+    margin-right: 150px;
+  }
+  
+  .boton a:hover {
+    background-color: rgba(255, 0, 0, 0.671); /* Color de fondo al pasar el mouse */
+  }
+  
+  /* Estilos para centrar la imagen del carrito */
+  .boton-carrito img {
+    display: block;
+    max-height: 100%; /* Asegura que la imagen no exceda el tamaño del contenedor */
+    height: 35px;
+  }
+  
+  /* Elimina el borde del botón del carrito */
+  .boton-carrito a {
+    border: none;
+  }
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65%;
+    background-color: #575656;
+}
+
+#login-form {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+p {
+    text-align: center;
+}
+
+a {
+    color: blue;
+}
+/* Empieza el css del footer */
+.footer {
+    position: relative;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.993);
+    min-height: 100px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .social-icon, .menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+  }
+  
+  .social-icon__item, .menu__item {
+    list-style: none;
+  }
+  
+  .social-icon__link {
+    font-size: 2rem;
+    color: whitesmoke;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+  }
+  
+  .social-icon__link:hover {
+    transform: translateY(-10px);
+  }
+  
+  .menu__link {
+    font-size: 1.2rem;
+    color: whitesmoke;
+    margin: 0 10px;
+    transition: 0.5s;
+    text-decoration: none;
+    font-weight: 300;
+    font-family: 'myFont', sans-serif; /* Aplica la fuente myFont */
+  }
+  
+  .menu__link:hover {
+    opacity: 1;
+  }
+  
+  .footer p {
+    color: whitesmoke;
+    margin: 15px 0 10px 0;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+  
+  .carousel-container {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .carousel-slide {
+    display: flex;
+  }
+  
+  .carousel-item {
+    width: 33.33%; /* Divide en tres partes */
+    padding: 0 10px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: darkred;
+  }
+  
+  .carousel-item img {
+    width: 80%;
+    height: auto;
+  }
+  
+  .carousel-item h2 {
+    margin: 10px 0;
+  }
+  
+  .carousel-item .btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .carousel-item .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilos responsive */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column; /* Cambia la dirección de los elementos a columna */
+      align-items: center; /* Alinea los elementos a la izquierda */
+    }
+  
+    .logo-bt img {
+      margin-right: 0; /* Elimina el margen derecho del logo */
+      margin-bottom: 10px; /* Añade margen inferior al logo */
+    }
+  
+    .boton-carrito img {
+      margin-bottom: 20px;
+    }
+  
+    .boton a {
+      margin-right: 0; /* Elimina el margen derecho de los botones */
+      margin-bottom: 10px; /* Añade margen inferior a los botones */
+    }
+  
+    .footer {
+      padding: 20px 10px; /* Ajusta el padding del footer */
+    }
+  
+    .social-icon, .menu {
+      flex-direction: column; /* Cambia la dirección de los elementos a columna */
+      align-items: center; /* Alinea los elementos al centro */
+    }
+  
+    .social-icon__link, .menu__link {
+      margin: 5px 0; /* Ajusta el margen entre los enlaces */
+    }
+    
+  }
