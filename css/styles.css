@@ -27,6 +27,12 @@ header {
   max-width: 200px; /* Tamaño máximo del logo */
   padding: 10%;
   margin-right: 80px;
+  transition: transform 0.3s ease; /* Transición para el cambio de tamaño */
+}
+
+/* Aumenta ligeramente el tamaño al pasar el ratón por encima */
+.logo-bt img:hover {
+  transform: scale(1.05); /* Aumenta el tamaño en un 10% */
 }
 
 /* Estilos de los botones */
@@ -44,7 +50,7 @@ header {
 }
 
 .boton a:hover {
-  background-color: rgba(255, 0, 0, 0.671); /* Color de fondo al pasar el mouse */
+  background-color: rgba(255, 0, 0, 0.400); /* Color de fondo al pasar el mouse */
 }
 
 /* Estilos para centrar la imagen del carrito */
@@ -181,14 +187,19 @@ body {
 .carousel-container {
   width: 100%;
   overflow: hidden;
+  background-color: darkred;
 }
 
 .carousel-slide {
   display: flex;
+  background-color: darkred;
+  overflow-x: hidden; /* Agrega desplazamiento horizontal */
+  overflow-y: hidden; /* Ocultar el desplazamiento vertical */
 }
 
 .carousel-item {
-  width: 33.33%; /* Divide en tres partes */
+  flex: 0 0 calc(100% / 3); /* Calcula el ancho para tres elementos por fila */
+  max-width: calc(100% / 3); /* Limita el ancho máximo para evitar que se hagan más pequeños */
   padding: 0 10px;
   box-sizing: border-box;
   text-align: center;
@@ -198,10 +209,16 @@ body {
 .carousel-item img {
   width: 80%;
   height: auto;
+  transition: transform 0.3s ease; /* Transición para el cambio de tamaño */
+}
+
+.carousel-item img:hover {
+  transform: scale(1.1); /* Aumenta el tamaño en un 10% */
 }
 
 .carousel-item h2 {
   margin: 10px 0;
+  font-size: 40px;
 }
 
 .boton-carrusel {
@@ -217,12 +234,12 @@ body {
   text-decoration: none;
   transition: all 250ms;
   border: 0;
-  font-size: 16px;
+  font-size: 25px;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  margin-top: 20px;
-  margin-bottom: 40px;
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
 
 .boton-carrusel:hover {
