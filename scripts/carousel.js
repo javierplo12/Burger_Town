@@ -26,11 +26,4 @@ carousel.addEventListener('mousemove', (e) => {
     const x = e.pageX - carousel.offsetLeft;
     const walk = (x - startX) * 1; // Ajusta la velocidad de desplazamiento
     carousel.scrollLeft = scrollLeft - walk;
-
-    // Si llega al final del carrusel, vuelve a mostrar el primer elemento
-    if (carousel.scrollLeft <= 0) {
-        carousel.scrollLeft = carousel.scrollWidth - carousel.clientWidth;
-    } else if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
-        carousel.scrollLeft = 0;
-    }
 });

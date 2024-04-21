@@ -204,10 +204,11 @@ body {
   box-sizing: border-box;
   text-align: center;
   background-color: darkred;
+  scroll-snap-align: start; /* Alinea el inicio de cada elemento con el inicio del contenedor */
 }
 
 .carousel-item img {
-  width: 80%;
+  max-width: 80%;
   height: auto;
   transition: transform 0.3s ease; /* Transición para el cambio de tamaño */
 }
@@ -279,6 +280,33 @@ body {
 
   .social-icon__link, .menu__link {
     margin: 5px 0; /* Ajusta el margen entre los enlaces */
+  }
+
+  .carousel-container {
+    justify-content: center; /* Centra horizontalmente los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    height: 100vh; /* Establece la altura al 100% del viewport */
+  }
+  
+  .carousel-slide {
+    flex-direction: column; /* Cambia la dirección del flex a columna */
+    align-items: center;
+  }
+
+  .carousel-item {
+    flex: 0 0 100%; /* Ancho de los elementos al 100% */
+    margin: 10px 0; /* Espacio entre elementos */
+  }
+
+/* Estilos para hacer más pequeños los botones */
+  .boton-carrusel {
+    padding: 5px 10px; /* Espaciado interno más pequeño */
+    font-size: 18px; /* Tamaño de fuente más pequeño */
+  }
+
+/* Estilos para hacer más pequeño el texto del título del producto */
+  .carousel-item h2 {
+    font-size: 20px; /* Tamaño de fuente más pequeño */
   }
   
 }
