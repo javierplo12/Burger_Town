@@ -61,43 +61,48 @@ header {
 
 /* Estilos para el fondo negro que ocupa toda la página */
 body {
-  font-family: sans-serif; /* Se eliminó la fuente myFont */
-  background-color: rgba(0, 0, 0, 0); /* Cambiado a transparente */
-  margin: 0; /* Elimina el margen predeterminado del body */
-  padding: 0; /* Elimina el padding predeterminado del body */
+  font-family: sans-serif; 
+  background-color: rgba(112, 111, 111, 0.89); 
   height: 100%; /* Ocupa toda la altura disponible */
+}
+.menu-container {
+  display: flex;
+  margin-bottom: 20px; /* Espacio entre las filas */
 }
 
 .menu {
-  background-color: rgb(88, 88, 88);
-  flex: 1; /* Para que ambos elementos ocupen el mismo espacio horizontal */
+  flex: 1;
+  margin-right: 20px;
+  
 }
 
-.producto {
-  background-color: rgb(221, 0, 0);
-  padding: 20px;
-  border-radius: 10px;
-  margin: 20px;
-  text-align: center;
-  max-width: 300px;
+.hamburguesa {
+  margin: 10px;
+}
+.hamburguesa img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; 
 }
 
-.producto img {
-  max-width: 100%;
-  border-radius: 10px;
-  margin-bottom: 10px;
+.texto-hamburguesa {
+  position: absolute;
+  bottom: 10px;
+  left: 30px;
+  color: white;
+  padding: 10px;
+
 }
 
-.producto h2 {
-  font-size: 1.5rem;
-  color: whitesmoke;
-  margin-bottom: 10px;
-}
 
-.producto p {
-  font-size: 1rem;
-  color: whitesmoke;
-}
+
+
+
+
+
+
+  
+  
 /* Empieza el css del footer */
 .footer {
   position: relative;
