@@ -137,7 +137,7 @@
   /* Estilos para la sección "Sobre Nosotros" */
   .about-us {
     background-color: #f8f9fa; /* Color de fondo de la sección */
-    padding: 50px 0; /* Espaciado interno */
+    padding-top: 50px;
   }
   
   .about-us .container {
@@ -171,7 +171,7 @@
     margin-top: 50px;
     margin-bottom: 50px;
   }
-  
+
   /* Estilos responsive */
   @media (max-width: 768px) {
     header {
