@@ -18,13 +18,13 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(0, 0, 0); /* Color de fondo del header */
-    font-family: 'myFont', sans-serif; /* Aplica la fuente myFont */
+    background-color: rgb(0, 0, 0); 
+    font-family: 'myFont', sans-serif; 
 }
 
 /* Estilos del logo */
 .logo-bt img {
-    max-width: 200px; /* Tamaño máximo del logo */
+    max-width: 200px; 
     padding: 10%;
     margin-right: 80px;
 }
@@ -32,25 +32,25 @@ header {
 /* Estilos de los botones */
 .boton a {
     text-decoration: none;
-    color: whitesmoke; /* Color de texto del botón */
+    color: whitesmoke; 
     font-size: 20px;
     font-weight: bold;
-    padding: 5px 15px; /* Espaciado interno */
-    border: 0px solid #333; /* Borde */
-    border-radius: 15px; /* Bordes redondeados */
-    transition: all 0.3s; /* Transición de propiedades */
+    padding: 5px 15px;
+    border: 0px solid #333; 
+    border-radius: 15px; 
+    transition: all 0.3s; 
     display: inline-block;
     margin-right: 150px;
 }
 
 .boton a:hover {
-    background-color: rgba(255, 0, 0, 0.671); /* Color de fondo al pasar el mouse */
+    background-color: rgba(255, 0, 0, 0.671); 
 }
 
-/* Estilos para centrar la imagen del carrito */
+
 .boton-carrito img {
     display: block;
-    max-height: 100%; /* Asegura que la imagen no exceda el tamaño del contenedor */
+    max-height: 100%; 
     height: 35px;
 }
 
@@ -58,21 +58,17 @@ header {
 .boton-carrito a {
     border: none;
 }
-
-/* Estilos para el fondo negro que ocupa toda la página */
+/*Termina el Header*/
+/*Empieza  el body*/
 body {
     font-family: 'myFont', sans-serif;
-    background-color: rgba(0, 0, 0, 0); /* Cambiado a transparente */
-    color: rgb(7, 7, 7); /* Color del texto en el fondo negro */
-    margin: 0; /* Elimina el margen predeterminado del body */
-    padding: 0; /* Elimina el padding predeterminado del body */
-    height: 100%; /* Ocupa toda la altura disponible */
+    background-color: rgba(0, 0, 0, 0); 
+    color: rgb(7, 7, 7); 
+    margin: 0; 
+    padding: 0; 
+    height: 100%; 
 }
 
-/* Estilos para el contenedor del video */
-h1 {
-    margin: 0;
-}
 
 .content {
     max-width: 800px;
@@ -136,7 +132,7 @@ p {
     transition: 0.5s;
     text-decoration: none;
     font-weight: 300;
-    font-family: 'myFont', sans-serif; /* Aplica la fuente myFont */
+    font-family: 'myFont', sans-serif; /
 }
 
 .menu__link:hover {
@@ -153,13 +149,13 @@ p {
 /* Estilos responsive */
 @media (max-width: 768px) {
     header {
-        flex-direction: column; /* Cambia la dirección de los elementos a columna */
-        align-items: center; /* Alinea los elementos a la izquierda */
+        flex-direction: column; 
+        align-items: center; 
     }
 
     .logo-bt img {
-        margin-right: 0; /* Elimina el margen derecho del logo */
-        margin-bottom: 10px; /* Añade margen inferior al logo */
+        margin-right: 0; 
+        margin-bottom: 10px; 
     }
 
     .boton-carrito img {
@@ -167,20 +163,20 @@ p {
     }
 
     .boton a {
-        margin-right: 0; /* Elimina el margen derecho de los botones */
-        margin-bottom: 10px; /* Añade margen inferior a los botones */
+        margin-right: 0; 
+        margin-bottom: 10px; 
     }
 
     .footer {
-        padding: 20px 10px; /* Ajusta el padding del footer */
+        padding: 20px 10px; 
     }
 
     .social-icon, .menu {
-        flex-direction: column; /* Cambia la dirección de los elementos a columna */
-        align-items: center; /* Alinea los elementos al centro */
+        flex-direction: column; 
+        align-items: center; 
     }
 
     .social-icon__link, .menu__link {
-        margin: 5px 0; /* Ajusta el margen entre los enlaces */
+        margin: 5px 0; 
     }
 }
