@@ -136,7 +136,7 @@
   
   /* Estilos para la sección "Sobre Nosotros" */
   .about-us {
-    background-color: #f8f9fa; /* Color de fondo de la sección */
+    background-color: whitesmoke; /* Color de fondo de la sección */
     padding-top: 50px;
   }
   
@@ -208,6 +208,19 @@
     height: 550px; /* Altura automática para mantener la proporción */
     margin-top: 50px;
     margin-bottom: 50px;
+  }
+  
+  .image-container-history {
+    text-align: center; /* Centra la imagen horizontalmente */
+    margin-top: 50px; /* Espacio entre el texto y la imagen */
+    background-color: black;
+  }
+
+.image-container-history img {
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    height: 550px; /* Altura automática para mantener la proporción */
+    margin-top: 50px; /* Margen superior */
+    margin-bottom: 50px; /* Margen inferior */
   }
 
   /* Estilos responsive */
