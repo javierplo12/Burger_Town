@@ -172,6 +172,44 @@
     margin-bottom: 50px;
   }
 
+  /* Estilos para la sección "Our History" */
+  .our-history {
+    background-color: darkred; /* Color de fondo de la sección */
+    padding-top: 50px;
+  }
+  
+  .our-history .container {
+    max-width: 1000px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+  }
+  
+  .our-history h2 {
+    font-size: 50px; /* Tamaño del título */
+    margin-bottom: 20px; /* Espaciado inferior */
+    color: whitesmoke; /* Color del texto */
+    text-align: center;
+  }
+  
+  .our-history p {
+    font-size: 24px; /* Tamaño del texto */
+    margin-bottom: 30px; /* Espaciado inferior */
+    color: whitesmoke; /* Color del texto */
+    text-align: center;
+  }
+  
+  .image-container {
+    text-align: center; /* Centra la imagen horizontalmente */
+    margin-top: 50px; /* Espacio entre el texto y la imagen */
+    background-color: black;
+  }
+
+  .image-container img {
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    height: 550px; /* Altura automática para mantener la proporción */
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
   /* Estilos responsive */
   @media (max-width: 768px) {
     header {
