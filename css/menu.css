@@ -61,7 +61,7 @@ header {
 
 body {
   font-family: sans-serif; 
-  background-color: rgba(112, 111, 111, 0.89); 
+  background-color: darkred; 
   height: 100%; /* Ocupa toda la altura disponible */
 }
 .menu-container {
