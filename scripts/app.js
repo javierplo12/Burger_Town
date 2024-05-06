@@ -41,16 +41,10 @@ function preparado() {
     document.getElementsByClassName('btn-pagar')[0].addEventListener('click', pagarClicked);
 }
 
-// Eliminamos todos los elementos del carrito y lo ocultamos
 function pagarClicked() {
-    alert("¡Gracias por tu compra!");
-    var carritoItems = document.getElementsByClassName('carrito-items')[0];
-    while (carritoItems.hasChildNodes()) {
-        carritoItems.removeChild(carritoItems.firstChild);
-    }
-    actualizarTotalCarrito();
-    ocultarCarrito();
+    window.location.href = "/public/pago.html";
 }
+
 
 // Controla el clic en el botón "Agregar al carrito"
 function agregarAlCarritoClicked(event) {

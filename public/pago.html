@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BURGER TOWN</title>
+    <link rel="stylesheet" href="/css/pago.css">
+    <script src="/scripts/pago.js" async></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo-bt">
+            <a href="/public/index.html">
+                <img src="../img/logobt.png" alt="Logo Burger Town">
+            </a>
+        </div>
+        <div class="boton">
+            <a href="/public/index.html">HOME</a>
+        </div>
+        <div class="boton">
+            <a href="/public/menu.html">MENU</a>
+        </div>
+        <div class="boton">
+            <a href="/public/menu.html">ORDER NOW</a>
+        </div>
+        <div class="boton">
+            <a href="/public/sing-in.html">SIGN IN </a>
+        </div>
+        <div class="boton-carrito">
+            <a href="/public/carrito.html">
+                <img src="/img/cesta.png">
+            </a>
+        </div>
+    </header>
+
+    <div class="row">
+        <div class="col-75">
+          <div class="container">
+            
+      
+              <div class="row">
+                <div class="col-50">
+                  <h3>Billing Address</h3>
+                  <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                  <input type="text" id="fname" name="firstname" placeholder="Insert your Name">
+                  <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                  <input type="text" id="email" name="email" placeholder="john@example.com">
+                  <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                  <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                  <label for="city"><i class="fa fa-institution"></i> City</label>
+                  <input type="text" id="city" name="city" placeholder="New York">
+      
+                  <div class="row">
+                    <div class="col-50">
+                      <label for="state">State</label>
+                      <input type="text" id="state" name="state" placeholder="NY">
+                    </div>
+                    <div class="col-50">
+                      <label for="zip">Zip</label>
+                      <input type="text" id="zip" name="zip" placeholder="10001">
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-50">
+                  <h3>Payment</h3>
+                  <label for="fname">Accepted Cards</label>
+                  <div class="icon-container">
+                    <i class="fa fa-cc-visa" ><img src="/img/Tarjetas/Visa.PNG"></i>
+                    <i class="fa fa-cc-visa" ><img src="/img/Tarjetas/mastercard.PNG"></i>
+                    <i class="fa fa-cc-visa" ><img src="/img/Tarjetas/AmericaExpress.PNG"></i>
+                  </div>
+                  <label for="cname">Name on Card</label>
+                  <input type="text" id="cname" name="cardname" placeholder="Jobany Jason">
+                  <label for="ccnum">Credit card number</label>
+                  <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                  <label for="expmonth">Exp Month</label>
+                  <input type="text" id="expmonth" name="expmonth" placeholder="September">
+      
+                  <div class="row">
+                    <div class="col-50">
+                      <label for="expyear">Exp Year</label>
+                      <input type="text" id="expyear" name="expyear" placeholder="2018">
+                    </div>
+                    <div class="col-50">
+                      <label for="cvv">CVV</label>
+                      <input type="text" id="cvv" name="cvv" placeholder="352">
+                    </div>
+                  </div>
+                </div>
+      
+              </div>
+              
+              <input type="submit" value="Continue to checkout" class="btn">
+            </form>
+          </div>
+        </div>
+      
+        
+
+
+
+
+
+
+
+        <footer class="footer">
+            <ul class="social-icon">
+                <li class="social-icon__item"><a class="social-icon__link" href="#">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a></li>
+                <li class="social-icon__item"><a class="social-icon__link" href="#">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                    </a></li>
+                <li class="social-icon__item"><a class="social-icon__link" href="#">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a></li>
+                <li class="social-icon__item"><a class="social-icon__link" href="#">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a></li>
+            </ul>
+            <ul class="menu">
+                <li class="menu__item"><a class="menu__link" href="../public/about.html">ABOUT US</a></li>
+                <li class="menu__item"><a class="menu__link" href="/public/privacy-polices.html">PRIVACY POLICIES</a></li>
+                <li class="menu__item"><a class="menu__link" href="/public/our-team.html">OUR TEAM</a></li>
+                <li class="menu__item"><a class="menu__link" href="/public/contact.html">CONTACT</a></li>
+            </ul>
+            <p>&copy; 2024 BURGER TOWN | ALL RIGHTS RESERVED</p>
+        </footer>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
