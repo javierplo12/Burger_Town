@@ -22,11 +22,25 @@ header {
   font-family: 'myFont', sans-serif; /* Aplica la fuente myFont */
 }
 
+.header-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Estilos del logo */
 .logo-bt img {
-  max-width: 200px; /* Tamaño máximo del logo */
-  padding: 10%;
-  margin-right: 80px;
+  max-width: 180px; /* Tamaño máximo del logo */
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  transition: transform 0.3s ease; /* Transición para el cambio de tamaño */
+}
+
+/* Aumenta ligeramente el tamaño al pasar el ratón por encima */
+.logo-bt img:hover {
+  transform: scale(1.02); /* Aumenta el tamaño en un 10% */
 }
 
 /* Estilos de los botones */
@@ -40,11 +54,12 @@ header {
   border-radius: 15px; /* Bordes redondeados */
   transition: all 0.3s; /* Transición de propiedades */
   display: inline-block;
-  margin-right: 150px;
+  margin-right: 80px;
+  margin-left: 80px;
 }
 
 .boton a:hover {
-  background-color: rgba(255, 0, 0, 0.671); /* Color de fondo al pasar el mouse */
+  background-color: rgba(255, 0, 0, 0.400); /* Color de fondo al pasar el mouse */
 }
 
 /* Estilos para centrar la imagen del carrito */
