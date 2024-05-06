@@ -110,7 +110,7 @@ body {
   margin: 5px; /* Agrega un pequeño espacio entre las imágenes */
 }
 
-input[type=text] {
+input[type=text], input[type=number] {
   width: 100%;
   margin-bottom: 20px;
   padding: 12px;
