@@ -130,6 +130,12 @@ body {
   background: linear-gradient(0deg, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 100%);
 }
 
+.gradient-container-carousel {
+  height: 200px;
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,1) 20%, rgba(139,0,0,1) 100%);
+}
+
 /* Estilos para el texto del título */
 .texto h1 {
   font-size: 100px;
@@ -329,7 +335,7 @@ body {
 
 .container-vertical {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .carousel-vertical {
@@ -340,7 +346,7 @@ body {
   align-items: center;
   margin-top: 30px;
   margin-bottom: 30px;
-  margin-left: 120px;
+  margin-right: 100px;
 }
 
 .carousel-vertical-dots {
@@ -399,4 +405,106 @@ body {
   display: flex;
   justify-content: center;
   background-color: black;
+}
+
+.video-container-vertical {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 100px;
+}
+
+.video-container-vertical img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 450px;
+}
+
+.container-encuentranos {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.find-us {
+  margin-bottom: 50px; 
+}
+
+.find-us h2 {
+  font-size: 50px;
+  text-align: center;
+  color: #333;
+}
+
+.map-container {
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  margin-right: 80px;
+  margin-left: 80px;
+}
+
+.mapas {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.texto-slider-container {
+  display: flex;
+  justify-content: center;
+}
+
+.marquee-w {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+  background-color: darkred;
+}
+
+.marquee {
+  position: absolute;
+  display: block;
+  margin: auto auto;
+  white-space: nowrap;
+  overflow: hidden;
+  min-width: 100%;
+  height: 100%;
+}
+
+.marquee span {
+  display: inline-block;
+  padding-left: 100%;
+  text-align: center;
+  white-space: nowrap;
+  min-width: 100%;
+  height: 100%;
+  line-height: 140px;
+  font-size: 85px;
+  font-style: italic;
+  color: whitesmoke;
+  animation: animacion 10s linear infinite;
+}
+
+.marquee2 span {
+  animation-delay: 5s;
+}
+
+@keyframes animacion {
+  0% {
+      transform: translate(0, 0);
+  }
+  100% {
+      transform: translate(-100%, 0);
+  }
 }
