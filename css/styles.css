@@ -213,6 +213,18 @@ body {
   background-color: darkred;
 }
 
+.productos-destacados {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: whitesmoke;
+  font-size: 60px;    
+  margin-top: 70px;
+  margin-bottom: 10px;
+  text-decoration: none; 
+  position: relative; 
+}
+
 .carousel-slide {
   display: flex;
   background-color: darkred;
@@ -476,6 +488,8 @@ body {
 .telefono, .email, .ubicacion {
   display: flex;
   align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .telefono img, .email img, .ubicacion img {
