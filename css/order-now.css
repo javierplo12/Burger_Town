@@ -66,7 +66,8 @@ header {
 .boton-carrito img {
   display: block;
   max-height: 100%; /* Asegura que la imagen no exceda el tamaño del contenedor */
-  height: 35px;
+  height: 34px;
+  filter: invert(100%) sepia(21%) saturate(361%) hue-rotate(152deg) brightness(111%) contrast(92%);
 }
 
 /* Elimina el borde del botón del carrito */
@@ -82,23 +83,25 @@ body {
 
 .menu-section {
   text-align: center;
+  display: flex;
+  flex-direction: column;
   margin: 50px 0;
 }
 
+.menu-section h2 {
+  font-size: 80px;
+}
+
 .menu {
-  display: block; /* Cambia de flex a block */
-  text-align: center; /* Alinea las imágenes al centro */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 25px;
 }
 
-.menu-section h2{
-  margin-top: 10px;
-  margin-bottom: 25px;
-  text-decoration: underline;
-}
-
-.burger-item,
-.drink-item,
-.dessert-item {
+.burger-item, .drink-item, .dessert-item {
   display: flex; /* Utiliza flexbox para centrar la imagen */
   justify-content: center; /* Centra horizontalmente */
   align-items: center; /* Centra verticalmente */
@@ -110,12 +113,27 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.952); /* Agrega una sombra suave */
 }
 
-.burger-item img,
-.drink-item img,
-.dessert-item img {
+.burger-item img, .drink-item img, .dessert-item img {
   max-width: 100%; 
   max-height: 100%; 
-  border-radius: 20px; 
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.burger-details {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.burger-details-titulo {
+  display: flex;
+  justify-content: center;
+}
+
+.burger-details-texto {
+  display: flex;
 }
 
 .add-to-cart {
@@ -132,10 +150,6 @@ body {
 .add-to-cart:hover {
   background-color: #45a049;
 }
-
-
-
-
   
 /* Empieza el css del footer */
 .footer {
@@ -148,15 +162,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-
-.social-icon, .menu {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0;
-  flex-wrap: wrap;
 }
 
 .social-icon__item, .menu__item {
@@ -196,56 +201,13 @@ body {
   font-weight: 300;
 }
 
-.carousel-container {
-  width: 100%;
-  overflow: hidden;
-}
-
-.carousel-slide {
+.social-icon {
+  position: relative;
   display: flex;
-}
-
-.carousel-item {
-  width: 33.33%; /* Divide en tres partes */
-  padding: 0 10px;
-  box-sizing: border-box;
-  text-align: center;
-  background-color: darkred;
-}
-
-.carousel-item img {
-  width: 80%;
-  height: auto;
-}
-
-.carousel-item h2 {
+  justify-content: center;
+  align-items: center;
   margin: 10px 0;
-}
-
-.boton-carrusel {
-  background-color: black;
-  border-radius: 100px;
-  box-shadow: rgba(169, 169, 169, .2) 0 -25px 18px -14px inset,rgba(169, 169, 169, .15) 0 1px 2px,rgba(169, 169, 169, .15) 0 2px 4px,rgba(169, 169, 169, .15) 0 4px 8px,rgba(169, 169, 169, .15) 0 8px 16px,rgba(169, 169, 169, .15) 0 16px 32px;
-  color: whitesmoke;
-  cursor: pointer;
-  display: inline-block;
-  font-family: 'myFont', sans-serif;
-  padding: 7px 20px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 250ms;
-  border: 0;
-  font-size: 16px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  margin-top: 20px;
-  margin-bottom: 40px;
-}
-
-.boton-carrusel:hover {
-  box-shadow: rgba(169, 169, 169,.35) 0 -25px 18px -14px inset,rgba(169, 169, 169,.25) 0 1px 2px,rgba(169, 169, 169,.25) 0 2px 4px,rgba(169, 169, 169,.25) 0 4px 8px,rgba(169, 169, 169,.25) 0 8px 16px,rgba(169, 169, 169,.25) 0 16px 32px;
-  transform: scale(1.05) rotate(-1deg);
+  flex-wrap: wrap;
 }
 
 /* Estilos responsive */
