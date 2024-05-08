@@ -54,8 +54,8 @@ header {
     border-radius: 15px; /* Bordes redondeados */
     transition: all 0.3s; /* Transición de propiedades */
     display: inline-block;
-    margin-right: 80px;
-    margin-left: 80px;
+    margin-right: 180px;
+    margin-left: 180px;
   }
   
   .boton a:hover {
