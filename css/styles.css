@@ -439,23 +439,54 @@ body {
 .find-us h2 {
   font-size: 50px;
   text-align: center;
-  color: #333;
-}
-
-.map-container {
-  width: 100%;
-  max-width: 600px;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  margin-right: 80px;
-  margin-left: 80px;
 }
 
 .mapas {
   display: flex;
   justify-content: center;
-  margin-bottom: 80px;
+}
+
+.map-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 80px;
+}
+
+.direccion {
+  padding: 10px;
+  padding-left: 0px;
+  border-radius: 5px;
+  font-size: 20px;
+  margin-top: 10px;
+  text-align: left;
+  width: 100%;
+}
+
+.contacto {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  padding-left: 0px;
+  font-size: 14px;
+  text-align: left;
+  width: 100%;
+}
+
+.telefono, .email, .ubicacion {
+  display: flex;
+  align-items: center;
+}
+
+.telefono img, .email img, .ubicacion img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.telefono p, .email p, .ubicacion p {
+    display: inline-block;
+
 }
 
 .texto-slider-container {
