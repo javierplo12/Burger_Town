@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0px;
+    padding: 0;
+}
+
+.container {
+    width: 300px;
+    margin: 100px auto;
+    background-color: #fff;
+    padding: 57px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    width: 106%;
+    padding: 10px;
+    background-color: #ff0000;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    transition: 1s;
+}
+
+button:hover {
+    background-color: #000000;
+}
