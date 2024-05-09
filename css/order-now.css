@@ -84,7 +84,7 @@ body {
 .menu-section {
   display: flex;
   flex-direction: column;
-  margin: 50px 0;
+  margin: 100px 0;
 }
 
 .menu-section h2 {
@@ -92,44 +92,85 @@ body {
   text-align: center;
 }
 
-.menu {
+.menu-section-drinks {
+  display: flex;
+  flex-direction: column;
+  margin: 100px 0;
+}
+
+.menu-section-drinks h2 {
+  font-size: 80px;
+  text-align: center;
+}
+
+.menu-items {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 25px;
+  margin-top: 50px;
+}
+
+.menu-drinks {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
 }
 
 .burger-item, .drink-item, .dessert-item {
   display: flex; /* Utiliza flexbox para centrar la imagen */
+  flex-direction: row;
   justify-content: center; /* Centra horizontalmente */
   align-items: center; /* Centra verticalmente */
   margin: 0 auto 40px; /* Agrega margen inferior para separar las cajas */
-  width: 750px; /* Ajusta el ancho del contenedor */
-  height: 318px; /* Ajusta la altura del contenedor */
+  width: 1200px; /* Ajusta el ancho del contenedor */
+  height: 300px; /* Ajusta la altura del contenedor */
   border-radius: 20px; /* Añade un borde redondeado */
   overflow: hidden; /* Asegura que el contenido no sobresalga del contenedor redondeado */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.952); /* Agrega una sombra suave */
 }
 
-.burger-item img, .drink-item img, .dessert-item img {
-  max-width: 100%; 
-  max-height: 100%; 
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+.imagen-item {
+  display: flex;
+  align-items: center;
+  height: 500px;
+  width: 500px;
+}
+
+.imagen-item img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.contenido {
+  display: flex;
+  width: 1000px;
+  height: auto;
 }
 
 .burger-details {
   display: flex;
   flex-direction: column;
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-right: 35px;
+  margin-left: 35px;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .burger-details-titulo {
   display: flex;
   justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.burger-details-titulo h3 {
+  font-size: 50px;
 }
 
 .burger-details-texto {
@@ -137,19 +178,44 @@ body {
   justify-content: flex-start;
 }
 
+.burger-details-texto P {
+  font-size: 25px;
+}
+
+.order-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 70px;
+  background-color: darkred;
+}
+
 .add-to-cart {
-  background-color: #4CAF50;
+  display: flex;
+  align-items: center;
+  background-color: darkred;
   border: none;
   color: white;
   padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 100%;
+  height: 100%;
+}
+
+.add-to-cart p {
+  align-items: center;
+  font-family: 'myFont';
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: 25px;
+  transition: color 0.3s ease;
 }
 
 .add-to-cart:hover {
-  background-color: #45a049;
+  background-color: black;
+  color: darkred;
 }
   
 /* Empieza el css del footer */
@@ -163,6 +229,15 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.social-icon, .menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
 }
 
 .social-icon__item, .menu__item {
@@ -200,49 +275,4 @@ body {
   margin: 15px 0 10px 0;
   font-size: 1rem;
   font-weight: 300;
-}
-
-.social-icon {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0;
-  flex-wrap: wrap;
-}
-
-/* Estilos responsive */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column; /* Cambia la dirección de los elementos a columna */
-    align-items: center; /* Alinea los elementos a la izquierda */
-  }
-
-  .logo-bt img {
-    margin-right: 0; /* Elimina el margen derecho del logo */
-    margin-bottom: 10px; /* Añade margen inferior al logo */
-  }
-
-  .boton-carrito img {
-    margin-bottom: 20px;
-  }
-
-  .boton a {
-    margin-right: 0; /* Elimina el margen derecho de los botones */
-    margin-bottom: 10px; /* Añade margen inferior a los botones */
-  }
-
-  .footer {
-    padding: 20px 10px; /* Ajusta el padding del footer */
-  }
-
-  .social-icon, .menu {
-    flex-direction: column; /* Cambia la dirección de los elementos a columna */
-    align-items: center; /* Alinea los elementos al centro */
-  }
-
-  .social-icon__link, .menu__link {
-    margin: 5px 0; /* Ajusta el margen entre los enlaces */
-  }
-  
 }
