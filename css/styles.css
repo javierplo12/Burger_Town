@@ -135,6 +135,21 @@ body {
   background: rgb(0,0,0);
   background: linear-gradient(180deg, rgba(0,0,0,1) 20%, rgba(139,0,0,1) 100%);
 }
+.trabaja-nosotros h1 {
+  font-size: 30px; 
+  margin-top: 40px; 
+
+}
+
+.trabaja-nosotros p {
+ 
+  font-size: 16px; 
+  margin-top: 5px; 
+  text-align: center;
+  box-shadow: black;
+  
+
+}
 
 /* Estilos para el texto del título */
 .texto h1 {
