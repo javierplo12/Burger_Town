@@ -161,9 +161,20 @@ body {
   display: flex;
   justify-content: flex-start;
   margin-bottom: 20px;
+  align-items: center;
+}
+
+.burger-details-titulo-drinks {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .burger-details-titulo h3 {
+  font-size: 50px;
+}
+
+.burger-details-titulo-drinks h3 {
   font-size: 50px;
 }
 
