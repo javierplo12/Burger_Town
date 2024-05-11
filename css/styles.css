@@ -243,8 +243,8 @@ body {
 .carousel-slide {
   display: flex;
   background-color: darkred;
-  overflow-x: hidden; /* Agrega desplazamiento horizontal */
-  overflow-y: hidden; /* Ocultar el desplazamiento vertical */
+  overflow-x: hidden; 
+  overflow-y: hidden; 
 }
 
 .carousel-item {
@@ -260,11 +260,11 @@ body {
 .carousel-item img {
   max-width: 80%;
   height: auto;
-  transition: transform 0.3s ease; /* Transición para el cambio de tamaño */
+  transition: transform 0.3s ease; 
 }
 
 .carousel-item img:hover {
-  transform: scale(1.1); /* Aumenta el tamaño en un 10% */
+  transform: scale(1.1); 
 }
 
 .carousel-item h2 {
@@ -295,69 +295,6 @@ body {
 
 .boton-carrusel:hover {
   transform: scale(1.05) rotate(-1deg);
-}
-
-/* Estilos responsive */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column; /* Cambia la dirección de los elementos a columna */
-    align-items: center; /* Alinea los elementos a la izquierda */
-  }
-
-  .logo-bt img {
-    margin-right: 0; /* Elimina el margen derecho del logo */
-    margin-bottom: 10px; /* Añade margen inferior al logo */
-  }
-
-  .boton-carrito img {
-    margin-bottom: 20px;
-  }
-
-  .boton a {
-    margin-right: 0; /* Elimina el margen derecho de los botones */
-    margin-bottom: 10px; /* Añade margen inferior a los botones */
-  }
-
-  .footer {
-    padding: 20px 10px; /* Ajusta el padding del footer */
-  }
-
-  .social-icon, .menu {
-    flex-direction: column; /* Cambia la dirección de los elementos a columna */
-    align-items: center; /* Alinea los elementos al centro */
-  }
-
-  .social-icon__link, .menu__link {
-    margin: 5px 0; /* Ajusta el margen entre los enlaces */
-  }
-
-  .carousel-container {
-    justify-content: center; /* Centra horizontalmente los elementos */
-    align-items: center; /* Centra verticalmente los elementos */
-    height: 100vh; /* Establece la altura al 100% del viewport */
-  }
-  
-  .carousel-slide {
-    flex-direction: column; /* Cambia la dirección del flex a columna */
-    align-items: center;
-  }
-
-  .carousel-item {
-    flex: 0 0 100%; /* Ancho de los elementos al 100% */
-    margin: 10px 0; /* Espacio entre elementos */
-  }
-
-/* Estilos para hacer más pequeños los botones */
-  .boton-carrusel {
-    padding: 5px 10px; /* Espaciado interno más pequeño */
-    font-size: 18px; /* Tamaño de fuente más pequeño */
-  }
-
-/* Estilos para hacer más pequeño el texto del título del producto */
-  .carousel-item h2 {
-    font-size: 20px; /* Tamaño de fuente más pequeño */
-  }
-  
 }
 
 .container-vertical {
