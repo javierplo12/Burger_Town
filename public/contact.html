@@ -66,16 +66,15 @@
                             </div>
                             <div class="app-form-group buttons">
                                 <button class="app-form-button">CANCEL</button>
-                                <button class="app-form-button">SEND</button>
+                                <button class="app-form-button" id="sendButton">SEND</button>
                             </div>
                         </div>
+                        <div id="messageContainer"></div> <!-- Elemento para mostrar el mensaje -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
 
     <footer class="footer">
         <ul class="social-icon">
@@ -101,9 +100,22 @@
         </ul>
         <p>&copy; 2024 BURGER TOWN | ALL RIGHTS RESERVED</p>
     </footer>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="../scripts/carousel.js"></script>
+
+    <script>
+        document.getElementById('sendButton').addEventListener('click', function () {
+            var name = document.querySelector('.app-form-control[placeholder="NAME"]').value;
+            var email = document.querySelector('.app-form-control[placeholder="EMAIL"]').value;
+            var phone = document.querySelector('.app-form-control[placeholder="PHONE NUMBER"]').value;
+            var message = document.querySelector('.app-form-control[placeholder="MESSAGE"]').value;
+            var messageContainer = document.getElementById('messageContainer');
+
+            if (name && email && phone && message) {
+                messageContainer.innerHTML = "<p>Mensaje recibido. Nos pondremos en contacto contigo cuanto antes.</p>"; 
+            } else {
+                messageContainer.innerHTML = "<p>Por favor, completa todos los campos.</p>";
+            }
+        });
+    </script>
 </body>
 
 </html>
