@@ -14,6 +14,11 @@
   font-style: normal;
 }
 
+#messageContainer {
+  color: white; /* Cambia el color del texto a blanco */
+  margin-top: 10px;
+}
+
 /* Estilos del header */
 header {
   display: flex;
