@@ -84,10 +84,15 @@ body {
   contain: paint;
 }
 
+.contenedor-categoria {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
 .contenedor-title {
   display: flex;
   justify-content: center;
-  margin-top: 100px;
 }
 
 .contenedor-title h2 {
@@ -106,7 +111,7 @@ body {
 }
 
 .items{
-  margin-top: 30px;
+  margin-top: 55px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   grid-gap:30px;
@@ -114,18 +119,25 @@ body {
   /* width: 60%; */
   width: 100%;
   transition: .3s;
+  align-items: center;
+  justify-content: center;
 }
 
 .item {
+  display: flex;
+  flex-direction: column;
   max-width: 250px;
-  margin: auto;
   border: 1px solid #666;
   border-radius: 10px;
   padding: 20px;
   transition: .3s;
 }
 
-.img-item{
+.img-item {
+  max-width: 100%;
+}
+
+.img-item img {
   width: 100%;
 }
 
