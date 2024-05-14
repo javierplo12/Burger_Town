@@ -95,7 +95,7 @@ body {
 }
 
 /* SECCION CONTENEDOR DE ITEMS */
-.contenedor .contenedor-items{
+.contenedor-items{
   margin-bottom: 100px;
   display: grid;
   grid-gap:30px;
@@ -116,7 +116,7 @@ body {
   transition: .3s;
 }
 
-.contenedor .contenedor-items .item{
+.item {
   max-width: 250px;
   margin: auto;
   border: 1px solid #666;
@@ -125,16 +125,16 @@ body {
   transition: .3s;
 }
 
-.contenedor .contenedor-items .item .img-item{
+.img-item{
   width: 100%;
 }
 
-.contenedor .contenedor-items .item:hover{
+.item:hover{
   box-shadow: 0 0 10px #666;
   scale: 1.05;
 }
 
-.contenedor .contenedor-items .item .titulo-item{
+.titulo-item{
   display: block;
   font-weight: bold;
   text-align: center;
@@ -143,7 +143,7 @@ body {
   margin-bottom: 15px;
 }
 
-.contenedor .contenedor-items .item .precio-item{
+.precio-item{
   display: block;
   text-align: center;
   font-weight: bold;
@@ -151,13 +151,13 @@ body {
   margin-top: 10px;
 }
 
-.contenedor .contenedor-items .item .boton-item{
+.boton-item{
   display: block;
   margin: 10px auto;
   border: none;
   background-color: black;
   color: #fff;
-  padding: 5px 15px;
+  padding: 5px 50px;
   border-radius: 5px;
   cursor: pointer;
   font-family: 'myFont';
