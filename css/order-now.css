@@ -88,6 +88,8 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: 100px;
+  align-items: center;
+  justify-content: center;
 }
 
 .contenedor-title {
@@ -114,8 +116,7 @@ body {
   margin-top: 55px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  grid-gap:30px;
-  grid-row-gap: 30px;
+  gap: 15px;
   /* width: 60%; */
   width: 100%;
   transition: .3s;
@@ -127,13 +128,15 @@ body {
   display: flex;
   flex-direction: column;
   max-width: 250px;
-  border: 1px solid #666;
+  border: 2px solid #666;
   border-radius: 10px;
-  padding: 20px;
   transition: .3s;
 }
 
 .img-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   max-width: 100%;
 }
 
@@ -152,20 +155,23 @@ body {
   text-align: center;
   text-transform: uppercase;
   font-size: 25px;
-  margin-bottom: 15px;
 }
 
 .precio-item{
-  display: block;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: bold;
   font-size: 20px;
-  margin-top: 10px;
+}
+
+.cuadrado-boton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .boton-item{
-  display: block;
-  margin: 10px auto;
   border: none;
   background-color: black;
   color: #fff;
