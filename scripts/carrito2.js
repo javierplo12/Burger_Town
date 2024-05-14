@@ -183,15 +183,19 @@ function actualizarTotalCarrito(){
     for(var i=0; i< carritoItems.length;i++){
         var item = carritoItems[i];
         var precioElemento = item.getElementsByClassName('carrito-item-precio')[0];
-        //quitamos el simobolo peso y el punto de milesimos.
+        //quitamos el símbolo peso y el punto de milesimos.
         var precio = parseFloat(precioElemento.innerText.replace('$','').replace('.',''));
         var cantidadItem = item.getElementsByClassName('carrito-item-cantidad')[0];
-        console.log(precio);
         var cantidad = cantidadItem.value;
         total = total + (precio * cantidad);
     }
-    total = Math.round(total/100);
+    total = total/100;
 
-    document.getElementsByClassName('carrito-precio-total')[0].innerText = '$'+total.toLocaleString("es") + ".00";
+    // Formateamos el total con punto como separador de miles
+    var formattedTotal = total.toLocaleString("es", {useGrouping: true});
 
+    // Reemplazamos la coma por un punto si es necesario
+    formattedTotal = formattedTotal.replace(/,/g, '.');
+
+    document.getElementsByClassName('carrito-precio-total')[0].innerText = '$'+formattedTotal;
 }
