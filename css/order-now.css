@@ -87,51 +87,57 @@ body {
 .contenedor-categoria {
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
+  margin-bottom: 100px;
+  align-items: center;
+  justify-content: center;
 }
 
 .contenedor-title {
   display: flex;
   justify-content: center;
-  margin-top: 100px;
+  align-items: center;
 }
 
 .contenedor-title h2 {
-  font-size: 50px;
+  font-size: 80px;
 }
 
 /* SECCION CONTENEDOR DE ITEMS */
 .contenedor-items{
-  margin-bottom: 100px;
   display: grid;
-  grid-gap:30px;
-  grid-row-gap: 30px;
   /* width: 60%; */
   width: 100%;
   transition: .3s;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .items{
-  margin-top: 30px;
+  margin-top: 50px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  grid-gap:30px;
-  grid-row-gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 0fr));
+  gap: 50px;
   /* width: 60%; */
   width: 100%;
   transition: .3s;
+  justify-content: center;
+  align-items: center;
 }
 
 .item {
+  display: flex;
+  flex-direction: column;
   max-width: 250px;
   border: 1px solid #666;
   border-radius: 10px;
-  padding: 20px;
   transition: .3s;
 }
 
 .img-item {
-  max-width: 100%;
+  display: flex;
+  max-width: 250px;
+  justify-content: center;
+  align-items: center;
 }
 
 .img-item img {
@@ -144,20 +150,22 @@ body {
 }
 
 .titulo-item{
-  display: block;
+  display: flex;
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
   font-size: 25px;
-  margin-bottom: 15px;
+  justify-content: center;
+  align-items: center;
 }
 
 .precio-item{
-  display: block;
+  display: flex;
   text-align: center;
   font-weight: bold;
   font-size: 20px;
-  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 .boton-item{
