@@ -188,12 +188,13 @@ function actualizarTotalCarrito() {
         var cantidad = cantidadItem.value;
         total = total + (precio * cantidad);
     }
-    total = total / 100;
+    total = total/100;
+
     // Formateamos el total con punto como separador de miles
     var formattedTotal = total.toLocaleString("es", { useGrouping: true });
 
     // Reemplazamos la coma por un punto si es necesario
     formattedTotal = formattedTotal.replace(/,/g, '.');
 
-    document.getElementsByClassName('carrito-precio-total')[0].innerText = '$' + formattedTotal;
+    document.getElementsByClassName('carrito-precio-total')[0].innerText = '€' + formattedTotal;
 }

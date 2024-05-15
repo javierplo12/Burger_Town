@@ -115,7 +115,7 @@ body {
   margin-top: 50px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 0fr));
-  gap: 50px;
+  gap: 65px;
   /* width: 60%; */
   width: 100%;
   transition: .3s;
@@ -165,6 +165,7 @@ body {
   font-size: 20px;
   justify-content: center;
   align-items: center;
+  margin-top: 10px;
 }
 
 .boton-item{
