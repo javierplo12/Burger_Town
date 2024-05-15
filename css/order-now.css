@@ -103,9 +103,8 @@ body {
 
 /* SECCION CONTENEDOR DE ITEMS */
 .contenedor-items{
-  display: grid;
-  /* width: 60%; */
   width: 100%;
+  display: grid;
   transition: .3s;
   margin-top: 100px;
   margin-bottom: 100px;
@@ -116,7 +115,6 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 0fr));
   gap: 65px;
-  /* width: 60%; */
   width: 100%;
   transition: .3s;
   justify-content: center;
@@ -141,6 +139,7 @@ body {
 
 .img-item img {
   width: 100%;
+  padding: 10px;
 }
 
 .item:hover{
@@ -172,7 +171,7 @@ body {
   display: block;
   margin: 10px auto;
   border: none;
-  background-color: black;
+  background-color: darkred;
   color: #fff;
   padding: 5px 50px;
   border-radius: 5px;
@@ -304,7 +303,7 @@ body {
   display: block;
   width: 100%;
   border: none;
-  background: #000;
+  background: darkred;
   color: #fff;
   border-radius: 5px;
   font-size: 18px;
