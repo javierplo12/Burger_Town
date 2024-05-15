@@ -76,7 +76,6 @@ body {
 
 .contenedor{
   max-width: 1200px;
-  padding: 10px;
   margin: auto;
   display: flex;
   justify-content: space-between;
