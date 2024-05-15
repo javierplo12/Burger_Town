@@ -50,14 +50,13 @@ function pagarClicked() {
 // Función que controla el botón clickeado de agregar al carrito
 function agregarAlCarritoClicked(event) {
     var button = event.target;
-    var item = button.parentElement;
+    var item = button.closest('.item'); // Use closest to find the nearest parent with class 'item'
     var titulo = item.getElementsByClassName('titulo-item')[0].innerText;
     var precio = item.getElementsByClassName('precio-item')[0].innerText;
-    var imagenSrc = item.getElementsByClassName('img-item')[0].src;
+    var imagenSrc = item.getElementsByClassName('img-item')[0].getElementsByTagName('img')[0].src;
     console.log(imagenSrc);
 
     agregarItemAlCarrito(titulo, precio, imagenSrc);
-
     hacerVisibleCarrito();
 }
 
@@ -182,14 +181,14 @@ function actualizarTotalCarrito() {
     for (var i = 0; i < carritoItems.length; i++) {
         var item = carritoItems[i];
         var precioElemento = item.getElementsByClassName('carrito-item-precio')[0];
-        // Quitamos el símbolo de peso y el punto de milésimos.
-        var precio = parseFloat(precioElemento.innerText.replace('$', '').replace('.', ''));
+        console.log(precioElemento);
+        // Quitamos el símbolo € y el punto de miles
+        var precio = parseFloat(precioElemento.innerText.replace('€', '').replace('.', ''));
         var cantidadItem = item.getElementsByClassName('carrito-item-cantidad')[0];
         var cantidad = cantidadItem.value;
         total = total + (precio * cantidad);
     }
     total = total / 100;
-
     // Formateamos el total con punto como separador de miles
     var formattedTotal = total.toLocaleString("es", { useGrouping: true });
 

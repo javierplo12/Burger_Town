@@ -179,6 +179,12 @@ body {
   font-family: 'myFont';
 }
 
+.contenedor-boton-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* seccion carrito */
 .carrito{
   border: 1px solid #666;
@@ -236,6 +242,7 @@ body {
   padding: 5px;
   text-align: center;
   font-family: 'myFont';
+  color: #000;
 }
 
 .carrito .carrito-item .selector-cantidad i{
