@@ -118,17 +118,14 @@ body {
 
 .item {
   max-width: 250px;
+  margin: auto;
   border: 1px solid #666;
   border-radius: 10px;
   padding: 20px;
   transition: .3s;
 }
 
-.img-item {
-  max-width: 100%;
-}
-
-.img-item img {
+.img-item{
   width: 100%;
 }
 
