@@ -195,5 +195,5 @@ function actualizarTotalCarrito() {
     // Formateamos el total con coma como separador decimal
     var formattedTotal = total.toFixed(2).replace('.', ',');
 
-    document.getElementsByClassName('carrito-precio-total')[0].innerText = '€' + formattedTotal;
+    document.getElementsByClassName('carrito-precio-total')[0].innerText = formattedTotal + ' €';
 }
