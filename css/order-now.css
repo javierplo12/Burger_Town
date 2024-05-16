@@ -75,12 +75,13 @@ body {
 }
 
 .contenedor{
-  max-width: 1200px;
+  max-width: 1500px;
   margin: auto;
   display: flex;
   justify-content: space-between;
   /* oculto lo que queda fuera del .contenedor */
   contain: paint;
+  align-items: center;
 }
 
 .contenedor-categoria {
@@ -108,12 +109,14 @@ body {
   transition: .3s;
   margin-top: 100px;
   margin-bottom: 100px;
+  justify-content: center;
+  align-items: center;
 }
 
-.items{
+.items {
   margin-top: 50px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 0fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 65px;
   width: 100%;
   transition: .3s;
@@ -125,6 +128,7 @@ body {
   display: flex;
   flex-direction: column;
   max-width: 250px;
+  height: 400px; /* Añadido para que todos los recuadros tengan la misma altura */
   border: 1px solid #666;
   border-radius: 10px;
   transition: .3s;
@@ -135,6 +139,7 @@ body {
   max-width: 250px;
   justify-content: center;
   align-items: center;
+  flex-grow: 1; /* Permite que la imagen crezca para llenar el espacio disponible */
 }
 
 .img-item img {
@@ -142,12 +147,12 @@ body {
   padding: 10px;
 }
 
-.item:hover{
+.item:hover {
   box-shadow: 0 0 10px #666;
   scale: 1.05;
 }
 
-.titulo-item{
+.titulo-item {
   display: flex;
   font-weight: bold;
   text-align: center;
@@ -155,9 +160,12 @@ body {
   font-size: 25px;
   justify-content: center;
   align-items: center;
+  height: 50px; /* Añadido para altura uniforme */
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
-.precio-item{
+.precio-item {
   display: flex;
   text-align: center;
   font-weight: bold;
@@ -165,9 +173,10 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 10px;
+  height: 40px; /* Añadido para altura uniforme */
 }
 
-.boton-item{
+.boton-item {
   display: block;
   margin: 10px auto;
   border: none;
@@ -183,7 +192,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: auto; /* Empuja el botón hacia abajo */
+  margin-bottom: 10px; /* Espacio inferior para el botón */
+  height: 50px; /* Añadido para altura uniforme */
 }
+
 
 /* seccion carrito */
 .carrito{
