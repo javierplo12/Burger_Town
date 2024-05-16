@@ -208,6 +208,7 @@ body {
   outline: none;
   text-decoration: none;
   padding: 10px 20px; /* Incrementado el padding */
+  width: 120px;
   margin: 15px;
   font-family: 'myFont', sans-serif;
   flex: 1; /* Añadido para que los botones tomen el mismo tamaño */
