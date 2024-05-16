@@ -1,4 +1,3 @@
-
 /* Reset de estilos */
 * {
   margin: 0;
@@ -74,7 +73,7 @@ header {
   border: none;
 }
 
-/*Empieza el formulario */
+/* Empieza el formulario */
 /* Establece el modelo de caja para todos los elementos */
 *,
 *:before,
@@ -164,6 +163,8 @@ body {
 }
 
 .app-form-group.buttons {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 0px;
 }
 
@@ -199,7 +200,6 @@ body {
 
 /* Estilos para los botones del formulario de la aplicación */
 .app-form-button {
-  
   background: none;
   border: 2px solid #db2223; /* Añadido un borde */
   color: #db2223;
@@ -210,11 +210,12 @@ body {
   padding: 10px 20px; /* Incrementado el padding */
   margin: 15px;
   font-family: 'myFont', sans-serif;
+  flex: 1; /* Añadido para que los botones tomen el mismo tamaño */
+  text-align: center; /* Centrar el texto */
 }
 
 /* Estilos para los botones del formulario al pasar el cursor */
 .app-form-button:hover {
-  
   background: #db2223;
   color: #fff;
 }
