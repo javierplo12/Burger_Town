@@ -1,5 +1,3 @@
-
-/* Reset de estilos */
 * {
   margin: 0;
   padding: 0;
@@ -100,6 +98,8 @@ body {
 .container {
   display: flex;
   margin: auto;
+  width: 80%; /* Ajuste el ancho del contenedor */
+  max-width: 1200px; /* Ancho máximo para pantallas más grandes */
 }
 
 /* Estilos para el área de pantalla */
@@ -110,6 +110,7 @@ body {
   background: #3e3e3e;
   border-radius: 15px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  width: 100%; /* Ancho del contenedor */
 }
 
 /* Estilos para el encabezado de la pantalla */
@@ -134,18 +135,20 @@ body {
 .screen-body {
   display: flex;
   padding: 40px; /* Incrementado el padding */
-  flex-direction: column;
+  flex-direction: column; /* Cambiado a fila para un mejor diseño en ancho */
+  width: 100%;
 }
 
 .screen-body-item-left {
   display: flex;
   flex-direction: column;
+  width: 50%; /* Ajuste el ancho de los elementos */
 }
 
 /* Estilos para el título de la aplicación */
 .app-title {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   color: whitesmoke;
   font-size: 40px; /* Incrementado el tamaño de la fuente */
   margin-bottom: 30px;
