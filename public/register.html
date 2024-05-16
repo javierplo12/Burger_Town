@@ -4,12 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BURGER TOWN</title>
-    <link rel="stylesheet" href="/css/register.css">
+    <title>BURGER TOWN - Login</title>
+    <link rel="stylesheet" href="/css/sing.in.css">
 </head>
 
 <body>
-
     <header>
         <div class="header-container">
             <div class="logo-bt">
@@ -26,30 +25,42 @@
             <div class="boton">
                 <a href="/public/sing-in.html">SIGN IN </a>
             </div>
-            
         </div>
     </header>
 
-    <div class="container">
-        <form id="login-form">
-            <h2>LOG IN</h2>
-            <div class="form-group">
-                <label for="username">USERNAME</label>
-                <input type="text" id="username" name="username" required>
+    <div class="background">
+        <div class="container">
+            <div class="screen">
+                <div class="screen-body">
+                    <div class="screen-body-item-left">
+                        <div class="app-title">
+                            <span>LOGIN</span>
+                        </div>
+                    </div>
+                    <div class="screen-body-item">
+                        <div class="app-form">
+                            <div class="app-form-group">
+                                <input type="email" class="app-form-control" placeholder="EMAIL" required>
+                            </div>
+                            <div class="app-form-group">
+                                <input type="password" class="app-form-control" placeholder="PASSWORD" id="password" required>
+                            </div>
+                            <div class="app-form-group">
+                                <input type="password" class="app-form-control" placeholder="CONFIRM PASSWORD" id="confirm-password" required>
+                            </div>
+                            <div class="app-form-group">
+                                <input type="text" class="app-form-control" placeholder="NUMBER" required>
+                            </div>
+                            <div class="app-form-group buttons">
+                                <a href="/public/register.html" class="app-form-button">REGISTER</a>
+                                <button class="app-form-button" id="loginButton">LOGIN</button>
+                            </div>
+                        </div>
+                        <div id="messageContainer"></div> <!-- Elemento para mostrar el mensaje -->
+                    </div>
+                </div>
             </div>
-
-            <div class="form-group">
-                <label for="password">PASSWORD</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-
-            <div class="form-group">
-                <label for="password">CONFIRM PASSWORD</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit">LOG IN <a href="/public/index.html"></a></button>
-            <p>Do you already have an account? <a href="/public/sing-in.html">LOG IN </a></p>
-        </form>
+        </div>
     </div>
 
     <footer class="footer">
@@ -69,15 +80,39 @@
         </ul>
         <ul class="menu">
             <li class="menu__item"><a class="menu__link" href="../public/about.html">ABOUT US</a></li>
-            <li class="menu__item"><a class="menu__link" href="/public/privacy-polices.html">PRIVACY POLICIES</a></li>
+            <li class="menu__item"><a class="menu__link" href="/public/privacy-policies.html">PRIVACY POLICIES</a></li>
             <li class="menu__item"><a class="menu__link" href="/public/our-team.html">OUR TEAM</a></li>
             <li class="menu__item"><a class="menu__link" href="/public/contact.html">CONTACT</a></li>
         </ul>
         <p>&copy; 2024 BURGER TOWN | ALL RIGHTS RESERVED</p>
     </footer>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+    <script>
+        document.getElementById('loginButton').addEventListener('click', function (event) {
+            event.preventDefault(); // Previene el comportamiento por defecto del botón
+
+            var email = document.querySelector('.app-form-control[placeholder="EMAIL"]').value;
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+            var number = document.querySelector('.app-form-control[placeholder="NUMBER"]').value;
+            var messageContainer = document.getElementById('messageContainer');
+
+            if (!email || !password || !confirmPassword || !number) {
+                messageContainer.innerHTML = "<p>Por favor, completa todos los campos.</p>";
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                messageContainer.innerHTML = "<p>Las contraseñas no coinciden. Por favor, inténtalo de nuevo.</p>";
+                return;
+            }
+
+            messageContainer.innerHTML = "<p>Inicio de sesión exitoso. Redirigiendo...</p>";
+            setTimeout(function () {
+                window.location.href = '/public/index.html'; 
+            }, 2000);
+        });
+    </script>
 </body>
 
 </html>

@@ -1,18 +1,23 @@
+
 /* Reset de estilos */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Fuente myFont */
-  @font-face {
-    font-family: 'myFont';
-    src: url('../fonts/PatuaOne-Regular.ttf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fuente myFont */
+@font-face {
+  font-family: 'myFont';
+  src: url('../fonts/PatuaOne-Regular.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#messageContainer {
+  color: white; /* Cambia el color del texto a blanco */
+  margin-top: 10px;
+}
 
 /* Estilos del header */
 header {
@@ -69,216 +74,208 @@ header {
   border: none;
 }
 
-  body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
+/*Empieza el formulario */
+/* Establece el modelo de caja para todos los elementos */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
+/* Establece el fondo y la fuente para el cuerpo del documento */
+body {
+  background: darkred;
+  font-family: 'myFont', sans-serif;
+}
+
+/* Define un contenedor flex para centrar verticalmente el contenido */
+.background {
+  display: flex;
+  min-height: 75vh;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos para el contenedor principal */
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 65%;
-    background-color: #575656;
+  display: flex;
+  margin: auto;
 }
 
-#login-form {
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+/* Estilos para el área de pantalla */
+.screen {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background: #3e3e3e;
+  border-radius: 15px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
-h2 {
-    text-align: center;
+/* Estilos para el encabezado de la pantalla */
+.screen-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: #0000009a;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
-.form-group {
-    margin-bottom: 20px;
+/* Estilos para los botones del encabezado */
+.screen-header-button {
+  width: 8px;
+  height: 8px;
+  margin-right: 3px;
+  border-radius: 8px;
 }
 
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
+/* Estilos para el cuerpo de la pantalla */
+.screen-body {
+  display: flex;
+  padding: 40px; /* Incrementado el padding */
+  flex-direction: column;
 }
 
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.screen-body-item-left {
+  display: flex;
+  flex-direction: column;
 }
 
-button {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    background-color: #db2425;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+/* Estilos para el título de la aplicación */
+.app-title {
+  display: flex;
+  justify-content: center;
+  color: whitesmoke;
+  font-size: 40px; /* Incrementado el tamaño de la fuente */
+  margin-bottom: 30px;
 }
 
-button:hover {
-    background-color: #45a049;
+/* Estilos para la información de contacto de la aplicación */
+.app-contact {
+  margin-top: auto;
+  font-size: 18px; /* Incrementado el tamaño de la fuente */
+  color: #888;
 }
 
-p {
-    text-align: center;
-    padding: 10px;
+/* Estilos para los grupos de formularios de la aplicación */
+.app-form-group {
+  margin-bottom: 20px;
 }
 
-a {
-    color: blue;
+.app-form-group.buttons {
+  margin-bottom: 0px;
+}
+
+/* Estilos para el grupo de mensajes del formulario de la aplicación */
+.app-form-group.message {
+  margin-top: 40px;
+}
+
+/* Estilos para los controles del formulario de la aplicación */
+.app-form-control {
+  width: 100%;
+  padding: 15px 0; /* Incrementado el padding */
+  background: none;
+  border: none;
+  border-bottom: 2px solid #666; /* Incrementado el grosor del borde */
+  color: #ffffff;
+  font-size: 20px; /* Incrementado el tamaño de la fuente */
+  text-transform: uppercase;
+  outline: none;
+  transition: border-color .2s;
+  font-family: 'myFont', sans-serif;
+}
+
+/* Estilos para el texto de marcador de posición de los controles del formulario */
+.app-form-control::placeholder {
+  color: #666;
+}
+
+/* Estilos para los controles del formulario enfocados */
+.app-form-control:focus {
+  border-bottom-color: #ddd;
+}
+
+/* Estilos para los botones del formulario de la aplicación */
+.app-form-button {
+  
+  background: none;
+  border: 2px solid #db2223; /* Añadido un borde */
+  color: #db2223;
+  font-size: 18px; /* Incrementado el tamaño de la fuente */
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  padding: 10px 20px; /* Incrementado el padding */
+  margin: 15px;
+  font-family: 'myFont', sans-serif;
+}
+
+/* Estilos para los botones del formulario al pasar el cursor */
+.app-form-button:hover {
+  
+  background: #db2223;
+  color: #fff;
 }
 
 /* Empieza el css del footer */
 .footer {
-    position: relative;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.993);
-    min-height: 100px;
-    padding: 20px 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  .social-icon, .menu {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0;
-    flex-wrap: wrap;
-  }
-  
-  .social-icon__item, .menu__item {
-    list-style: none;
-  }
-  
-  .social-icon__link {
-    font-size: 2rem;
-    color: whitesmoke;
-    margin: 0 10px;
-    display: inline-block;
-    transition: 0.5s;
-  }
-  
-  .social-icon__link:hover {
-    transform: translateY(-10px);
-  }
-  
-  .menu__link {
-    font-size: 1.2rem;
-    color: whitesmoke;
-    margin: 0 10px;
-    transition: 0.5s;
-    text-decoration: none;
-    font-weight: 300;
-    font-family: 'myFont', sans-serif; /* Aplica la fuente myFont */
-  }
-  
-  .menu__link:hover {
-    opacity: 1;
-  }
-  
-  .footer p {
-    color: whitesmoke;
-    margin: 15px 0 10px 0;
-    font-size: 1rem;
-    font-weight: 300;
-  }
-  
-  .carousel-container {
-    width: 100%;
-    overflow: hidden;
-  }
-  
-  .carousel-slide {
-    display: flex;
-  }
-  
-  .carousel-item {
-    width: 33.33%; /* Divide en tres partes */
-    padding: 0 10px;
-    box-sizing: border-box;
-    text-align: center;
-    background-color: darkred;
-  }
-  
-  .carousel-item img {
-    width: 80%;
-    height: auto;
-  }
-  
-  .carousel-item h2 {
-    margin: 10px 0;
-  }
-  
-  .boton-carrusel {
-    background-color: black;
-    border-radius: 100px;
-    box-shadow: rgba(169, 169, 169, .2) 0 -25px 18px -14px inset,rgba(169, 169, 169, .15) 0 1px 2px,rgba(169, 169, 169, .15) 0 2px 4px,rgba(169, 169, 169, .15) 0 4px 8px,rgba(169, 169, 169, .15) 0 8px 16px,rgba(169, 169, 169, .15) 0 16px 32px;
-    color: whitesmoke;
-    cursor: pointer;
-    display: inline-block;
-    font-family: 'myFont', sans-serif;
-    padding: 7px 20px;
-    text-align: center;
-    text-decoration: none;
-    transition: all 250ms;
-    border: 0;
-    font-size: 16px;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    margin-top: 20px;
-    margin-bottom: 40px;
-  }
-  
-  .boton-carrusel:hover {
-    box-shadow: rgba(169, 169, 169,.35) 0 -25px 18px -14px inset,rgba(169, 169, 169,.25) 0 1px 2px,rgba(169, 169, 169,.25) 0 2px 4px,rgba(169, 169, 169,.25) 0 4px 8px,rgba(169, 169, 169,.25) 0 8px 16px,rgba(169, 169, 169,.25) 0 16px 32px;
-    transform: scale(1.05) rotate(-1deg);
-  }
-  
-  /* Estilos responsive */
-  @media (max-width: 768px) {
-    header {
-      flex-direction: column; /* Cambia la dirección de los elementos a columna */
-      align-items: center; /* Alinea los elementos a la izquierda */
-    }
-  
-    .logo-bt img {
-      margin-right: 0; /* Elimina el margen derecho del logo */
-      margin-bottom: 10px; /* Añade margen inferior al logo */
-    }
-  
-    .boton-carrito img {
-      margin-bottom: 20px;
-    }
-  
-    .boton a {
-      margin-right: 0; /* Elimina el margen derecho de los botones */
-      margin-bottom: 10px; /* Añade margen inferior a los botones */
-    }
-  
-    .footer {
-      padding: 20px 10px; /* Ajusta el padding del footer */
-    }
-  
-    .social-icon, .menu {
-      flex-direction: column; /* Cambia la dirección de los elementos a columna */
-      align-items: center; /* Alinea los elementos al centro */
-    }
-  
-    .social-icon__link, .menu__link {
-      margin: 5px 0; /* Ajusta el margen entre los enlaces */
-    }
-    
-  }
+  position: relative;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.993);
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.social-icon,
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  font-size: 2rem;
+  color: whitesmoke;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  color: whitesmoke;
+  margin: 0 10px;
+  transition: 0.5s;
+  text-decoration: none;
+  font-weight: 300;
+  font-family: 'myFont', sans-serif;
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+.footer p {
+  color: whitesmoke;
+  margin: 15px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
