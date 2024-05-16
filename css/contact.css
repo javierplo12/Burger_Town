@@ -1,10 +1,10 @@
+
 /* Reset de estilos */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 
 /* Fuente myFont */
 @font-face {
@@ -76,8 +76,6 @@ header {
 
 /*Empieza el formulario */
 /* Establece el modelo de caja para todos los elementos */
-/*Empieza el formulario */
-/* Establece el modelo de caja para todos los elementos */
 *,
 *:before,
 *:after {
@@ -87,144 +85,106 @@ header {
 /* Establece el fondo y la fuente para el cuerpo del documento */
 body {
   background: darkred;
-  /* Fondo oscuro rojo */
   font-family: 'myFont', sans-serif;
-  /* Aplica la fuente myFont */
 }
 
 /* Define un contenedor flex para centrar verticalmente el contenido */
 .background {
   display: flex;
   min-height: 75vh;
-  /* Altura mínima del 75% del viewport */
   align-items: center;
-  /* Centra verticalmente los elementos hijos */
   justify-content: center;
-  /* Centra horizontalmente los elementos hijos */
 }
 
 /* Estilos para el contenedor principal */
 .container {
-  flex: 0 1 700px;
-  /* Flexibilidad del contenedor */
+  display: flex;
   margin: auto;
-  /* Margen automático */
-  padding: 10px;
-  /* Relleno */
 }
 
 /* Estilos para el área de pantalla */
 .screen {
+  display: flex;
+  justify-content: center;
   position: relative;
-  /* Posición relativa */
   background: #3e3e3e;
-  /* Fondo gris oscuro */
   border-radius: 15px;
-  /* Borde redondeado */
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-  /* Sombra */
 }
 
 /* Estilos para el encabezado de la pantalla */
 .screen-header {
   display: flex;
-  /* Contenedor flexible */
   align-items: center;
-  /* Centra verticalmente los elementos */
   padding: 10px 20px;
-  /* Relleno */
   background: #0000009a;
-  /* Fondo gris oscuro */
   border-top-left-radius: 15px;
-  /* Borde redondeado superior izquierdo */
   border-top-right-radius: 15px;
-  /* Borde redondeado superior derecho */
 }
 
 /* Estilos para los botones del encabezado */
 .screen-header-button {
   width: 8px;
-  /* Ancho */
   height: 8px;
-  /* Altura */
   margin-right: 3px;
-  /* Margen derecho */
   border-radius: 8px;
-  /* Borde redondeado */
 }
 
 /* Estilos para el cuerpo de la pantalla */
 .screen-body {
   display: flex;
-  /* Contenedor flexible */
-  padding: 50px;
-  /* Relleno */
+  padding: 40px; /* Incrementado el padding */
+  flex-direction: column;
 }
 
-/* Estilos para los elementos del cuerpo de la pantalla */
-.screen-body-item {
-  flex: 1;
-  /* Flexibilidad */
-  padding: 0 50px;
-  /* Relleno */
+.screen-body-item-left {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Estilos para el título de la aplicación */
 .app-title {
+  display: flex;
+  justify-content: center;
   color: whitesmoke;
-  /* Color blanco */
-  font-size: 26px;
-  /* Tamaño de fuente */
-  margin-bottom: 10px;
-  /* Margen inferior */
+  font-size: 40px; /* Incrementado el tamaño de la fuente */
+  margin-bottom: 30px;
 }
 
 /* Estilos para la información de contacto de la aplicación */
 .app-contact {
   margin-top: auto;
-  /* Margen superior automático */
-  font-size: 11px;
-  /* Tamaño de fuente */
+  font-size: 18px; /* Incrementado el tamaño de la fuente */
   color: #888;
-  /* Color gris */
 }
 
 /* Estilos para los grupos de formularios de la aplicación */
 .app-form-group {
-  margin-bottom: 15px;
-  /* Margen inferior */
+  margin-bottom: 20px;
+}
+
+.app-form-group.buttons {
+  margin-bottom: 0px;
 }
 
 /* Estilos para el grupo de mensajes del formulario de la aplicación */
 .app-form-group.message {
   margin-top: 40px;
-  /* Margen superior */
 }
 
 /* Estilos para los controles del formulario de la aplicación */
 .app-form-control {
   width: 100%;
-  /* Ancho completo */
-  padding: 10px 0;
-  /* Relleno */
+  padding: 15px 0; /* Incrementado el padding */
   background: none;
-  /* Fondo transparente */
   border: none;
-  /* Sin borde */
-  border-bottom: 1px solid #666;
-  /* Borde inferior gris */
+  border-bottom: 2px solid #666; /* Incrementado el grosor del borde */
   color: #ffffff;
-  /* Color de texto */
-  font-size: 14px;
-  /* Tamaño de fuente */
+  font-size: 20px; /* Incrementado el tamaño de la fuente */
   text-transform: uppercase;
-  /* Transformación de texto a mayúsculas */
   outline: none;
-  /* Sin contorno */
   transition: border-color .2s;
-  /* Transición */
   font-family: 'myFont', sans-serif;
-  /* Aplica la fuente myFont */
 }
 
 /* Estilos para el texto de marcador de posición de los controles del formulario */
@@ -235,66 +195,26 @@ body {
 /* Estilos para los controles del formulario enfocados */
 .app-form-control:focus {
   border-bottom-color: #ddd;
-  /* Cambio de color de borde inferior al enfocar */
 }
 
 /* Estilos para los botones del formulario de la aplicación */
 .app-form-button {
   background: none;
-  /* Fondo transparente */
-  border: none;
-  /* Sin borde */
+  border: 2px solid #db2223; /* Añadido un borde */
   color: #db2223;
-  /* Color */
-  font-size: 14px;
-  /* Tamaño de fuente */
+  font-size: 18px; /* Incrementado el tamaño de la fuente */
   cursor: pointer;
-  /* Cursor apuntador */
   outline: none;
-  /* Sin contorno */
+  padding: 10px 20px; /* Incrementado el padding */
   margin: 15px;
   font-family: 'myFont', sans-serif;
-  /* Aplica la fuente myFont */
 }
 
 /* Estilos para los botones del formulario al pasar el cursor */
 .app-form-button:hover {
-  color: #b9134f;
-  /* Cambio de color al pasar el cursor */
+  background: #db2223;
+  color: #fff;
 }
-
-/* Estilos de los elementos en pantallas pequeñas */
-@media screen and (max-width: 520px) {
-  .screen-body {
-    flex-direction: column;
-    /* Cambio de dirección de los elementos a columna */
-  }
-
-  .screen-body-item.left {
-    margin-bottom: 30px;
-    /* Margen inferior */
-  }
-
-  .app-title {
-    font-size: 20px;
-    /* Tamaño de fuente más pequeño */
-  }
-}
-
-/* Estilos de los elementos en pantallas aún más pequeñas */
-@media screen and (max-width: 600px) {
-  .screen-body {
-    padding: 40px;
-    /* Relleno reducido */
-  }
-
-  .screen-body-item {
-    padding: 0;
-    /* Sin relleno */
-  }
-}
-
-
 
 /* Empieza el css del footer */
 .footer {
@@ -344,7 +264,6 @@ body {
   text-decoration: none;
   font-weight: 300;
   font-family: 'myFont', sans-serif;
-  /* Aplica la fuente myFont */
 }
 
 .menu__link:hover {
@@ -356,154 +275,4 @@ body {
   margin: 15px 0 10px 0;
   font-size: 1rem;
   font-weight: 300;
-}
-
-.carousel-container {
-  width: 100%;
-  overflow: hidden;
-  background-color: darkred;
-}
-
-.carousel-slide {
-  display: flex;
-  background-color: darkred;
-  overflow-x: hidden;
-  /* Agrega desplazamiento horizontal */
-  overflow-y: hidden;
-  /* Ocultar el desplazamiento vertical */
-}
-
-.carousel-item {
-  flex: 0 0 calc(100% / 3);
-  /* Calcula el ancho para tres elementos por fila */
-  max-width: calc(100% / 3);
-  /* Limita el ancho máximo para evitar que se hagan más pequeños */
-  padding: 0 10px;
-  box-sizing: border-box;
-  text-align: center;
-  background-color: darkred;
-  scroll-snap-align: start;
-  /* Alinea el inicio de cada elemento con el inicio del contenedor */
-}
-
-.carousel-item img {
-  max-width: 80%;
-  height: auto;
-  transition: transform 0.3s ease;
-  /* Transición para el cambio de tamaño */
-}
-
-.carousel-item img:hover {
-  transform: scale(1.1);
-  /* Aumenta el tamaño en un 10% */
-}
-
-.carousel-item h2 {
-  margin: 10px 0;
-  font-size: 40px;
-}
-
-.boton-carrusel {
-  background-color: black;
-  border-radius: 100px;
-  box-shadow: rgba(169, 169, 169, .2) 0 -25px 18px -14px inset, rgba(169, 169, 169, .15) 0 1px 2px, rgba(169, 169, 169, .15) 0 2px 4px, rgba(169, 169, 169, .15) 0 4px 8px, rgba(169, 169, 169, .15) 0 8px 16px, rgba(169, 169, 169, .15) 0 16px 32px;
-  color: whitesmoke;
-  cursor: pointer;
-  display: inline-block;
-  font-family: 'myFont', sans-serif;
-  padding: 7px 20px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 250ms;
-  border: 0;
-  font-size: 25px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  margin-top: 50px;
-  margin-bottom: 100px;
-}
-
-.boton-carrusel:hover {
-  box-shadow: rgba(169, 169, 169, .35) 0 -25px 18px -14px inset, rgba(169, 169, 169, .25) 0 1px 2px, rgba(169, 169, 169, .25) 0 2px 4px, rgba(169, 169, 169, .25) 0 4px 8px, rgba(169, 169, 169, .25) 0 8px 16px, rgba(169, 169, 169, .25) 0 16px 32px;
-  transform: scale(1.05) rotate(-1deg);
-}
-
-/* Estilos responsive */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    /* Cambia la dirección de los elementos a columna */
-    align-items: center;
-    /* Alinea los elementos a la izquierda */
-  }
-
- 
-
-  .boton-carrito img {
-    margin-bottom: 20px;
-  }
-
-  .boton a {
-    margin-right: 0;
-    /* Elimina el margen derecho de los botones */
-    margin-bottom: 10px;
-    /* Añade margen inferior a los botones */
-  }
-
-  .footer {
-    padding: 20px 10px;
-    /* Ajusta el padding del footer */
-  }
-
-  .social-icon,
-  .menu {
-    flex-direction: column;
-    /* Cambia la dirección de los elementos a columna */
-    align-items: center;
-    /* Alinea los elementos al centro */
-  }
-
-  .social-icon__link,
-  .menu__link {
-    margin: 5px 0;
-    /* Ajusta el margen entre los enlaces */
-  }
-
-  .carousel-container {
-    justify-content: center;
-    /* Centra horizontalmente los elementos */
-    align-items: center;
-    /* Centra verticalmente los elementos */
-    height: 100vh;
-    /* Establece la altura al 100% del viewport */
-  }
-
-  .carousel-slide {
-    flex-direction: column;
-    /* Cambia la dirección del flex a columna */
-    align-items: center;
-  }
-
-  .carousel-item {
-    flex: 0 0 100%;
-    /* Ancho de los elementos al 100% */
-    margin: 10px 0;
-    /* Espacio entre elementos */
-  }
-
-  /* Estilos para hacer más pequeños los botones */
-  .boton-carrusel {
-    padding: 5px 10px;
-    /* Espaciado interno más pequeño */
-    font-size: 18px;
-    /* Tamaño de fuente más pequeño */
-  }
-
-  /* Estilos para hacer más pequeño el texto del título del producto */
-  .carousel-item h2 {
-    font-size: 20px;
-    /* Tamaño de fuente más pequeño */
-  }
-
 }
