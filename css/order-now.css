@@ -130,7 +130,7 @@ body {
   max-width: 300px;
   height: 450px; /* Añadido para que todos los recuadros tengan la misma altura */
   border: 1px solid #666;
-  border-radius: 10px;
+  border-radius: 20px;
   transition: .3s;
 }
 
@@ -139,6 +139,8 @@ body {
   justify-content: center;
   align-items: center;
   flex-grow: 1; /* Permite que la imagen crezca para llenar el espacio disponible */
+  max-width: 300px;
+  max-height: 300px;
 }
 
 .img-item img {
@@ -159,9 +161,8 @@ body {
   font-size: 25px;
   justify-content: center;
   align-items: center;
-  height: 50px; /* Añadido para altura uniforme */
-  margin-top: 25px;
-  margin-bottom: 25px;
+  height: 150px; /* Añadido para altura uniforme */
+  
 }
 
 .precio-item {
@@ -180,7 +181,7 @@ body {
   background-color: darkred;
   color: #fff;
   padding: 5px 50px;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
   font-family: 'myFont';
 }
@@ -191,6 +192,7 @@ body {
   justify-content: center;
   margin-top: auto; /* Empuja el botón hacia abajo */
   margin-bottom: 10px; /* Espacio inferior para el botón */
+  margin-top: 10px; 
   height: 50px; /* Añadido para altura uniforme */
 }
 
