@@ -39,6 +39,9 @@ function ready() {
 
     // Agregamos funcionalidad al botón comprar
     document.getElementsByClassName('btn-pagar')[0].addEventListener('click', pagarClicked);
+
+    // Inicialmente ocultamos el carrito
+    ocultarCarrito();
 }
 
 // Eliminamos todos los elementos del carrito y lo ocultamos
@@ -182,19 +185,15 @@ function actualizarTotalCarrito() {
         var item = carritoItems[i];
         var precioElemento = item.getElementsByClassName('carrito-item-precio')[0];
         console.log(precioElemento);
-        // Quitamos el símbolo € y el punto de miles
-        var precio = parseFloat(precioElemento.innerText.replace('€', '').replace('.', ''));
+        // Quitamos el símbolo € y reemplazamos la coma por un punto
+        var precio = parseFloat(precioElemento.innerText.replace('€', '').replace('.', '').replace(',', '.'));
         var cantidadItem = item.getElementsByClassName('carrito-item-cantidad')[0];
         var cantidad = cantidadItem.value;
         total = total + (precio * cantidad);
     }
-    total = total/100;
 
-    // Formateamos el total con punto como separador de miles
-    var formattedTotal = total.toLocaleString("es", { useGrouping: true });
-
-    // Reemplazamos la coma por un punto si es necesario
-    formattedTotal = formattedTotal.replace(/,/g, '.');
+    // Formateamos el total con coma como separador decimal
+    var formattedTotal = total.toFixed(2).replace('.', ',');
 
     document.getElementsByClassName('carrito-precio-total')[0].innerText = '€' + formattedTotal;
 }
