@@ -203,15 +203,17 @@ body {
 /* Estilos para los botones del formulario de la aplicación */
 .app-form-button {
   background: none;
-  border: 2px solid #db2223; /* Añadido un borde */
+  border: 2px solid #db2223;
   color: #db2223;
-  font-size: 18px; /* Incrementado el tamaño de la fuente */
+  font-size: 18px;
   cursor: pointer;
   outline: none;
-  padding: 10px 20px; /* Incrementado el padding */
-  margin-top: 15px;
-  margin-right: 15px;
+  padding: 10px 20px;
   font-family: 'myFont', sans-serif;
+  width: 120px; /* Ancho fijo */
+  text-align: center;
+  margin-top: 15px;
+  margin-right: 20px;
 }
 
 /* Estilos para los botones del formulario al pasar el cursor */
