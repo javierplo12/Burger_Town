@@ -66,6 +66,7 @@
                     <a href="https://www.paypal.com/signin" target="_blank">
                       <img src="/img/Tarjetas/PayPal.jpg" alt="PayPal">
                     </a>
+                    <p>Total del Pedido: <span id="totalCarritoActual"></span></p>
                   </div>
                 
                             
@@ -95,7 +96,19 @@
           </div>
         </div>
       
+     
+       
         
+    
+        <script>
+            // Recuperar los totales desde localStorage y mostrarlos
+            document.addEventListener('DOMContentLoaded', function() {
+                var totalCarritoActual = localStorage.getItem('totalCarrito');
+                var totalCarritoAnterior = localStorage.getItem('previousTotalCarrito');
+                document.getElementById('totalCarritoActual').innerText = totalCarritoActual ? totalCarritoActual : '0 €';
+                document.getElementById('totalCarritoAnterior').innerText = totalCarritoAnterior ? totalCarritoAnterior : '0 €';
+            });
+        </script>
 
 
 

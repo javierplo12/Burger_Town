@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       });
   
-      // Si no todos los campos están llenos, evita el comportamiento predeterminado del botón
+      // Si no todos los campos están llenos, y evita continuar con el pago
       if (!fieldsFilled) {
         event.preventDefault();
         alert("Por favor, completa todos los campos antes de continuar.");

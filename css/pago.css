@@ -78,6 +78,10 @@ body {
   -ms-flex: 50%; /* IE10 */
   flex: 50%;
 }
+.col-50 p{
+  font-family: 'myFont', sans-serif; /* Aplica la fuente myFont */
+margin-top: 10px;
+}
 
 .col-75 {
   -ms-flex: 75%; /* IE10 */

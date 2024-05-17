@@ -84,7 +84,7 @@ function agregarItemAlCarrito(titulo, precio, imagenSrc) {
     var nombresItemsCarrito = itemsCarrito.getElementsByClassName('carrito-item-titulo');
     for (var i = 0; i < nombresItemsCarrito.length; i++) {
         if (nombresItemsCarrito[i].innerText == titulo) {
-            alert("El item ya se encuentra en el carrito");
+            alert("El producto ya esta en el carrito puedes eliminarlo o agregar uno mas ");
             return;
         }
     }
@@ -176,22 +176,25 @@ function ocultarCarrito() {
 
 // Actualizamos el total del carrito
 function actualizarTotalCarrito() {
-    // Seleccionamos el contenedor carrito
     var carritoContenedor = document.getElementsByClassName('carrito')[0];
     var carritoItems = carritoContenedor.getElementsByClassName('carrito-item');
     var total = 0;
-    // Recorremos cada elemento del carrito para actualizar el total
     for (var i = 0; i < carritoItems.length; i++) {
         var item = carritoItems[i];
         var precioElemento = item.getElementsByClassName('carrito-item-precio')[0];
-        console.log(precioElemento);
-        // Quitamos el símbolo € y reemplazamos la coma por un punto
         var precio = parseFloat(precioElemento.innerText.replace('€', '').replace('.', '').replace(',', '.'));
         var cantidadItem = item.getElementsByClassName('carrito-item-cantidad')[0];
         var cantidad = cantidadItem.value;
         total = total + (precio * cantidad);
     }
+    var formattedTotal = total.toFixed(2).replace('.', ',');
 
+    document.getElementsByClassName('carrito-precio-total')[0].innerText = formattedTotal + ' €';
+    
+    // Guardar el total en localStorage
+    localStorage.setItem('totalCarrito', formattedTotal + ' €');
+}
+{
     // Formateamos el total con coma como separador decimal
     var formattedTotal = total.toFixed(2).replace('.', ',');
 
