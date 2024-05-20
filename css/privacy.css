@@ -83,15 +83,21 @@ body {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
+    
 }
 
 h2 {
-    color: #333;
+    color: black;
     margin-top: 20px;
 }
 
 p {
     line-height: 1.6;
+    color: black;
+}
+
+li {
+    color: black;
 }
 
 
