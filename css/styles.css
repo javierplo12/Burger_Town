@@ -396,6 +396,7 @@ body {
 
 .mapas {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -492,5 +493,11 @@ body {
   }
   100% {
       transform: translate(-100%, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .container-hamburguesas {
+    display: none;
   }
 }
