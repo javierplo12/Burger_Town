@@ -7,29 +7,51 @@
     <title>BURGER TOWN</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/carrito.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
     <script src="/scripts/carrito.js" async></script>
 </head>
 
 <body>
-    <header>
-        <div class="header-container">
-            <div class="logo-bt">
-                <a href="/public/index.html">
-                    <img src="../img/logobt.png" alt="Logo Burger Town">
-                </a>
-            </div>
-            <div class="boton">
-                <a href="../public/index.html">HOME</a>
-            </div>
-            <div class="boton">
-                <a href="../public/order-now.html">ORDER NOW</a>
-            </div>
-            <div class="boton">
-                <a href="/public/sing-in.html">SIGN IN </a>
-            </div>
-            
-        </div>
-    </header>
+    <header class="header" id="header">
+        <nav class="nav container">
+           <div class="logo">
+              <img src="../img/logobt.png" alt="logobt">
+           </div>
+
+           <div class="nav__menu" id="nav-menu">
+              <ul class="nav__list">
+                 <li class="nav__item">
+                    <a href="../public/index.html" class="nav__link">Home</a>
+                 </li>
+
+                 <li class="nav__item">
+                    <a href="../public/about.html" class="nav__link">About Us</a>
+                 </li>
+
+                 <li class="nav__item">
+                    <a href="../public/order-now.html" class="nav__link">Order Now</a>
+                 </li>
+              </ul>
+
+              <!-- Close button -->
+              <div class="nav__close" id="nav-close">
+                 <i class="ri-close-line"></i>
+              </div>
+           </div>
+
+           <div class="nav__actions">
+              <!-- Login button -->
+              <a href="../public/sing-in.html">
+                 <i class="ri-user-line nav__login" id="login-btn"></i>
+              </a>
+
+              <!-- Toggle button -->
+              <div class="nav__toggle" id="nav-toggle">
+                 <i class="ri-menu-line"></i>
+              </div>
+           </div>
+        </nav>
+     </header>
 
 
     
@@ -179,7 +201,7 @@
     </footer>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-   
+    <script src="../scripts/header.js"></script>
 </body>
 
 </html>
