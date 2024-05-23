@@ -321,8 +321,7 @@ body {
   flex-direction: column;
 }
 
-.social-icon,
-.menu {
+.social-icon, .menu {
   position: relative;
   display: flex;
   justify-content: center;
@@ -331,8 +330,7 @@ body {
   flex-wrap: wrap;
 }
 
-.social-icon__item,
-.menu__item {
+.social-icon__item, .menu__item {
   list-style: none;
 }
 
@@ -355,16 +353,26 @@ body {
   transition: 0.5s;
   text-decoration: none;
   font-weight: 300;
-  font-family: 'myFont', sans-serif;
+  font-family: 'myFont', sans-serif; 
 }
 
 .menu__link:hover {
   opacity: 1;
 }
 
-.footer p {
+.footer-texto {
+  display: flex;
   color: whitesmoke;
-  margin: 15px 0 10px 0;
+  margin: 15px 0 15px 0;
   font-size: 1rem;
   font-weight: 300;
+  justify-content: center;
+  text-align: center;
+}
+
+
+@media screen and (max-width: 850px) {
+  .menu {
+    flex-direction: column;
+  }
 }
