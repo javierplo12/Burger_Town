@@ -183,7 +183,7 @@ body {
 }
 
 /* Estilos para el contenedor principal */
-.container {
+.contenedor {
   display: flex;
   margin: auto;
 }
