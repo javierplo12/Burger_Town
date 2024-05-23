@@ -66,7 +66,7 @@ a {
   height: 100%;
 }
 
-.logo img{
+.logo img {
   height: auto;
   padding: 15px;
 }
@@ -177,7 +177,7 @@ body {
 /* Define un contenedor flex para centrar verticalmente el contenido */
 .background {
   display: flex;
-  min-height: 75vh;
+  min-height: 100vh; /* Aumenta la altura mínima del contenedor de fondo */
   align-items: center;
   justify-content: center;
 }
@@ -186,6 +186,8 @@ body {
 .contenedor {
   display: flex;
   margin: auto;
+  width: 100%;
+  max-width: 600px; /* Limita el ancho máximo del contenedor */
 }
 
 /* Estilos para el área de pantalla */
@@ -196,31 +198,15 @@ body {
   background: #3e3e3e;
   border-radius: 15px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-}
-
-/* Estilos para el encabezado de la pantalla */
-.screen-header {
-  display: flex;
-  align-items: center;
-  padding: 10px 20px;
-  background: #0000009a;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-}
-
-/* Estilos para los botones del encabezado */
-.screen-header-button {
-  width: 8px;
-  height: 8px;
-  margin-right: 3px;
-  border-radius: 8px;
+  width: 100%; /* Hace que el contenedor tome todo el ancho */
 }
 
 /* Estilos para el cuerpo de la pantalla */
 .screen-body {
   display: flex;
-  padding: 40px; /* Incrementado el padding */
+  padding: 40px 40px; /* Incrementa el padding */
   flex-direction: column;
+  width: 100%;
 }
 
 .screen-body-item-left {
@@ -233,20 +219,13 @@ body {
   display: flex;
   justify-content: center;
   color: whitesmoke;
-  font-size: 40px; /* Incrementado el tamaño de la fuente */
-  margin-bottom: 30px;
-}
-
-/* Estilos para la información de contacto de la aplicación */
-.app-contact {
-  margin-top: auto;
-  font-size: 18px; /* Incrementado el tamaño de la fuente */
-  color: #888;
+  font-size: 32px;
+  margin-bottom: 40px; /* Incrementa el margen inferior */
 }
 
 /* Estilos para los grupos de formularios de la aplicación */
 .app-form-group {
-  margin-bottom: 20px;
+  margin-bottom: 30px; /* Incrementa el margen inferior */
 }
 
 .app-form-group.buttons {
@@ -255,51 +234,35 @@ body {
   margin-bottom: 0px;
 }
 
-/* Estilos para el grupo de mensajes del formulario de la aplicación */
-.app-form-group.message {
-  margin-top: 40px;
-}
-
 /* Estilos para los controles del formulario de la aplicación */
 .app-form-control {
   width: 100%;
-  padding: 15px 0; /* Incrementado el padding */
+  padding: 15px 0;
   background: none;
   border: none;
-  border-bottom: 2px solid #666; /* Incrementado el grosor del borde */
+  border-bottom: 2px solid #666;
   color: #ffffff;
-  font-size: 20px; /* Incrementado el tamaño de la fuente */
+  font-size: 18px;
   text-transform: uppercase;
   outline: none;
   transition: border-color .2s;
   font-family: 'myFont', sans-serif;
 }
 
-/* Estilos para el texto de marcador de posición de los controles del formulario */
-.app-form-control::placeholder {
-  color: #666;
-}
-
-/* Estilos para los controles del formulario enfocados */
-.app-form-control:focus {
-  border-bottom-color: #ddd;
-}
-
 /* Estilos para los botones del formulario de la aplicación */
 .app-form-button {
   background: none;
-  border: 2px solid #db2223; /* Añadido un borde */
+  border: 2px solid #db2223;
   color: #db2223;
-  font-size: 18px; /* Incrementado el tamaño de la fuente */
+  font-size: 16px;
   cursor: pointer;
   outline: none;
   text-decoration: none;
-  padding: 10px 20px; /* Incrementado el padding */
-  width: 120px;
-  margin: 15px;
+  padding: 10px;
+  width: 45%;
+  margin: 5px;
   font-family: 'myFont', sans-serif;
-  flex: 1; /* Añadido para que los botones tomen el mismo tamaño */
-  text-align: center; /* Centrar el texto */
+  text-align: center;
 }
 
 /* Estilos para los botones del formulario al pasar el cursor */
@@ -370,9 +333,37 @@ body {
   text-align: center;
 }
 
-
 @media screen and (max-width: 850px) {
   .menu {
     flex-direction: column;
+  }
+}
+
+/* Media Queries para formulario */
+@media screen and (max-width: 600px) {
+  .contenedor {
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .screen-body {
+    padding: 40px 20px; /* Ajusta el padding para móviles */
+  }
+
+  .app-title {
+    font-size: 24px;
+  }
+
+  .app-form-control {
+    font-size: 16px;
+    padding: 10px 0;
+  }
+
+  .app-form-button {
+    font-size: 14px;
+    padding: 8px;
+    width: 48%;
   }
 }
