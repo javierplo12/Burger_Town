@@ -9,16 +9,33 @@
 <body>
     <div class="container">
         <h2>Welcome to the Private Area</h2>
-        <div class="button-container">
-            <button class="add-product-btn">Add Product</button>
-            <button class="delete-product-btn">Delete Product</button>
-            <button class="add-product-btn" onclick="window.location.href='/private/empleados.html';">Employees</button>
-
-
+        
+        <!-- Sección de Productos -->
+        <div class="product-section">
+            <h3>Productos</h3>
+            <div class="button-container">
+                <button class="add-product-btn">Add Product</button>
+                <button class="add-product-btn" onclick="window.location.href='/private/productos.html';">Product</button>
+                <button class="delete-product-btn">Delete Product</button>
+            </div>
         </div>
-        <div class="button-container">
-            <a href="/private/occupational hazards.html" class="risgos-btn">Riesgos Laborales</a>
+    
+        <!-- Sección de Empleados -->
+        <div class="employee-section">
+            <h3>Empleados</h3>
+            <div class="button-container">
+                <button class="add-product-btn" onclick="window.location.href='/private/empleados.html';">Employees</button>
+            </div>
+        </div>
+    
+        <!-- Sección de Riesgos Laborales -->
+        <div class="risk-section">
+            <h3>Riesgos Laborales</h3>
+            <div class="button-container">
+                <a href="/private/occupational hazards.html" class="riesgos-btn">Riesgos Laborales</a>
+            </div>
         </div>
     </div>
+    
 </body>
 </html>
