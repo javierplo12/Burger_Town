@@ -490,9 +490,19 @@ body {
   opacity: 1;
 }
 
-.footer p {
+.footer-texto {
+  display: flex;
   color: whitesmoke;
-  margin: 15px 0 10px 0;
+  margin: 15px 0 15px 0;
   font-size: 1rem;
   font-weight: 300;
+  justify-content: center;
+  text-align: center;
+}
+
+
+@media screen and (max-width: 850px) {
+  .menu {
+    flex-direction: column;
+  }
 }
