@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'myFont';
+    src: url('../fonts/PatuaOne-Regular.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'myFont', Arial, sans-serif;
+    color: #333; /* Color de texto negro */
+    background-color: #f2f2f2; /* Color de fondo gris claro */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto; /* Centra el contenedor verticalmente */
+    padding: 20px;
+    background-color: #fff; /* Color de fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em; /* Tamaño de fuente grande */
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1em; /* Tamaño de fuente un poco más grande */
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+strong {
+    font-weight: bold;
+    color: #000000; /* Color azul para puntos importantes */
+}
+
+img {
+    display: block;
+    margin: 20px auto; /* Centra la imagen horizontalmente */
+    max-width: 100%; /* Ajusta la imagen al ancho del contenedor */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+.titulo-grande {
+
+    font-weight: bold;
+    text-align: center;
+    margin-top: 33px; /* Añadido para separar el título del contenido anterior */
+    margin-bottom: 33px;
+    color: #000000; /* Color de texto negro */
+    font-family: 'myFont', sans-serif; /* Fuente personalizada */
+}

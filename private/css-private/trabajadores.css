@@ -1,0 +1,44 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+.employee-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.employee-details {
+    flex: 1;
+}
+
+.employee-details h2 {
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: bold; /* Agregado para hacer las palabras en negrita */
+}
+
+.employee-details p {
+    margin: 5px 0;
+}
+
+.employee-rank {
+    flex: 1;
+    text-align: right; /* Alineación del texto a la derecha */
+}
+
+.employee-rank h2 {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.employee-rank p {
+    margin: 5px 0;
+}

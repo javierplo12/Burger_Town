@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Area Login</title>
+    <link rel="stylesheet" href="/private/css-private/styles.css"> 
+</head>
+<body>
+    <div class="container">
+        <h2>Login to Private Area (Burger Town)</h2>
+        <form id="loginForm" action="login.php" method="POST">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="button" onclick="login()">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function login() {
+            var usernameInput = document.getElementById('username').value;
+            var passwordInput = document.getElementById('password').value;
+
+            // Usuario y contraseña predefinidos
+            var predefinedUsername = 'administrator';
+            var predefinedPassword = 'Administrator123@';
+
+            if (usernameInput === predefinedUsername && passwordInput === predefinedPassword) {
+                alert('Login successful! Redirecting to private area...');
+                window.location.href = 'private_area.html';
+            } else {
+                alert('Invalid username or password. Please try again.');
+            }
+        }
+    </script>
+</body>
+</html>
