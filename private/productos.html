@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Productos</title>
+    <style>
+        .producto-card {
+            border: 1px solid #ccc;
+            padding: 16px;
+            margin: 16px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="producto_detail"></div>
+    
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const getProductos = async () => {
+                const url = `http://localhost:8080/Buger_Town/Controller?ACTION=PRODUCTO.FIND_ALL`;
+                const result = await fetch(url);
+                const resultJson = await result.json();
+                console.log(resultJson);
+                createProductoDetail(resultJson);
+            }
+            
+            const createProductoDetail = (productos) => {
+                const producto_detail = document.querySelector('#producto_detail');
+                productos.forEach(producto => {
+                    const tarjeta = document.createElement("div");
+                    tarjeta.classList.add("producto-card");
+                    
+                    const { Id_Producto, nombre, descripcion, precio, id_categoria } = producto;
+                    
+                    let producto_innerHTML = `
+                        <h2>${nombre}</h2>
+                        <p><strong>ID:</strong> ${Id_Producto}</p>
+                        <p><strong>Descripción:</strong> ${descripcion}</p>
+                        <p><strong>Precio:</strong> ${precio} $</p>
+                        <p><strong>ID Categoría:</strong> ${id_categoria}</p>
+                    `;
+                    
+                    tarjeta.innerHTML = producto_innerHTML;
+                    producto_detail.appendChild(tarjeta);
+                });
+            }
+            
+            getProductos();
+        });
+    </script>
+</body>
+</html>
