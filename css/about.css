@@ -236,124 +236,58 @@ a {
   
   /* Estilos para la sección "Sobre Nosotros" */
   .about-us {
-    background-color: whitesmoke; /* Color de fondo de la sección */
-    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
-  
-  .about-us .container {
-    max-width: 1000px; /* Ancho máximo del contenedor */
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
+
+  .about-us p {
+    font-size: 24px; /* Tamaño del texto */
+    margin-top: 25px;
+    color: black; /* Color del texto */
   }
   
   .about-us h2 {
     font-size: 50px; /* Tamaño del título */
-    margin-bottom: 20px; /* Espaciado inferior */
     color: black; /* Color del texto */
     text-align: center;
   }
-  
-  .about-us p {
-    font-size: 24px; /* Tamaño del texto */
-    margin-bottom: 30px; /* Espaciado inferior */
-    color: black; /* Color del texto */
-    text-align: center;
-  }
-  
-  .image-container {
-    text-align: center; /* Centra la imagen horizontalmente */
-    margin-top: 50px; /* Espacio entre el texto y la imagen */
-    background-color: black;
-  }
 
-  .image-container img {
-    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
-    height: 550px; /* Altura automática para mantener la proporción */
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-
-  /* Estilos para la sección "Our History" */
   .our-history {
-    background-color: darkred; /* Color de fondo de la sección */
-    padding-top: 50px;
+    background-color: darkred;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
-  
-  .our-history .container {
-    max-width: 1000px; /* Ancho máximo del contenedor */
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
+
+  .our-history p {
+    font-size: 24px; /* Tamaño del texto */
+    margin-top: 25px;
+    color: whitesmoke; /* Color del texto */
   }
   
   .our-history h2 {
     font-size: 50px; /* Tamaño del título */
-    margin-bottom: 20px; /* Espaciado inferior */
-    color: whitesmoke; /* Color del texto */
-    text-align: center;
-  }
-  
-  .our-history p {
-    font-size: 24px; /* Tamaño del texto */
-    margin-bottom: 30px; /* Espaciado inferior */
     color: whitesmoke; /* Color del texto */
     text-align: center;
   }
   
   .image-container {
-    text-align: center; /* Centra la imagen horizontalmente */
-    margin-top: 50px; /* Espacio entre el texto y la imagen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: black;
   }
 
   .image-container img {
     max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
-    height: 550px; /* Altura automática para mantener la proporción */
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-  
-  .image-container-history {
-    text-align: center; /* Centra la imagen horizontalmente */
-    margin-top: 50px; /* Espacio entre el texto y la imagen */
-    background-color: black;
-  }
-
-.image-container-history img {
-    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
-    height: 550px; /* Altura automática para mantener la proporción */
-    margin-top: 50px; /* Margen superior */
-    margin-bottom: 50px; /* Margen inferior */
-  }
-
-  /* Estilos responsive */
-  @media (max-width: 768px) {
-    header {
-      flex-direction: column; /* Cambia la dirección de los elementos a columna */
-      align-items: center; /* Alinea los elementos a la izquierda */
-    }
-  
-    .logo-bt img {
-      margin-right: 0; /* Elimina el margen derecho del logo */
-      margin-bottom: 10px; /* Añade margen inferior al logo */
-    }
-  
-    .boton-carrito img {
-      margin-bottom: 20px;
-    }
-  
-    .boton a {
-      margin-right: 0; /* Elimina el margen derecho de los botones */
-      margin-bottom: 10px; /* Añade margen inferior a los botones */
-    }
-  
-    .footer {
-      padding: 20px 10px; /* Ajusta el padding del footer */
-    }
-  
-    .social-icon, .menu {
-      flex-direction: column; /* Cambia la dirección de los elementos a columna */
-      align-items: center; /* Alinea los elementos al centro */
-    }
-  
-    .social-icon__link, .menu__link {
-      margin: 5px 0; /* Ajusta el margen entre los enlaces */
-    }
+    max-height: 400px; /* Altura automática para mantener la proporción */
+    width: auto;
+    padding: 20px;
   }
