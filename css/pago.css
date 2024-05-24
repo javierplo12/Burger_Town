@@ -159,12 +159,15 @@ body {
   font-family: 'myFont', sans-serif; /* Aplica la fuente myFont */
 }
 
+
+
+
 .row {
   display: -ms-flexbox; /* IE10 */
   display: flex;
   -ms-flex-wrap: wrap; /* IE10 */
   flex-wrap: wrap;
-  margin: 0 -16px;
+  margin: 20px;
 }
 
 .col-25 {
@@ -176,35 +179,25 @@ body {
   -ms-flex: 50%; /* IE10 */
   flex: 50%;
 }
-.col-50 p{
-  font-family: 'myFont', sans-serif; /* Aplica la fuente myFont */
-margin-top: 10px;
-}
 
 .col-75 {
   -ms-flex: 75%; /* IE10 */
   flex: 75%;
 }
 
-.col-25,
 .col-50,
 .col-75 {
   padding: 0 16px;
 }
 
-.container {
+.contenedor {
   background-color: #f2f2f2;
-  padding: 45px 45px 45px 45px;
+  padding: 5px 20px 15px 20px;
   border: 1px solid lightgrey;
   border-radius: 3px;
 }
-.icon-container img {
-  width: 50px; /* Ajusta el ancho de las imágenes */
-  height: auto; /* Permite que la altura se ajuste automáticamente */
-  margin: 5px; /* Agrega un pequeño espacio entre las imágenes */
-}
 
-input[type=text], input[type=number] {
+input[type=text] {
   width: 100%;
   margin-bottom: 20px;
   padding: 12px;
@@ -225,16 +218,20 @@ label {
 
 .btn {
   background-color: darkred;
-  color: rgb(255, 255, 255);
-  padding: 21px;
-
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
   border: none;
   width: 100%;
   border-radius: 3px;
   cursor: pointer;
-  font-family: 'myFont', sans-serif; /* Aplica la fuente myFont */
   font-size: 17px;
+  font-family: 'myFont';
   text-transform: uppercase;
+}
+
+.btn:hover {
+  background-color: #45a049;
 }
 
 span.price {
@@ -242,15 +239,15 @@ span.price {
   color: grey;
 }
 
-/* Responsive layout */
 @media (max-width: 800px) {
   .row {
     flex-direction: column-reverse;
   }
-  .col-25 {
-    margin-bottom: 20px;
-  }
 }
+
+
+
+
 
 /* Empieza el css del footer */
 .footer {

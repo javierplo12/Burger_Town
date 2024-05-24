@@ -21,9 +21,8 @@ document.addEventListener("DOMContentLoaded", function() {
         alert("Por favor, completa todos los campos antes de continuar.");
       } else {
         // Muestra la alerta y redirige solo si todos los campos están llenos
-        alert("¡Tu pedido ha sido pagado y pronto llegará, A la ubicacion Indicada !");
+        alert("¡Tu pedido ha sido completado!");
         window.location.href = "/public/index.html"; // Redirige a la pantalla principal
       }
     });
   });
-  

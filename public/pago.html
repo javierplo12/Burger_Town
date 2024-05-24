@@ -2,169 +2,154 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BURGER TOWN</title>
-    <link rel="stylesheet" href="/css/pago.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
-    <script src="/scripts/pago.js" async></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BURGER TOWN</title>
+  <link rel="stylesheet" href="/css/pago.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="/scripts/pago.js" async></script>
 </head>
 
 <body>
   <header class="header" id="header">
     <nav class="nav container">
-       <div class="logo">
-          <img src="../img/logobt.png" alt="logobt">
-       </div>
+      <div class="logo">
+        <img src="../img/logobt.png" alt="logobt">
+      </div>
 
-       <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list">
-             <li class="nav__item">
-                <a href="../public/index.html" class="nav__link">Home</a>
-             </li>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="../public/index.html" class="nav__link">Home</a>
+          </li>
 
-             <li class="nav__item">
-                <a href="../public/about.html" class="nav__link">About Us</a>
-             </li>
+          <li class="nav__item">
+            <a href="../public/about.html" class="nav__link">About Us</a>
+          </li>
 
-             <li class="nav__item">
-                <a href="../public/order-now.html" class="nav__link">Order Now</a>
-             </li>
-          </ul>
+          <li class="nav__item">
+            <a href="../public/order-now.html" class="nav__link">Order Now</a>
+          </li>
+        </ul>
 
-          <!-- Close button -->
-          <div class="nav__close" id="nav-close">
-             <i class="ri-close-line"></i>
-          </div>
-       </div>
+        <!-- Close button -->
+        <div class="nav__close" id="nav-close">
+          <i class="ri-close-line"></i>
+        </div>
+      </div>
 
-       <div class="nav__actions">
-          <!-- Login button -->
-          <a href="../public/sing-in.html">
-             <i class="ri-user-line nav__login" id="login-btn"></i>
-          </a>
+      <div class="nav__actions">
+        <!-- Login button -->
+        <a href="../public/sing-in.html">
+          <i class="ri-user-line nav__login" id="login-btn"></i>
+        </a>
 
-          <!-- Toggle button -->
-          <div class="nav__toggle" id="nav-toggle">
-             <i class="ri-menu-line"></i>
-          </div>
-       </div>
+        <!-- Toggle button -->
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="ri-menu-line"></i>
+        </div>
+      </div>
     </nav>
- </header>
+  </header>
 
-    <div class="row">
-        <div class="col-75">
-          <div class="container">
-            
-      
+
+
+  <div class="row">
+    <div class="col-75">
+      <div class="contenedor">
+        <form action="/action_page.php">
+  
+          <div class="row">
+            <div class="col-50">
+              <h3>Billing Address</h3>
+              <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+              <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+              <label for="email"><i class="fa fa-envelope"></i> Email</label>
+              <input type="text" id="email" name="email" placeholder="john@example.com">
+              <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+              <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+              <label for="city"><i class="fa fa-institution"></i> City</label>
+              <input type="text" id="city" name="city" placeholder="New York">
+  
               <div class="row">
                 <div class="col-50">
-                  <h3>Billing Address</h3>
-                  <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-                  <input type="text" id="fname" name="firstname" placeholder="Insert your Name">
-                  <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                  <input type="text" id="email" name="email" placeholder="john@example.com">
-                  <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-                  <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
-                  <label for="city"><i class="fa fa-institution"></i> City</label>
-                  <input type="text" id="city" name="city" placeholder="New York">
-      
-                  <div class="row">
-                    <div class="col-50">
-                      <label for="state">State</label>
-                      <input type="text" id="state" name="state" placeholder="NY">
-                    </div>
-                    <div class="col-50">
-                      <label for="zip">Zip</label>
-                      <input type="number" id="zip" name="zip" placeholder="10001">
-                    </div>
-                  </div>
+                  <label for="state">State</label>
+                  <input type="text" id="state" name="state" placeholder="NY">
                 </div>
-      
                 <div class="col-50">
-                  <h3>Payment</h3>
-                  <label for="fname">Accepted Cards</label>
-                  <div class="icon-container">
-                    <i class="fa fa-cc-visa"><img src="/img/Tarjetas/Visa.PNG" alt="Visa"></i>
-                    <i class="fa fa-cc-mastercard"><img src="/img/Tarjetas/mastercard.PNG" alt="MasterCard"></i>
-                    <a href="https://www.paypal.com/signin" target="_blank">
-                      <img src="/img/Tarjetas/PayPal.jpg" alt="PayPal">
-                    </a>
-                    <p>Total del Pedido: <span id="totalCarritoActual"></span></p>
-                  </div>
-                
-                            
-                  <label for="cname">Name on Card</label>
-                  <input type="text" id="cname" name="cardname" placeholder="Jobany Jason">
-                  <label for="ccnum">Credit card number</label>
-                  <input type="number" id="cardcnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-                  <label for="expmonth">Exp Month</label>
-                  <input type="text" id="expmonth" name="expmonth" placeholder="September">
-      
-                  <div class="row">
-                    <div class="col-50">
-                      <label for="expyear">Exp Year</label>
-                      <input type="number" id="expyear" name="expyear" placeholder="2018">
-                    </div>
-                    <div class="col-50">
-                      <label for="cvv">CVV</label>
-                      <input type="number" id="cvv" name="cvv" placeholder="352">
-                    </div>
-                  </div>
+                  <label for="zip">Zip</label>
+                  <input type="text" id="zip" name="zip" placeholder="10001">
                 </div>
-      
               </div>
-              
-              <input type="submit" value="Continue to checkout" class="btn">
-            </form>
+            </div>
+  
+            <div class="col-50">
+              <h3>Payment</h3>
+              <label for="fname">Accepted Cards</label>
+              <div class="icon-container">
+                <i class="fa fa-cc-visa" style="color:navy;"></i>
+                <i class="fa fa-cc-amex" style="color:blue;"></i>
+                <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                <i class="fa fa-cc-discover" style="color:orange;"></i>
+              </div>
+              <label for="cname">Name on Card</label>
+              <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+              <label for="ccnum">Credit card number</label>
+              <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+              <label for="expmonth">Exp Month</label>
+              <input type="text" id="expmonth" name="expmonth" placeholder="September">
+  
+              <div class="row">
+                <div class="col-50">
+                  <label for="expyear">Exp Year</label>
+                  <input type="text" id="expyear" name="expyear" placeholder="2018">
+                </div>
+                <div class="col-50">
+                  <label for="cvv">CVV</label>
+                  <input type="text" id="cvv" name="cvv" placeholder="352">
+                </div>
+              </div>
+            </div>
+  
           </div>
-        </div>
-      
-     
-       
-        
-    
-        <script>
-            // Recuperar los totales desde localStorage y mostrarlos
-            document.addEventListener('DOMContentLoaded', function() {
-                var totalCarritoActual = localStorage.getItem('totalCarrito');
-                var totalCarritoAnterior = localStorage.getItem('previousTotalCarrito');
-                document.getElementById('totalCarritoActual').innerText = totalCarritoActual ? totalCarritoActual : '0 €';
-                document.getElementById('totalCarritoAnterior').innerText = totalCarritoAnterior ? totalCarritoAnterior : '0 €';
-            });
-        </script>
+          <label>
+            <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+          </label>
+          <input type="submit" value="Continue to checkout" class="btn">
+        </form>
+      </div>
+    </div>
+  </div>
 
 
 
-
-
-
-
-        <footer class="footer">
-          <ul class="social-icon">
-              <li class="social-icon__item"><a class="social-icon__link" href="#">
-                      <ion-icon name="logo-facebook"></ion-icon>
-                  </a></li>
-              <li class="social-icon__item"><a class="social-icon__link" href="#">
-                      <ion-icon name="logo-twitter"></ion-icon>
-                  </a></li>
-              <li class="social-icon__item"><a class="social-icon__link" href="#">
-                      <ion-icon name="logo-linkedin"></ion-icon>
-                  </a></li>
-              <li class="social-icon__item"><a class="social-icon__link" href="#">
-                      <ion-icon name="logo-instagram"></ion-icon>
-                  </a></li>
-          </ul>
-          <ul class="menu">
-              <li class="menu__item"><a class="menu__link" href="../public/about.html">ABOUT US</a></li>
-              <li class="menu__item"><a class="menu__link" href="/public/privacy-polices.html">PRIVACY POLICIES</a></li>
-              <li class="menu__item"><a class="menu__link" href="/public/our-team.html">OUR TEAM</a></li>
-              <li class="menu__item"><a class="menu__link" href="/public/contact.html">CONTACT</a></li>
-          </ul>
-          <div class="footer-texto">
-              <p>&copy; 2024 BURGER TOWN | ALL RIGHTS RESERVED</p>
-          </div>
-      </footer>
-        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-        <script src="../scripts/header.js"></script>
+  <footer class="footer">
+    <ul class="social-icon">
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a></li>
+    </ul>
+    <ul class="menu">
+      <li class="menu__item"><a class="menu__link" href="../public/about.html">ABOUT US</a></li>
+      <li class="menu__item"><a class="menu__link" href="/public/privacy-polices.html">PRIVACY POLICIES</a></li>
+      <li class="menu__item"><a class="menu__link" href="/public/our-team.html">OUR TEAM</a></li>
+      <li class="menu__item"><a class="menu__link" href="/public/contact.html">CONTACT</a></li>
+    </ul>
+    <div class="footer-texto">
+      <p>&copy; 2024 BURGER TOWN | ALL RIGHTS RESERVED</p>
+    </div>
+  </footer>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="../scripts/header.js"></script>
+</body>
