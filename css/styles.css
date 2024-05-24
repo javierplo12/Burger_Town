@@ -409,6 +409,11 @@ body {
   .boton-carrusel {
     padding: 10px;
   }
+
+  .carousel-vertical {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 
 .container-vertical {
@@ -431,6 +436,17 @@ body {
   justify-content: center;
   align-items: center;
   margin-right: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .carousel-vertical-dots {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0px;
+  }
 }
 
 .carousel-vertical-inner {
