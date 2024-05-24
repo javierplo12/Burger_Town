@@ -330,10 +330,11 @@ body {
   background-color: darkred;
   overflow-x: hidden; 
   overflow-y: hidden; 
+  -webkit-overflow-scrolling: touch; /* Añadido para un desplazamiento suave en iOS */
 }
 
 .carousel-item {
-  flex: 0 0 calc(100% / 3); /* Calcula el ancho para tres elementos por fila */
+  flex: 0 0 33.33%; /* Cambiado a 33.33% para mostrar tres elementos por fila en pantallas grandes */
   max-width: calc(100% / 3); /* Limita el ancho máximo para evitar que se hagan más pequeños */
   padding: 0 10px;
   box-sizing: border-box;
@@ -380,6 +381,34 @@ body {
 
 .boton-carrusel:hover {
   transform: scale(1.05) rotate(-1deg);
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .carousel-slide {
+    overflow-x: auto;
+    flex-wrap: nowrap; /* Añadido para evitar que los elementos se envuelvan */
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+
+  .carousel-item {
+    flex: 0 0 50%; /* Cambiado a 50% para mostrar dos elementos por fila en pantallas medianas */
+    max-width: 50%; /* Limita el ancho máximo */
+  }
+
+  .carousel-item h2 {
+    font-size: 20px;
+  }
+  
+  .productos-destacados {
+    font-size: 40px; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+    text-align: center;
+  }
+
+  .boton-carrusel {
+    padding: 10px;
+  }
 }
 
 .container-vertical {
