@@ -384,18 +384,16 @@ body {
 
 .container-vertical {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
 .carousel-vertical {
   overflow: hidden;
   width: 900px;
-  height: 400px;
   display: flex;
   align-items: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-right: 100px;
+  padding: 30px;
 }
 
 .carousel-vertical-dots {
@@ -466,9 +464,7 @@ body {
   justify-content: center;
   align-items: center;
   max-width: 100%;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-left: 100px;
+  padding: 30px;
 }
 
 .video-container-vertical img {
