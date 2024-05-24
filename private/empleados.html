@@ -42,6 +42,7 @@
             }
 
             const createEmployeeList = (employees) => {
+                employees.sort((a, b) => a.Id_Empleado - b.Id_Empleado);
                 const employeeTableBody = document.querySelector('tbody');
                 employeeTableBody.innerHTML = '';
                 employees.forEach(employee => {
