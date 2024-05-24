@@ -14,58 +14,145 @@
 }
 
 /* Estilos del header */
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(0, 0, 0);
-  font-family: 'myFont', sans-serif;
+:root {
+  --header-height: 5rem;
+  --body-color: black;
+  --z-fixed: 100;
+  --z-modal: 1000;
 }
 
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Cambiado para distribuir los elementos */
-  max-width: 1200px; /* Ancho máximo del header */
-  width: 90%; /* Ajuste para pantallas pequeñas */
+html {
+  scroll-behavior: smooth;
 }
 
-/* Estilos del logo */
-.logo-bt img {
-  max-width: 180px;
-  padding: 20px;
-  transition: transform 0.3s ease;
+ul {
+  list-style: none;
 }
 
-/* Aumenta ligeramente el tamaño al pasar el ratón por encima */
-.logo-bt img:hover {
-  transform: scale(1.02);
-}
-
-/* Estilos de los botones */
-.boton a {
+a {
   text-decoration: none;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--body-color);
+  box-shadow: 0 2px 16px hsla(230, 75%, 32%, .15);
+  z-index: var(--z-fixed);
+}
+
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  height: 100%;
+}
+
+.logo img{
+  height: auto;
+  padding: 15px;
+}
+
+.nav__actions {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
   color: whitesmoke;
-  font-size: 20px;
-  font-weight: bold;
-  padding: 10px 20px; /* Aumentado el padding */
-  border-radius: 15px;
-  transition: all 0.3s;
 }
 
-.boton a:hover {
-  background-color: rgba(255, 0, 0, 0.4);
+.nav__actions a {
+  color: whitesmoke;
 }
 
-/* Estilos para centrar la imagen del carrito */
-.boton-carrito img {
-  height: 34px;
-  filter: invert(100%) sepia(21%) saturate(361%) hue-rotate(152deg) brightness(111%) contrast(92%);
+.nav__toggle, 
+.nav__close {
+  font-size: 1.25rem;
+  color: whitesmoke;
+  cursor: pointer;
+  transition: color .4s;
 }
 
-/* Elimina el borde del botón del carrito */
-.boton-carrito a {
-  border: none;
+:is(.nav__logo, .nav__toggle, .nav__link):hover {
+  color: var(--first-color);
+}
+
+/* Navigation for mobile devices */
+@media screen and (max-width: 1023px) {
+  .nav__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    background-color: var(--body-color);
+    width: 100%;
+    padding-block: 4.5rem 4rem;
+    transition: top .4s;
+  }
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+  text-align: center;
+  font-family: 'myFont';
+  text-transform: uppercase;
+  color: whitesmoke;
+}
+
+.nav__link {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  transition: color .4s;
+}
+
+.nav__close {
+  position: absolute;
+  top: 1.15rem;
+  right: 1.5rem;
+}
+
+/* Show menu */
+.show-menu {
+  top: 0;
+  z-index: 1;
+}
+
+/* For large devices */
+@media screen and (min-width: 1023px) {
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+    column-gap: 3rem;
+  }
+  .nav__close, 
+  .nav__toggle {
+    display: none;
+  }
+  .nav__menu {
+    margin-left: auto;
+  }
+  .nav__list {
+    flex-direction: row;
+    column-gap: 3rem;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .container {
+    margin-inline: auto;
+  }
 }
 
 * {
@@ -108,7 +195,7 @@ header {
   min-height: 75px;
 }
 
-.container {
+.container-team {
   max-width: 1380px;
   margin-top: 80px;
   margin-right: auto;
@@ -196,8 +283,7 @@ header {
   flex-direction: column;
 }
 
-.social-icon,
-.menu {
+.social-icon, .menu {
   position: relative;
   display: flex;
   justify-content: center;
@@ -206,8 +292,7 @@ header {
   flex-wrap: wrap;
 }
 
-.social-icon__item,
-.menu__item {
+.social-icon__item, .menu__item {
   list-style: none;
 }
 
@@ -230,101 +315,26 @@ header {
   transition: 0.5s;
   text-decoration: none;
   font-weight: 300;
-  font-family: 'myFont', sans-serif;
-  /* Aplica la fuente myFont */
+  font-family: 'myFont', sans-serif; 
 }
 
 .menu__link:hover {
   opacity: 1;
 }
 
-.footer p {
+.footer-texto {
+  display: flex;
   color: whitesmoke;
-  margin: 15px 0 10px 0;
+  margin: 15px 0 15px 0;
   font-size: 1rem;
   font-weight: 300;
+  justify-content: center;
+  text-align: center;
 }
 
-/* Estilos responsive */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    /* Cambia la dirección de los elementos a columna */
-    align-items: center;
-    /* Alinea los elementos a la izquierda */
-  }
 
-  .logo-bt img {
-    margin-right: 0;
-    /* Elimina el margen derecho del logo */
-    margin-bottom: 10px;
-    /* Añade margen inferior al logo */
-  }
-
-  .boton-carrito img {
-    margin-bottom: 20px;
-  }
-
-  .boton a {
-    margin-right: 0;
-    /* Elimina el margen derecho de los botones */
-    margin-bottom: 10px;
-    /* Añade margen inferior a los botones */
-  }
-
-  .footer {
-    padding: 20px 10px;
-    /* Ajusta el padding del footer */
-  }
-
-  .social-icon,
+@media screen and (max-width: 850px) {
   .menu {
     flex-direction: column;
-    /* Cambia la dirección de los elementos a columna */
-    align-items: center;
-    /* Alinea los elementos al centro */
   }
-
-  .social-icon__link,
-  .menu__link {
-    margin: 5px 0;
-    /* Ajusta el margen entre los enlaces */
-  }
-
-  .carousel-container {
-    justify-content: center;
-    /* Centra horizontalmente los elementos */
-    align-items: center;
-    /* Centra verticalmente los elementos */
-    height: 100vh;
-    /* Establece la altura al 100% del viewport */
-  }
-
-  .carousel-slide {
-    flex-direction: column;
-    /* Cambia la dirección del flex a columna */
-    align-items: center;
-  }
-
-  .carousel-item {
-    flex: 0 0 100%;
-    /* Ancho de los elementos al 100% */
-    margin: 10px 0;
-    /* Espacio entre elementos */
-  }
-
-  /* Estilos para hacer más pequeños los botones */
-  .boton-carrusel {
-    padding: 5px 10px;
-    /* Espaciado interno más pequeño */
-    font-size: 18px;
-    /* Tamaño de fuente más pequeño */
-  }
-
-  /* Estilos para hacer más pequeño el texto del título del producto */
-  .carousel-item h2 {
-    font-size: 20px;
-    /* Tamaño de fuente más pequeño */
-  }
-
 }

@@ -6,30 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BURGER TOWN - Login</title>
     <link rel="stylesheet" href="/css/sing.in.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
 </head>
 
 <body>
-    <header>
-        <div class="header-container">
-            <div class="logo-bt">
-                <a href="/public/index.html">
-                    <img src="../img/logobt.png" alt="Logo Burger Town">
-                </a>
-            </div>
-            <div class="boton">
-                <a href="../public/index.html">HOME</a>
-            </div>
-            <div class="boton">
-                <a href="../public/order-now.html">ORDER NOW</a>
-            </div>
-            <div class="boton">
-                <a href="/public/sing-in.html">SIGN IN </a>
-            </div>
-        </div>
-    </header>
+    <header class="header" id="header">
+        <nav class="nav container">
+           <div class="logo">
+              <img src="../img/logobt.png" alt="logobt">
+           </div>
 
-    <div class="background">
-        <div class="container">
+           <div class="nav__menu" id="nav-menu">
+              <ul class="nav__list">
+                 <li class="nav__item">
+                    <a href="../public/index.html" class="nav__link">Home</a>
+                 </li>
+
+                 <li class="nav__item">
+                    <a href="../public/about.html" class="nav__link">About Us</a>
+                 </li>
+
+                 <li class="nav__item">
+                    <a href="../public/order-now.html" class="nav__link">Order Now</a>
+                 </li>
+              </ul>
+
+              <!-- Close button -->
+              <div class="nav__close" id="nav-close">
+                 <i class="ri-close-line"></i>
+              </div>
+           </div>
+
+           <div class="nav__actions">
+              <!-- Login button -->
+              <a href="../public/sing-in.html">
+                 <i class="ri-user-line nav__login" id="login-btn"></i>
+              </a>
+
+              <!-- Toggle button -->
+              <div class="nav__toggle" id="nav-toggle">
+                 <i class="ri-menu-line"></i>
+              </div>
+           </div>
+        </nav>
+     </header>
+
+     <div class="background">
+        <div class="contenedor">
             <div class="screen">
                 <div class="screen-body">
                     <div class="screen-body-item-left">
@@ -74,11 +97,13 @@
         </ul>
         <ul class="menu">
             <li class="menu__item"><a class="menu__link" href="../public/about.html">ABOUT US</a></li>
-            <li class="menu__item"><a class="menu__link" href="../public/privacy-polices.html">PRIVACY POLICIES</a></li>
+            <li class="menu__item"><a class="menu__link" href="/public/privacy-polices.html">PRIVACY POLICIES</a></li>
             <li class="menu__item"><a class="menu__link" href="/public/our-team.html">OUR TEAM</a></li>
             <li class="menu__item"><a class="menu__link" href="/public/contact.html">CONTACT</a></li>
         </ul>
-        <p>&copy; 2024 BURGER TOWN | ALL RIGHTS RESERVED</p>
+        <div class="footer-texto">
+            <p>&copy; 2024 BURGER TOWN | ALL RIGHTS RESERVED</p>
+        </div>
     </footer>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -101,6 +126,7 @@
             }
         });
     </script>
+    <script src="../scripts/header.js"></script>
 </body>
 
 </html>

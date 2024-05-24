@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Producto</title>
+</head>
+<body>
+    <h1>Agregar Producto</h1>
+    <form id="addProductForm">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br>
+        <label for="descripcion">Descripción:</label><br>
+        <input type="text" id="descripcion" name="descripcion" required><br>
+        <label for="precio">Precio:</label><br>
+        <input type="number" id="precio" name="precio" min="0" step="0.01" required><br>
+        <label for="id_categoria">ID Categoría:</label><br>
+        <input type="number" id="id_categoria" name="id_categoria" min="1" required><br><br>
+        <button type="submit">Agregar Producto</button>
+    </form>
+
+    <script>
+        document.getElementById("addProductForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const nombre = document.getElementById("nombre").value;
+            const descripcion = document.getElementById("descripcion").value;
+            const precio = parseFloat(document.getElementById("precio").value);
+            const id_categoria = parseInt(document.getElementById("id_categoria").value);
+
+            const producto = {
+                nombre: nombre,
+                descripcion: descripcion,
+                precio: precio,
+                id_categoria: id_categoria
+            };
+
+            const response = await fetch('http://localhost:8080/Buger_Town/Controller?ACTION=PRODUCTO.ADD', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(producto)
+            });
+
+            if (response.status === 201) {
+                alert('Producto agregado exitosamente');
+                // Limpiar el formulario después de agregar el producto
+                document.getElementById("addProductForm").reset();
+            } else {
+                alert('Hubo un error al agregar el producto');
+            }
+        });
+    </script>
+</body>
+</html>

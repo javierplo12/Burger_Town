@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Productos</title>
+    <style>
+        .producto-card {
+            border: 1px solid #ccc;
+            padding: 16px;
+            margin: 16px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="producto_detail"></div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const getProductos = async () => {
+                try {
+                    const url = `http://localhost:8080/Buger_Town/Controller?ACTION=PRODUCTO.FIND_ALL`;
+                    const response = await fetch(url);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const productos = await response.json();
+                    createProductoDetail(productos);
+                } catch (error) {
+                    console.error('Error fetching productos:', error);
+                    // Aquí puedes agregar un mensaje de error en la UI si es necesario
+                }
+            }
+            
+            const createProductoDetail = (productos) => {
+                
+                const producto_detail = document.querySelector('#producto_detail');
+                producto_detail.innerHTML = ''; // Limpiar el contenido anterior si es necesario
+                
+                productos.forEach(producto => {
+                    const tarjeta = document.createElement("div");
+                    tarjeta.classList.add("producto-card");
+                    
+                    const { Id_Producto, nombre, descripcion, precio, id_categoria } = producto;
+                    
+                    let producto_innerHTML = `
+                        <h2>${nombre}</h2>
+                        <p><strong>ID:</strong> ${Id_Producto}</p>
+                        <p><strong>Descripción:</strong> ${descripcion}</p>
+                        <p><strong>Precio:</strong> ${precio} $</p>
+                        <p><strong>ID Categoría:</strong> ${id_categoria}</p>
+                    `;
+                    
+                    tarjeta.innerHTML = producto_innerHTML;
+                    producto_detail.appendChild(tarjeta);
+                });
+            }
+            
+            getProductos();
+        });
+    </script>
+</body>
+</html>

@@ -67,6 +67,7 @@ function agregarAlCarritoClicked(event) {
 function hacerVisibleCarrito() {
     carritoVisible = true;
     var carrito = document.getElementsByClassName('carrito')[0];
+   
     carrito.style.marginRight = '0';
     carrito.style.opacity = '1';
 

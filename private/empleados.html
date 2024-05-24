@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empleados</title>
+    <style>
+        .employee-card {
+            border: 1px solid #ddd;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="employee_list"></div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const getEmployees = async () => {
+                const url = 'http://localhost:8080/Buger_Town/Controller?ACTION=EMPLEADO.FIND_ALL';  // Asegúrate de que esta URL coincide con tu endpoint backend
+                const result = await fetch(url);
+                const employees = await result.json();
+                console.log(employees);
+                createEmployeeList(employees);
+            }
+
+            const createEmployeeList = (employees) => {
+                const employeeList = document.querySelector('#employee_list');
+                employeeList.innerHTML = '';  // Limpiar cualquier contenido previo
+                employees.forEach(employee => {
+                    const employeeCard = document.createElement("div");
+                    employeeCard.classList.add("employee-card");
+                    const { Id_Empleado, nombre, apellido, DNI, puesto, telefono } = employee;
+                    const employeeInnerHTML = `
+                        <h2>${nombre} ${apellido}</h2>
+                        <p><strong>ID:</strong> ${Id_Empleado}</p>
+                        <p><strong>DNI:</strong> ${DNI}</p>
+                        <p><strong>Puesto:</strong> ${puesto}</p>
+                        <p><strong>Teléfono:</strong> ${telefono}</p>
+                    `;
+                    employeeCard.innerHTML = employeeInnerHTML;
+                    employeeList.appendChild(employeeCard);
+                });
+            }
+
+            // Fetch and display employees on page load
+            getEmployees();
+        });
+    </script>
+</body>
+</html>

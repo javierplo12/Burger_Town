@@ -19,58 +19,145 @@
 }
 
 /* Estilos del header */
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(0, 0, 0);
-  font-family: 'myFont', sans-serif;
+:root {
+  --header-height: 5rem;
+  --body-color: black;
+  --z-fixed: 100;
+  --z-modal: 1000;
 }
 
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Cambiado para distribuir los elementos */
-  max-width: 1200px; /* Ancho máximo del header */
-  width: 90%; /* Ajuste para pantallas pequeñas */
+html {
+  scroll-behavior: smooth;
 }
 
-/* Estilos del logo */
-.logo-bt img {
-  max-width: 180px;
-  padding: 20px;
-  transition: transform 0.3s ease;
+ul {
+  list-style: none;
 }
 
-/* Aumenta ligeramente el tamaño al pasar el ratón por encima */
-.logo-bt img:hover {
-  transform: scale(1.02);
-}
-
-/* Estilos de los botones */
-.boton a {
+a {
   text-decoration: none;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--body-color);
+  box-shadow: 0 2px 16px hsla(230, 75%, 32%, .15);
+  z-index: var(--z-fixed);
+}
+
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  height: 100%;
+}
+
+.logo img {
+  height: auto;
+  padding: 15px;
+}
+
+.nav__actions {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
   color: whitesmoke;
-  font-size: 20px;
-  font-weight: bold;
-  padding: 10px 20px; /* Aumentado el padding */
-  border-radius: 15px;
-  transition: all 0.3s;
 }
 
-.boton a:hover {
-  background-color: rgba(255, 0, 0, 0.4);
+.nav__actions a {
+  color: whitesmoke;
 }
 
-/* Estilos para centrar la imagen del carrito */
-.boton-carrito img {
-  height: 34px;
-  filter: invert(100%) sepia(21%) saturate(361%) hue-rotate(152deg) brightness(111%) contrast(92%);
+.nav__toggle, 
+.nav__close {
+  font-size: 1.25rem;
+  color: whitesmoke;
+  cursor: pointer;
+  transition: color .4s;
 }
 
-/* Elimina el borde del botón del carrito */
-.boton-carrito a {
-  border: none;
+:is(.nav__logo, .nav__toggle, .nav__link):hover {
+  color: var(--first-color);
+}
+
+/* Navigation for mobile devices */
+@media screen and (max-width: 1023px) {
+  .nav__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    background-color: var(--body-color);
+    width: 100%;
+    padding-block: 4.5rem 4rem;
+    transition: top .4s;
+  }
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+  text-align: center;
+  font-family: 'myFont';
+  text-transform: uppercase;
+  color: whitesmoke;
+}
+
+.nav__link {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  transition: color .4s;
+}
+
+.nav__close {
+  position: absolute;
+  top: 1.15rem;
+  right: 1.5rem;
+}
+
+/* Show menu */
+.show-menu {
+  top: 0;
+  z-index: 1;
+}
+
+/* For large devices */
+@media screen and (min-width: 1023px) {
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+    column-gap: 3rem;
+  }
+  .nav__close, 
+  .nav__toggle {
+    display: none;
+  }
+  .nav__menu {
+    margin-left: auto;
+  }
+  .nav__list {
+    flex-direction: row;
+    column-gap: 3rem;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .container {
+    margin-inline: auto;
+  }
 }
 
 /* Empieza el formulario */
@@ -90,15 +177,17 @@ body {
 /* Define un contenedor flex para centrar verticalmente el contenido */
 .background {
   display: flex;
-  min-height: 75vh;
+  min-height: 100vh; /* Aumenta la altura mínima del contenedor de fondo */
   align-items: center;
   justify-content: center;
 }
 
 /* Estilos para el contenedor principal */
-.container {
+.contenedor {
   display: flex;
   margin: auto;
+  width: 100%;
+  max-width: 600px; /* Limita el ancho máximo del contenedor */
 }
 
 /* Estilos para el área de pantalla */
@@ -109,31 +198,15 @@ body {
   background: #3e3e3e;
   border-radius: 15px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-}
-
-/* Estilos para el encabezado de la pantalla */
-.screen-header {
-  display: flex;
-  align-items: center;
-  padding: 10px 20px;
-  background: #0000009a;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-}
-
-/* Estilos para los botones del encabezado */
-.screen-header-button {
-  width: 8px;
-  height: 8px;
-  margin-right: 3px;
-  border-radius: 8px;
+  width: 100%; /* Hace que el contenedor tome todo el ancho */
 }
 
 /* Estilos para el cuerpo de la pantalla */
 .screen-body {
   display: flex;
-  padding: 40px; /* Incrementado el padding */
+  padding: 40px 40px; /* Incrementa el padding */
   flex-direction: column;
+  width: 100%;
 }
 
 .screen-body-item-left {
@@ -146,20 +219,13 @@ body {
   display: flex;
   justify-content: center;
   color: whitesmoke;
-  font-size: 40px; /* Incrementado el tamaño de la fuente */
-  margin-bottom: 30px;
-}
-
-/* Estilos para la información de contacto de la aplicación */
-.app-contact {
-  margin-top: auto;
-  font-size: 18px; /* Incrementado el tamaño de la fuente */
-  color: #888;
+  font-size: 32px;
+  margin-bottom: 40px; /* Incrementa el margen inferior */
 }
 
 /* Estilos para los grupos de formularios de la aplicación */
 .app-form-group {
-  margin-bottom: 20px;
+  margin-bottom: 30px; /* Incrementa el margen inferior */
 }
 
 .app-form-group.buttons {
@@ -168,51 +234,35 @@ body {
   margin-bottom: 0px;
 }
 
-/* Estilos para el grupo de mensajes del formulario de la aplicación */
-.app-form-group.message {
-  margin-top: 40px;
-}
-
 /* Estilos para los controles del formulario de la aplicación */
 .app-form-control {
   width: 100%;
-  padding: 15px 0; /* Incrementado el padding */
+  padding: 15px 0;
   background: none;
   border: none;
-  border-bottom: 2px solid #666; /* Incrementado el grosor del borde */
+  border-bottom: 2px solid #666;
   color: #ffffff;
-  font-size: 20px; /* Incrementado el tamaño de la fuente */
+  font-size: 18px;
   text-transform: uppercase;
   outline: none;
   transition: border-color .2s;
   font-family: 'myFont', sans-serif;
 }
 
-/* Estilos para el texto de marcador de posición de los controles del formulario */
-.app-form-control::placeholder {
-  color: #666;
-}
-
-/* Estilos para los controles del formulario enfocados */
-.app-form-control:focus {
-  border-bottom-color: #ddd;
-}
-
 /* Estilos para los botones del formulario de la aplicación */
 .app-form-button {
   background: none;
-  border: 2px solid #db2223; /* Añadido un borde */
+  border: 2px solid #db2223;
   color: #db2223;
-  font-size: 18px; /* Incrementado el tamaño de la fuente */
+  font-size: 16px;
   cursor: pointer;
   outline: none;
   text-decoration: none;
-  padding: 10px 20px; /* Incrementado el padding */
-  width: 120px;
-  margin: 15px;
+  padding: 10px;
+  width: 45%;
+  margin: 5px;
   font-family: 'myFont', sans-serif;
-  flex: 1; /* Añadido para que los botones tomen el mismo tamaño */
-  text-align: center; /* Centrar el texto */
+  text-align: center;
 }
 
 /* Estilos para los botones del formulario al pasar el cursor */
@@ -234,8 +284,7 @@ body {
   flex-direction: column;
 }
 
-.social-icon,
-.menu {
+.social-icon, .menu {
   position: relative;
   display: flex;
   justify-content: center;
@@ -244,8 +293,7 @@ body {
   flex-wrap: wrap;
 }
 
-.social-icon__item,
-.menu__item {
+.social-icon__item, .menu__item {
   list-style: none;
 }
 
@@ -268,16 +316,54 @@ body {
   transition: 0.5s;
   text-decoration: none;
   font-weight: 300;
-  font-family: 'myFont', sans-serif;
+  font-family: 'myFont', sans-serif; 
 }
 
 .menu__link:hover {
   opacity: 1;
 }
 
-.footer p {
+.footer-texto {
+  display: flex;
   color: whitesmoke;
-  margin: 15px 0 10px 0;
+  margin: 15px 0 15px 0;
   font-size: 1rem;
   font-weight: 300;
+  justify-content: center;
+  text-align: center;
+}
+
+@media screen and (max-width: 850px) {
+  .menu {
+    flex-direction: column;
+  }
+}
+
+/* Media Queries para formulario */
+@media screen and (max-width: 600px) {
+  .contenedor {
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .screen-body {
+    padding: 40px 20px; /* Ajusta el padding para móviles */
+  }
+
+  .app-title {
+    font-size: 24px;
+  }
+
+  .app-form-control {
+    font-size: 16px;
+    padding: 10px 0;
+  }
+
+  .app-form-button {
+    font-size: 14px;
+    padding: 8px;
+    width: 48%;
+  }
 }
