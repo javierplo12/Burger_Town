@@ -8,6 +8,7 @@
 <body>
     <h1>Agregar Producto</h1>
     <form id="addProductForm">
+        <label for="id_Producto">ID :</label><br>
         <label for="nombre">Nombre:</label><br>
         <input type="text" id="nombre" name="nombre" required><br>
         <label for="descripcion">Descripción:</label><br>
@@ -22,13 +23,16 @@
     <script>
         document.getElementById("addProductForm").addEventListener("submit", async function(event) {
             event.preventDefault();
+            producto.sort((a, b) => a.Id_Producto - b.Id_Producto);
 
+            const Id_Producto = document.getElementById("id_Producto").value;
             const nombre = document.getElementById("nombre").value;
             const descripcion = document.getElementById("descripcion").value;
             const precio = parseFloat(document.getElementById("precio").value);
             const id_categoria = parseInt(document.getElementById("id_categoria").value);
 
             const producto = {
+                Id_Producto:Id_Producto,
                 nombre: nombre,
                 descripcion: descripcion,
                 precio: precio,
