@@ -1,26 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Empleados</title>
-    <style>
-        .employee-card {
-            border: 1px solid #ddd;
-            margin: 10px;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-    </style>
+    <link rel="stylesheet" href="/private/css-private/empleados.css"> <!-- Enlace al archivo CSS externo -->
 </head>
+
 <body>
-    <div id="employee_list"></div>
+    <div class="container">
+        <table id="clients_table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>DNI</th>
+                    <th>Puesto</th>
+                    <th>Teléfono</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <div class="buttons">
+            <button id="addButton">ADD</button>
+            <button id="deleteButton">DELETE</button>
+        </div>
+    </div>
 
     <script>
         window.addEventListener('DOMContentLoaded', (event) => {
             const getEmployees = async () => {
-                const url = 'http://localhost:8080/Buger_Town/Controller?ACTION=EMPLEADO.FIND_ALL';  // Asegúrate de que esta URL coincide con tu endpoint backend
+                const url = 'http://localhost:8080/Buger_Town/Controller?ACTION=EMPLEADO.FIND_ALL';
                 const result = await fetch(url);
                 const employees = await result.json();
                 console.log(employees);
@@ -28,27 +42,54 @@
             }
 
             const createEmployeeList = (employees) => {
-                const employeeList = document.querySelector('#employee_list');
-                employeeList.innerHTML = '';  // Limpiar cualquier contenido previo
+                const employeeTableBody = document.querySelector('tbody');
+                employeeTableBody.innerHTML = '';
                 employees.forEach(employee => {
-                    const employeeCard = document.createElement("div");
-                    employeeCard.classList.add("employee-card");
                     const { Id_Empleado, nombre, apellido, DNI, puesto, telefono } = employee;
-                    const employeeInnerHTML = `
-                        <h2>${nombre} ${apellido}</h2>
-                        <p><strong>ID:</strong> ${Id_Empleado}</p>
-                        <p><strong>DNI:</strong> ${DNI}</p>
-                        <p><strong>Puesto:</strong> ${puesto}</p>
-                        <p><strong>Teléfono:</strong> ${telefono}</p>
+                    const row = `
+                        <tr>
+                            <td>${Id_Empleado}</td>
+                            <td>${nombre}</td>
+                            <td>${apellido}</td>
+                            <td>${DNI}</td>
+                            <td>${puesto}</td>
+                            <td>${telefono}</td>
+                        </tr>
                     `;
-                    employeeCard.innerHTML = employeeInnerHTML;
-                    employeeList.appendChild(employeeCard);
+                    employeeTableBody.insertAdjacentHTML('beforeend', row);
                 });
             }
+            const deleteEmployee = async (event) => {
+                const employeeId = event;
+                if (confirm(`¿Estás seguro de que quieres eliminar el empleado con ID ${employeeId}?`)) {
+                    const url = `http://localhost:8080/Buger_Town/Controller?ACTION=EMPLEADO.DELETE&ID_EMPLEADO=${employeeId}`;
+                    try {
+                        const response = await fetch(url);
+                        if (response.ok) {
+                            // Remove the row from the table
+                            event.target.closest('tr').remove();
+                            console.log(`Empleado con ID ${employeeId} eliminado correctamente.`);
+                        } else {
+                            console.error('Error al eliminar el empleado.');
+                        }
+                    } catch (error) {
+                        console.error('Error de red:', error);
+                    }
+                }
+            }
+            const deleteButton = document.getElementById('deleteButton');
+            deleteButton.addEventListener('click', () => {
+                const employeeId = prompt('Ingrese el ID del cliente que desea eliminar:');
+                if (employeeId !== null && employeeId.trim() !== '') {
+                    deleteEmployee(employeeId);
+                } else {
+                    alert('Debe ingresar un ID válido.');
+                }
+            });
 
-            // Fetch and display employees on page load
             getEmployees();
         });
     </script>
 </body>
+
 </html>

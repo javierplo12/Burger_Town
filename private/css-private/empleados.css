@@ -1,0 +1,29 @@
+.container {
+    margin: 20px;
+}
+
+#clients_table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#clients_table th,
+#clients_table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#clients_table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}

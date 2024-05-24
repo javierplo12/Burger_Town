@@ -47,3 +47,4 @@ document.addEventListener('DOMContentLoaded', function() {
   let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
   actualizarCarrito(carrito);
 });
+
