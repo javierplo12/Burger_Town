@@ -88,6 +88,53 @@
                 }
             });
 
+            const addEmployee = async () => {
+                const newId = prompt('Ingrese el ID del nuevo empleado:').trim();
+                const newNombre = prompt('Ingrese el nombre del nuevo empleado:').trim();
+                const newApellido = prompt('Ingrese el apellido del nuevo empleado:').trim();
+                const newDNI = prompt('Ingrese el DNI del nuevo empleado:').trim();
+                const newPuesto = prompt('Ingrese el puesto del nuevo empleado:').trim();
+                const newTelefono = prompt('Ingrese el teléfono del nuevo empleado:').trim();
+
+                if (newId && newNombre && newApellido && newDNI && newPuesto && newTelefono) {
+                    const url = `http://localhost:8080/Buger_Town/Controller?ACTION=EMPLEADO.ADD&ID_EMPLEADO=${newId}&NOMBRE=${newNombre}&APELLIDO=${newApellido}&DNI=${newDNI}&PUESTO=${newPuesto}&TELEFONO=${newTelefono}`;
+                    try {
+                        const response = await fetch(url);
+                        if (response.ok) {
+                            const newRow = `
+                                <tr data-id="${newId}">
+                                    <td>${newId}</td>
+                                    <td>${newNombre}</td>
+                                    <td>${newApellido}</td>
+                                    <td>${newDNI}</td>
+                                    <td>${newPuesto}</td>
+                                    <td>${newTelefono}</td>
+                                </tr>
+                            `;
+                            document.querySelector('tbody').insertAdjacentHTML('beforeend', newRow);
+                            console.log(`Empleado con ID ${newId} añadido correctamente.`);
+                        } else {
+                            console.error('Error al añadir el empleado.');
+                        }
+                    } catch (error) {
+                        console.error('Error de red:', error);
+                    }
+                } else {
+                    alert('Todos los campos son obligatorios.');
+                }
+            };
+
+            document.getElementById('addButton').addEventListener('click', addEmployee);
+
+            document.getElementById('deleteButton').addEventListener('click', () => {
+                const employeeId = prompt('Ingrese el ID del cliente que desea eliminar:');
+                if (employeeId !== null && employeeId.trim() !== '') {
+                    deleteEmployee(employeeId);
+                } else {
+                    alert('Debe ingresar un ID válido.');
+                }
+            });
+
             getEmployees();
         });
     </script>

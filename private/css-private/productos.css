@@ -1,0 +1,84 @@
+/* Fuente myFont */
+@font-face {
+    font-family: 'myFont';
+    src: url('../fonts/PatuaOne-Regular.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Estilos para la tabla de productos */
+#productos_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-family: 'myFont', sans-serif; /* Aplicar la fuente a la tabla */
+}
+
+#productos_table th,
+#productos_table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-family: 'myFont', sans-serif; /* Aplicar la fuente a las celdas */
+}
+
+#productos_table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+/* Estilos para los botones */
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'myFont', sans-serif; /* Aplicar la fuente a los botones */
+}
+
+.buttons button:hover {
+    background-color: #000000;
+    transition: 1s;
+    background: red;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Estilos para la sección de detalles del producto */
+#producto_detail {
+    margin-bottom: 20px;
+    font-family: 'myFont', sans-serif; /* Aplicar la fuente a la sección de detalles */
+}
+
+.producto-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-family: 'myFont', sans-serif; /* Aplicar la fuente a la tarjeta del producto */
+}
+
+.producto-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.producto-field {
+    margin-bottom: 5px;
+    font-family: 'myFont', sans-serif; /* Aplicar la fuente a los campos del producto */
+}

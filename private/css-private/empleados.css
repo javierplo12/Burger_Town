@@ -1,3 +1,15 @@
+ /* Fuente myFont */
+ @font-face {
+    font-family: 'myFont';
+    src: url('../fonts/PatuaOne-Regular.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
+.body{
+    font-family: 'myFont';
+}  
 .container {
     margin: 20px;
 }
@@ -11,6 +23,21 @@
 #clients_table td {
     border: 1px solid #ddd;
     padding: 8px;
+}
+.buttons button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: #000000;
+    transition: 1s;
+    background: red;
 }
 
 #clients_table th {

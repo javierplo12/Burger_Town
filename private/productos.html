@@ -4,24 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Productos</title>
-    <style>
-        .producto-card {
-            border: 1px solid #ccc;
-            padding: 16px;
-            margin: 16px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-    </style>
+    <link rel="stylesheet" href="/private/css-private/productos.css"> <!-- Enlace al archivo CSS externo -->
 </head>
 <body>
-    <div id="producto_detail"></div>
+    <div class="container">
+        <table id="productos_table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Categoría</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <div class="buttons">
+            <button id="addButton">ADD</button>
+            <button id="deleteButton">DELETE</button>
+        </div>
+    </div>
     
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
             const getProductos = async () => {
                 try {
-                    const url = `http://localhost:8080/Buger_Town/Controller?ACTION=PRODUCTO.FIND_ALL`;
+                    const url = 'http://localhost:8080/Buger_Town/Controller?ACTION=PRODUCTO.FIND_ALL';
                     const response = await fetch(url);
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);
@@ -30,33 +41,90 @@
                     createProductoDetail(productos);
                 } catch (error) {
                     console.error('Error fetching productos:', error);
-                    // Aquí puedes agregar un mensaje de error en la UI si es necesario
                 }
-            }
+            };
             
             const createProductoDetail = (productos) => {
-                const producto_detail = document.querySelector('#producto_detail');
-                producto_detail.innerHTML = ''; // Limpiar el contenido anterior si es necesario
+                const productoTableBody = document.querySelector('#productos_table tbody');
+                productoTableBody.innerHTML = ''; // Limpiar el contenido anterior si es necesario
                 
                 productos.forEach(producto => {
-                    const tarjeta = document.createElement("div");
-                    tarjeta.classList.add("producto-card");
-                    
                     const { Id_Producto, nombre, descripcion, precio, id_categoria } = producto;
                     
-                    let producto_innerHTML = `
-                        <h2>${nombre}</h2>
-                        <p><strong>ID:</strong> ${Id_Producto}</p>
-                        <p><strong>Descripción:</strong> ${descripcion}</p>
-                        <p><strong>Precio:</strong> ${precio} $</p>
-                        <p><strong>ID Categoría:</strong> ${id_categoria}</p>
+                    const row = `
+                        <tr data-id="${Id_Producto}">
+                            <td>${Id_Producto}</td>
+                            <td>${nombre}</td>
+                            <td>${descripcion}</td>
+                            <td>${precio} $</td>
+                            <td>${id_categoria}</td>
+                        </tr>
                     `;
                     
-                    tarjeta.innerHTML = producto_innerHTML;
-                    producto_detail.appendChild(tarjeta);
+                    productoTableBody.insertAdjacentHTML('beforeend', row);
                 });
-            }
+            };
             
+            const addProducto = async () => {
+                const newId = prompt('Ingrese el ID del nuevo producto:').trim();
+                const newNombre = prompt('Ingrese el nombre del nuevo producto:').trim();
+                const newDescripcion = prompt('Ingrese la descripción del nuevo producto:').trim();
+                const newPrecio = prompt('Ingrese el precio del nuevo producto:').trim();
+                const newIdCategoria = prompt('Ingrese el ID de la categoría del nuevo producto:').trim();
+                
+                if (newId && newNombre && newDescripcion && newPrecio && newIdCategoria) {
+                    const url = `http://localhost:8080/Buger_Town/Controller?ACTION=PRODUCTO.ADD&ID_PRODUCTO=${newId}&NOMBRE=${newNombre}&DESCRIPCION=${newDescripcion}&PRECIO=${newPrecio}&ID_CATEGORIA=${newIdCategoria}`;
+                    try {
+                        const response = await fetch(url);
+                        if (response.ok) {
+                            const newRow = `
+                                <tr data-id="${newId}">
+                                    <td>${newId}</td>
+                                    <td>${newNombre}</td>
+                                    <td>${newDescripcion}</td>
+                                    <td>${newPrecio} $</td>
+                                    <td>${newIdCategoria}</td>
+                                </tr>
+                            `;
+                            document.querySelector('#productos_table tbody').insertAdjacentHTML('beforeend', newRow);
+                            console.log(`Producto con ID ${newId} añadido correctamente.`);
+                        } else {
+                            console.error('Error al añadir el producto.');
+                        }
+                    } catch (error) {
+                        console.error('Error de red:', error);
+                    }
+                } else {
+                    alert('Todos los campos son obligatorios.');
+                }
+            };
+            
+            const deleteProducto = async () => {
+                const productId = prompt('Ingrese el ID del producto que desea eliminar:');
+                if (productId !== null && productId.trim() !== '') {
+                    const url = `http://localhost:8080/Buger_Town/Controller?ACTION=PRODUCTO.DELETE&ID_PRODUCTO=${productId}`;
+                    try {
+                        const response = await fetch(url);
+                        if (response.ok) {
+                            const productRow = document.querySelector(`#productos_table tr[data-id="${productId}"]`);
+                            if (productRow) {
+                                productRow.remove();
+                            }
+                            console.log(`Producto con ID ${productId} eliminado correctamente.`);
+                        } else {
+                            console.error('Error al eliminar el producto.');
+                        }
+                    } catch (error) {
+                        console.error('Error de red:', error);
+                    }
+                } else {
+                    alert('Debe ingresar un ID válido.');
+                }
+            };
+
+            document.getElementById('addButton').addEventListener('click', addProducto);
+            document.getElementById('deleteButton').addEventListener('click', deleteProducto);
+
             getProductos();
         });
     </script>
