@@ -215,7 +215,7 @@ body {
   display: flex;
   flex-direction: column;
   max-width: 300px;
-  height: 450px; /* Añadido para que todos los recuadros tengan la misma altura */
+  height: 550px; /* Añadido para que todos los recuadros tengan la misma altura */
   border: 1px solid #666;
   border-radius: 20px;
   transition: .3s;
@@ -249,8 +249,17 @@ body {
   justify-content: center;
   align-items: center;
   height: 150px; /* Añadido para altura uniforme */
-  margin-right: 10px;
-  margin-left: 10px;
+  padding: 10px;
+}
+
+.desc-item {
+  display: flex;
+  text-align: center;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  height: 150px; /* Añadido para altura uniforme */
+  padding: 10px;
 }
 
 .precio-item {
@@ -278,9 +287,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: auto; /* Empuja el botón hacia abajo */
-  margin-bottom: 10px; /* Espacio inferior para el botón */
-  margin-top: 10px; 
+  padding: 10px;
   height: 50px; /* Añadido para altura uniforme */
 }
 
