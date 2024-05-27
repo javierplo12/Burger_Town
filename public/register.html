@@ -12,44 +12,44 @@
 <body>
     <header class="header" id="header">
         <nav class="nav container">
-           <div class="logo">
-              <img src="../img/logobt.png" alt="logobt">
-           </div>
+            <div class="logo">
+                <img src="../img/logobt.png" alt="logobt">
+            </div>
 
-           <div class="nav__menu" id="nav-menu">
-              <ul class="nav__list">
-                 <li class="nav__item">
-                    <a href="../public/index.html" class="nav__link">Home</a>
-                 </li>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="../public/index.html" class="nav__link">Home</a>
+                    </li>
 
-                 <li class="nav__item">
-                    <a href="../public/about.html" class="nav__link">About Us</a>
-                 </li>
+                    <li class="nav__item">
+                        <a href="../public/about.html" class="nav__link">About Us</a>
+                    </li>
 
-                 <li class="nav__item">
-                    <a href="../public/order-now.html" class="nav__link">Order Now</a>
-                 </li>
-              </ul>
+                    <li class="nav__item">
+                        <a href="../public/order-now.html" class="nav__link">Order Now</a>
+                    </li>
+                </ul>
 
-              <!-- Close button -->
-              <div class="nav__close" id="nav-close">
-                 <i class="ri-close-line"></i>
-              </div>
-           </div>
+                <!-- Close button -->
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
 
-           <div class="nav__actions">
-              <!-- Login button -->
-              <a href="../public/sing-in.html">
-                 <i class="ri-user-line nav__login" id="login-btn"></i>
-              </a>
+            <div class="nav__actions">
+                <!-- Login button -->
+                <a href="../public/sing-in.html">
+                    <i class="ri-user-line nav__login" id="login-btn"></i>
+                </a>
 
-              <!-- Toggle button -->
-              <div class="nav__toggle" id="nav-toggle">
-                 <i class="ri-menu-line"></i>
-              </div>
-           </div>
+                <!-- Toggle button -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line"></i>
+                </div>
+            </div>
         </nav>
-     </header>
+    </header>
 
     <div class="background">
         <div class="contenedor">
@@ -69,10 +69,12 @@
                                 <input type="email" class="app-form-control" placeholder="EMAIL" required>
                             </div>
                             <div class="app-form-group">
-                                <input type="password" class="app-form-control" placeholder="PASSWORD" id="password" required>
+                                <input type="password" class="app-form-control" placeholder="PASSWORD" id="password"
+                                    required>
                             </div>
                             <div class="app-form-group">
-                                <input type="password" class="app-form-control" placeholder="CONFIRM PASSWORD" id="confirm-password" required>
+                                <input type="password" class="app-form-control" placeholder="CONFIRM PASSWORD"
+                                    id="confirm-password" required>
                             </div>
                             <div class="app-form-group">
                                 <input type="text" class="app-form-control" placeholder="PHONE NUMBER" required>
@@ -118,29 +120,55 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script>
-        document.getElementById('loginButton').addEventListener('click', function (event) {
+        document.getElementById('loginButton').addEventListener('click', function(event) {
             event.preventDefault(); // Previene el comportamiento por defecto del botón
-
+        
+            var username = document.querySelector('.app-form-control[placeholder="USURNAME"]').value;
             var email = document.querySelector('.app-form-control[placeholder="EMAIL"]').value;
             var password = document.getElementById('password').value;
             var confirmPassword = document.getElementById('confirm-password').value;
-            var number = document.querySelector('.app-form-control[placeholder="NUMBER"]').value;
+            var phoneNumber = document.querySelector('.app-form-control[placeholder="PHONE NUMBER"]').value;
             var messageContainer = document.getElementById('messageContainer');
-
-            if (!email || !password || !confirmPassword || !number) {
+        
+            if (!username || !email || !password || !confirmPassword || !phoneNumber) {
                 messageContainer.innerHTML = "<p>Por favor, completa todos los campos.</p>";
                 return;
             }
-
+        
             if (password !== confirmPassword) {
                 messageContainer.innerHTML = "<p>Las contraseñas no coinciden. Por favor, inténtalo de nuevo.</p>";
                 return;
             }
-
-            messageContainer.innerHTML = "<p>Inicio de sesión exitoso. Redirigiendo...</p>";
-            setTimeout(function () {
-                window.location.href = '/public/index.html'; 
-            }, 2000);
+        
+            // Construcción de la URL
+            const url = `http://localhost:8080/Buger_Town/Controller?ACTION=CLIENTE.ADD&NOMBRE=${username}&EMAIL=${email}&CONTRASENA=${password}&TELEFONO=${phoneNumber}`;
+        
+            // Enviar la solicitud HTTP
+            fetch(url, {
+                    method: 'POST', // Método POST para agregar un cliente
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        nombre: username,
+                        email: email,
+                        contrasena: password,
+                        telefono: phoneNumber
+                    })
+                })
+                .then(response => response.text())
+                .then(data => {
+                    messageContainer.innerHTML = `<p>${data}</p>`;
+                    if (data === 'Cliente añadido con éxito.') {
+                        setTimeout(function() {
+                            window.location.href = '/public/index.html';
+                        }, 2000);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    messageContainer.innerHTML = "<p>Ocurrió un error. Por favor, inténtalo de nuevo.</p>";
+                });
         });
     </script>
     <script src="../scripts/header.js"></script>
