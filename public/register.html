@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BURGER TOWN - Login</title>
+    <title>BURGER TOWN - Register</title>
     <link rel="stylesheet" href="/css/sing.in.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
 </head>
@@ -15,42 +15,32 @@
             <div class="logo">
                 <img src="../img/logobt.png" alt="logobt">
             </div>
-
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item">
                         <a href="../public/index.html" class="nav__link">Home</a>
                     </li>
-
                     <li class="nav__item">
                         <a href="../public/about.html" class="nav__link">About Us</a>
                     </li>
-
                     <li class="nav__item">
                         <a href="../public/order-now.html" class="nav__link">Order Now</a>
                     </li>
                 </ul>
-
-                <!-- Close button -->
                 <div class="nav__close" id="nav-close">
                     <i class="ri-close-line"></i>
                 </div>
             </div>
-
             <div class="nav__actions">
-                <!-- Login button -->
                 <a href="../public/sing-in.html">
                     <i class="ri-user-line nav__login" id="login-btn"></i>
                 </a>
-
-                <!-- Toggle button -->
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="ri-menu-line"></i>
                 </div>
             </div>
         </nav>
     </header>
-
     <div class="background">
         <div class="contenedor">
             <div class="screen">
@@ -63,25 +53,23 @@
                     <div class="screen-body-item">
                         <div class="app-form">
                             <div class="app-form-group">
-                                <input type="Usurname" class="app-form-control" placeholder="USURNAME" required>
+                                <input type="text" class="app-form-control" placeholder="USERNAME" required>
                             </div>
                             <div class="app-form-group">
                                 <input type="email" class="app-form-control" placeholder="EMAIL" required>
                             </div>
                             <div class="app-form-group">
-                                <input type="password" class="app-form-control" placeholder="PASSWORD" id="password"
-                                    required>
+                                <input type="password" class="app-form-control" id="password" placeholder="PASSWORD" required>
                             </div>
                             <div class="app-form-group">
-                                <input type="password" class="app-form-control" placeholder="CONFIRM PASSWORD"
-                                    id="confirm-password" required>
+                                <input type="password" class="app-form-control" id="confirm-password" placeholder="CONFIRM PASSWORD" required>
                             </div>
                             <div class="app-form-group">
                                 <input type="text" class="app-form-control" placeholder="PHONE NUMBER" required>
                             </div>
                             <div class="app-form-group buttons">
-                                <a href="/public/register.html" class="app-form-button">CANCEL</a>
-                                <button class="app-form-button" id="loginButton">REGISTER</button>
+                                <button class="app-form-button form-button" id="cancelButton">CANCEL</button>
+                                <button class="app-form-button form-button" id="registerButton">REGISTER</button>
                             </div>
                         </div>
                         <div id="messageContainer"></div> <!-- Elemento para mostrar el mensaje -->
@@ -120,29 +108,29 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script>
-        document.getElementById('loginButton').addEventListener('click', function(event) {
+        document.getElementById('registerButton').addEventListener('click', function(event) {
             event.preventDefault(); // Previene el comportamiento por defecto del botón
-        
-            var username = document.querySelector('.app-form-control[placeholder="USURNAME"]').value;
+
+            var username = document.querySelector('.app-form-control[placeholder="USERNAME"]').value;
             var email = document.querySelector('.app-form-control[placeholder="EMAIL"]').value;
             var password = document.getElementById('password').value;
             var confirmPassword = document.getElementById('confirm-password').value;
             var phoneNumber = document.querySelector('.app-form-control[placeholder="PHONE NUMBER"]').value;
             var messageContainer = document.getElementById('messageContainer');
-        
+
             if (!username || !email || !password || !confirmPassword || !phoneNumber) {
                 messageContainer.innerHTML = "<p>Please, complete all fields.</p>";
                 return;
             }
-        
+
             if (password !== confirmPassword) {
-                messageContainer.innerHTML = "<p>Passowrds do not match. Please try again.</p>";
+                messageContainer.innerHTML = "<p>Passwords do not match. Please try again.</p>";
                 return;
             }
-        
+
             // Construcción de la URL
-            const url = `http://localhost:8080/Buger_Town/Controller?ACTION=CLIENTE.ADD&NOMBRE=${username}&EMAIL=${email}&CONTRASENA=${password}&TELEFONO=${phoneNumber}`;
-        
+            const url = `http://localhost:8080/Buger_Town/Controller?ACTION=CLIENTE.ADD&NOMBRE=${encodeURIComponent(username)}&EMAIL=${encodeURIComponent(email)}&CONTRASENA=${encodeURIComponent(password)}&TELEFONO=${encodeURIComponent(phoneNumber)}`;
+
             // Enviar la solicitud HTTP
             fetch(url, {
                     method: 'POST', // Método POST para agregar un cliente
@@ -159,9 +147,9 @@
                 .then(response => response.text())
                 .then(data => {
                     messageContainer.innerHTML = `<p>${data}</p>`;
-                    if (data === 'Successfully registered.') {
+                    if (data.trim() === 'Successfully registered.') { // Asegúrate de que el mensaje coincide
                         setTimeout(function() {
-                            window.location.href = '/public/index.html';
+                            window.location.href = '/public/sing-in.html';
                         }, 2000);
                     }
                 })
@@ -169,6 +157,16 @@
                     console.error('Error:', error);
                     messageContainer.innerHTML = "<p>An error occurred. Please try again.</p>";
                 });
+        });
+
+        document.getElementById('cancelButton').addEventListener('click', function(event) {
+            event.preventDefault();
+            // Limpia los datos del formulario
+            document.querySelector('.app-form-control[placeholder="USERNAME"]').value = '';
+            document.querySelector('.app-form-control[placeholder="EMAIL"]').value = '';
+            document.getElementById('password').value = '';
+            document.getElementById('confirm-password').value = '';
+            document.querySelector('.app-form-control[placeholder="PHONE NUMBER"]').value = '';
         });
     </script>
     <script src="../scripts/header.js"></script>
