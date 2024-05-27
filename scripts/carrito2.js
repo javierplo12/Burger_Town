@@ -1,3 +1,51 @@
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const url = 'http://localhost:8080/Buger_Town/Controller?ACTION=PRODUCTO.FIND_ALL';
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const products = await response.json();
+        displayProducts(products);
+    } catch (error) {
+        console.error('Error fetching products:', error);
+    }
+});
+
+function displayProducts(products) {
+    const categories = {
+        1: 'sides',
+        2: 'burgers',
+        3: 'desserts',
+        4: 'drinks'
+    };
+
+    products.forEach(product => {
+        const { nombre, descripcion, precio, id_categoria } = product;
+        const categoryClass = categories[id_categoria];
+        const itemHTML = `
+            <div class="item">
+                <div class="titulo-item">
+                    <h3>${nombre}</h3>
+                </div>
+                <div class="img-item">
+                    <img src="../img/${nombre.toLowerCase().replace(/\s/g, '_')}.png" alt="${nombre}">
+                </div>
+                <div class="desc-item">
+                    <p>${descripcion}</p>
+                </div>
+                <div class="precio-item">
+                    <p>${precio} €</p>
+                </div>
+                <div class="contenedor-boton-item">
+                    <button class="boton-item">ADD TO CART</button>
+                </div>
+            </div>
+        `;
+        document.querySelector(`.contenedor-categoria.${categoryClass} .items`).insertAdjacentHTML('beforeend', itemHTML);
+    });
+}
+
 // Variable que mantiene el estado visible del carrito
 var carritoVisible = false;
 
@@ -201,5 +249,3 @@ function actualizarTotalCarrito() {
 
     document.getElementsByClassName('carrito-precio-total')[0].innerText = formattedTotal + ' €';
 }
-
-
