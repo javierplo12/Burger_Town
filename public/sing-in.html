@@ -141,13 +141,13 @@
                     }
                 })
                 .catch(error => {
-                    messageContainer.innerHTML = "<p>Wrong email or password. Try again.</p>";
+                    messageContainer.innerHTML = "<p>An error occurred. Please try again.</p>"; // Manejo del error
                 });
             } else {
                 messageContainer.innerHTML = "<p>Please, complete all fields.</p>";
             }
         });
-    </script>
+    </script>    
     <script src="../scripts/header.js"></script>
 </body>
 
