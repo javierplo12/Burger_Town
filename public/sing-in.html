@@ -111,16 +111,38 @@
     <script>
         document.getElementById('loginButton').addEventListener('click', function (event) {
             event.preventDefault(); // Previene el comportamiento por defecto del botón
-
+    
             var email = document.querySelector('.app-form-control[placeholder="EMAIL"]').value;
             var password = document.querySelector('.app-form-control[placeholder="PASSWORD"]').value;
             var messageContainer = document.getElementById('messageContainer');
-
+    
             if (email && password) {
-                messageContainer.innerHTML = "<p>Inicio de sesión exitoso. Redirigiendo...</p>";
-                setTimeout(function () {
-                    window.location.href = '/public/index.html'; // Redirige a la página principal después de 2 segundos
-                }, 2000);
+                fetch('http://localhost:8080/Buger_Town/Controller', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: 'ACTION=CLIENTE.LOGIN&EMAIL=' + encodeURIComponent(email) + '&CONTRASENA=' + encodeURIComponent(password)
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Error en la solicitud.');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.status === 'success') {
+                        messageContainer.innerHTML = "<p>Inicio de sesión exitoso. Redirigiendo...</p>";
+                        setTimeout(function () {
+                            window.location.href = '/public/index.html'; // Redirige a la página principal después de 2 segundos
+                        }, 2000);
+                    } else {
+                        messageContainer.innerHTML = "<p>" + data.message + "</p>";
+                    }
+                })
+                .catch(error => {
+                    messageContainer.innerHTML = "<p>Error en la solicitud. Inténtalo de nuevo.</p>";
+                });
             } else {
                 messageContainer.innerHTML = "<p>Por favor, completa todos los campos.</p>";
             }
