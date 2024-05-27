@@ -292,143 +292,59 @@ body {
 }
 
 
-/* seccion carrito */
-.carrito{
-  border: 1px solid #666;
-  width: 30%; /* Cambia el ancho del carrito */
-  margin-top: 100px;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: auto;
-  position: fixed; /* Cambia de sticky a fixed */
+.carrito {
+  position: fixed;
+  right: -100%;
   top: 0;
-  right: 0; /* Alinea el carrito a la derecha */
-  transition: .3s;
-  background-color: #f9f9f9; /* Cambia el color de fondo */
+  width: 40%;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s, opacity 0.3s;
+  opacity: 0;
 }
-
-.carrito-inner {
-  font-size: 80%; /* Tamaño de fuente más pequeño para el contenido del carrito */
+.carrito-visible {
+  right: 0;
+  opacity: 1;
 }
-
-.header-carrito{
-  background-color: #000;
-  color: #fff;
-  text-align: center;
+.carrito-items {
+  padding: 20px;
+}
+.carrito-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px 0;
+  border-bottom: 1px solid #ccc;
 }
-
-.carrito-item{
+.carrito-item img {
+  width: 80px;
+}
+.carrito-item-detalles {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.selector-cantidad {
   display: flex;
   align-items: center;
-  position: relative;
-  border-bottom: 1px solid #666;
-  padding: 10px; /* Reduce el padding */
 }
-
-
-.carrito-item img{
-  margin-right: 10px; /* Reduce el margen derecho de la imagen */
-  max-width: 50px; /* Limita el tamaño máximo de la imagen */
+.selector-cantidad button {
+  padding: 5px 10px;
+  margin: 0 5px;
 }
-
-.carrito-item .carrito-item-titulo{
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px; /* Reduce el margen inferior */
-  text-transform: uppercase;
-}
-
-.carrito-item .selector-cantidad{
-  display: inline-block;
-  margin-right: 15px;
-}
-
-.carrito-item .carrito-item-cantidad{
-  border: none;
-  font-size: 14px; /* Tamaño de fuente más pequeño */
-  background-color: transparent;
-  display: inline-block;
-  width:25px; /* Reduce el ancho */
-  padding: 3px; /* Reduce el padding */
-  text-align: center;
-  font-family: 'myFont';
-  color: #000;
-}
-
-.carrito-item .selector-cantidad i{
-  font-size: 14px; /* Tamaño de fuente más pequeño */
-  width: 28px; /* Reduce el tamaño del icono */
-  height: 28px;
-  line-height: 28px;
-  text-align: center;
-  border-radius: 50%;
-  border: 1px solid #000;
-  cursor: pointer;
-}
-
-.carrito-item .carrito-item-precio{
-  font-weight: bold;
-  display: inline-block;
-  font-size: 14px; /* Tamaño de fuente más pequeño */
-  margin-bottom: 5px;
-}
-
-.carrito-item .btn-eliminar{
-  position: absolute;
-  right: 10px; /* Ajusta la posición del botón */
-  top: 10px; /* Ajusta la posición del botón */
-  color: #000;
-  font-size: 16px; /* Tamaño de fuente más pequeño */
-  width: 30px; /* Reduce el ancho */
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  border-radius: 50%;
-  border: 1px solid #000;
-  cursor: pointer;
-  display: block;
-  background: transparent;
-  z-index: 20;
-}
-
-.carrito-item .btn-eliminar i{
-  pointer-events: none;
-}
-
-.carrito-total{
-  background-color: #f3f3f3;
-  padding: 20px; /* Reduce el padding */
-}
-
-.carrito-total .fila{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 18px; /* Tamaño de fuente más pequeño */
-  font-weight: bold;
-  margin-bottom: 15px; /* Reduce el margen inferior */
-}
-
-.carrito-total .btn-pagar{
-  display: block;
-  width: 100%;
-  border: none;
-  background: darkred;
+.btn-eliminar {
+  background: red;
   color: #fff;
-  border-radius: 5px;
-  font-size: 16px; /* Tamaño de fuente más pequeño */
-  padding: 12px; /* Reduce el padding */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  border: none;
+  padding: 5px 10px;
   cursor: pointer;
-  transition: .3s;
-  font-family: 'myFont';
 }
-
-.carrito-total .btn-pagar:hover{
-  scale: 1.05;
+.carrito-precio-total {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: right;
+  padding: 10px;
 }
 
 
