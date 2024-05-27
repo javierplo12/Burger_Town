@@ -132,7 +132,7 @@
                 })
                 .then(data => {
                     if (data.status === 'success') {
-                        messageContainer.innerHTML = "<p>Inicio de sesión exitoso. Redirigiendo...</p>";
+                        messageContainer.innerHTML = "<p>Log in successfull. Redirecting...</p>";
                         setTimeout(function () {
                             window.location.href = '/public/index.html'; // Redirige a la página principal después de 2 segundos
                         }, 2000);
@@ -141,10 +141,10 @@
                     }
                 })
                 .catch(error => {
-                    messageContainer.innerHTML = "<p>Error en la solicitud. Inténtalo de nuevo.</p>";
+                    messageContainer.innerHTML = "<p>Wrong email or password. Try again.</p>";
                 });
             } else {
-                messageContainer.innerHTML = "<p>Por favor, completa todos los campos.</p>";
+                messageContainer.innerHTML = "<p>Please, complete all fields.</p>";
             }
         });
     </script>
