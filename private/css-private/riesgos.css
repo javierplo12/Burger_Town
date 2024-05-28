@@ -1,35 +1,35 @@
 @font-face {
     font-family: 'myFont';
-    src: url('../fonts/PatuaOne-Regular.ttf') format('opentype');
+    src: url('/fonts/PatuaOne-Regular.ttf') format('opentype');
     font-weight: normal;
     font-style: normal;
-}
+  }
 
 body {
-    font-family: 'myFont', Arial, sans-serif;
-    color: #333; /* Color de texto negro */
-    background-color: #f2f2f2; /* Color de fondo gris claro */
+    font-family: 'myFont';
+    color: #333;
+    background-color: #f2f2f2;
     margin: 0;
     padding: 0;
 }
 
 .container {
     max-width: 800px;
-    margin: 50px auto; /* Centra el contenedor verticalmente */
+    margin: 50px auto;
     padding: 20px;
-    background-color: #fff; /* Color de fondo blanco */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     text-align: center;
-    font-size: 2em; /* Tamaño de fuente grande */
+    font-size: 2em;
     margin-bottom: 20px;
 }
 
 p {
-    font-size: 1.1em; /* Tamaño de fuente un poco más grande */
+    font-size: 1.1em;
     line-height: 1.6;
 }
 
@@ -40,22 +40,69 @@ ul {
 
 strong {
     font-weight: bold;
-    color: #000000; /* Color azul para puntos importantes */
+    color: #000000;
 }
 
 img {
     display: block;
-    margin: 20px auto; /* Centra la imagen horizontalmente */
-    max-width: 100%; /* Ajusta la imagen al ancho del contenedor */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin: 20px auto;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.titulo-grande {
 
+.titulo-grande {
     font-weight: bold;
     text-align: center;
-    margin-top: 33px; /* Añadido para separar el título del contenido anterior */
+    margin-top: 33px;
     margin-bottom: 33px;
-    color: #000000; /* Color de texto negro */
-    font-family: 'myFont', sans-serif; /* Fuente personalizada */
+    color: #000000;
+    font-family: 'myFont', sans-serif;
+}
+
+/* Nueva sección del Comité de Empresa */
+.comite {
+    margin-top: 30px;
+}
+
+.miembros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.miembro {
+    text-align: center;
+}
+
+.miembro img {
+    max-width: 150px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    p, ul {
+        font-size: 1em;
+    }
+
+    .miembros {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .miembro img {
+        max-width: 100px;
+    }
 }
