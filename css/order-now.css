@@ -294,7 +294,7 @@ body {
 /* CSS para el carrito */
 .carrito {
   border: 1px solid #666;
-  width: 35%;
+  width: 50%;
   margin-top: 100px;
   border-radius: 10px;
   overflow: hidden;
@@ -317,7 +317,6 @@ body {
   align-items: center;
   /* justify-content: space-between; */
   position: relative;
-  border-bottom: 1px solid #666;
   padding: 20px;
 }
 
