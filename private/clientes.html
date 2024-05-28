@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clients</title>
+    <link rel="stylesheet" href="/private/css-private/productos.css"> <!-- Link to the external CSS file -->
+</head>
+
+<body>
+    <div class="container">
+        <table id="clients_table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <div class="buttons">
+            <button id="addButton">ADD</button>
+            <button id="deleteButton">DELETE</button>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const getClients = async () => {
+                const url = 'http://localhost:8080/Buger_Town/Controller?ACTION=CLIENTE.FIND_ALL';
+                const result = await fetch(url);
+                const clients = await result.json();
+                console.log(clients);
+                createClientList(clients);
+            }
+
+            const createClientList = (clients) => {
+                clients.sort((a, b) => a.Id_Cliente - b.Id_Cliente);
+                const clientTableBody = document.querySelector('tbody');
+                clientTableBody.innerHTML = '';
+                clients.forEach(client => {
+                    const { Id_Cliente, nombre, email, contrasena, telefono } = client;
+                    const row = `
+                        <tr>
+                            <td>${Id_Cliente}</td>
+                            <td>${nombre}</td>
+                            <td>${email}</td>
+                            <td>${contrasena}</td>
+                            <td>${telefono}</td>
+                        </tr>
+                    `;
+                    clientTableBody.insertAdjacentHTML('beforeend', row);
+                });
+            }
+
+            const deleteClient = async (clientId) => {
+                if (confirm(`Are you sure you want to delete the client with ID ${clientId}?`)) {
+                    const url = `http://localhost:8080/Buger_Town/Controller?ACTION=CLIENTE.DELETE&ID_CLIENTE=${clientId}`;
+                    try {
+                        const response = await fetch(url);
+                        if (response.ok) {
+                            document.querySelector(`tr[data-id="${clientId}"]`).remove();
+                            console.log(`Client with ID ${clientId} successfully deleted.`);
+                        } else {
+                            console.error('Error deleting the client.');
+                        }
+                    } catch (error) {
+                        console.error('Network error:', error);
+                    }
+                }
+            }
+
+            document.getElementById('deleteButton').addEventListener('click', () => {
+                const clientId = prompt('Enter the ID of the client you want to delete:');
+                if (clientId !== null && clientId.trim() !== '') {
+                    deleteClient(clientId);
+                } else {
+                    alert('You must enter a valid ID.');
+                }
+            });
+
+            const addClient = async () => {
+                const newId = prompt('Enter the ID of the new client:').trim();
+                const newName = prompt('Enter the name of the new client:').trim();
+                const newEmail = prompt('Enter the email of the new client:').trim();
+                const newPassword = prompt('Enter the password of the new client:').trim();
+                const newPhone = prompt('Enter the phone number of the new client:').trim();
+
+                if (newId && newName && newEmail && newPassword && newPhone) {
+                    const url = `http://localhost:8080/Buger_Town/Controller?ACTION=CLIENTE.ADD&ID_CLIENTE=${newId}&NOMBRE=${newName}&EMAIL=${newEmail}&CONTRASEÑA=${newPassword}&TELEFONO=${newPhone}`;
+                    try {
+                        const response = await fetch(url);
+                        if (response.ok) {
+                            const newRow = `
+                                <tr data-id="${newId}">
+                                    <td>${newId}</td>
+                                    <td>${newName}</td>
+                                    <td>${newEmail}</td>
+                                    <td>${newPassword}</td>
+                                    <td>${newPhone}</td>
+                                </tr>
+                            `;
+                            document.querySelector('tbody').insertAdjacentHTML('beforeend', newRow);
+                            console.log(`Client with ID ${newId} successfully added.`);
+                        } else {
+                            console.error('Error adding the client.');
+                        }
+                    } catch (error) {
+                        console.error('Network error:', error);
+                    }
+                } else {
+                    alert('All fields are required.');
+                }
+            };
+
+            document.getElementById('addButton').addEventListener('click', addClient);
+
+            getClients();
+        });
+    </script>
+</body>
+
+</html>
