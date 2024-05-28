@@ -178,6 +178,7 @@ a {
   margin-bottom: 0px;
   margin-left: auto;
   justify-content: flex-start;
+  gap: 50px;
 }
 
 .container-block {
@@ -196,7 +197,7 @@ a {
 }
 
 .container-team {
-  max-width: 1380px;
+  max-width: 1000px;
   margin-top: 80px;
   margin-right: auto;
   margin-bottom: 80px;
@@ -219,7 +220,7 @@ a {
 }
 
 .name {
-  font-size: 18px;
+  font-size: 24px;
   margin-top: 11px;
   margin-right: 0px;
   margin-bottom: 0px;
@@ -246,15 +247,17 @@ a {
   justify-content: space-evenly;
 }
 
-.team-img-wrapper {
+.team-img {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+  height: 300px; /* Adjust height as needed */
+  width: 100%; /* Adjust width as needed */
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
-}
-
-.team-img {
-  max-width: 100%;
 }
 
 @media (max-width: 500px) {
