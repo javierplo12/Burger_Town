@@ -104,13 +104,14 @@ function agregarItemAlCarrito(titulo, precio, imagenSrc) {
             <div class="carrito-item-detalles">
                 <span class="carrito-item-titulo">${titulo}</span>
                 <div class="selector-cantidad">
-                    <button class="restar-cantidad">-</button>
+                    <button class="restar-cantidad"> <i class="fa-solid fa-minus restar-cantidad"></i>  </button>
                     <input type="text" value="1" class="carrito-item-cantidad" disabled>
-                    <button class="sumar-cantidad">+</button>
+                    <button class="sumar-cantidad"> <i class="fa-solid fa-plus sumar-cantidad"></i>  </button>
                 </div>
                 <span class="carrito-item-precio">${precio.toFixed(2).replace('.', ',')} €</span>
             </div>
-            <button class="btn-eliminar">Eliminar</button>
+            <button class="btn-eliminar"><i class="fa-solid fa-trash"></i>  </button>
+                      
         </div>
     `;
     item.innerHTML = itemCarritoContenido;
