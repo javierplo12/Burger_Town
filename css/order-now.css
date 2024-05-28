@@ -358,6 +358,17 @@ body {
   border: 1px solid #000;
   cursor: pointer;
 }
+.sumar-cantidad {
+  background-color: transparent;
+  border: none; /* Sin borde */
+}
+.restar-cantidad{
+ 
+    background-color: transparent;
+    border: none; /* Sin borde */
+  }
+  
+
 
 .carrito-item .carrito-item-precio{
   font-weight: bold;
