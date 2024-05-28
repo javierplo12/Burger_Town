@@ -162,7 +162,7 @@ body {
 }
 
 .contenedor{
-  max-width: 1500px;
+  max-width: 2100px;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -294,7 +294,7 @@ body {
 /* CSS para el carrito */
 .carrito {
   border: 1px solid #666;
-  width: 50%;
+  width: 30%;
   margin-top: 100px;
   border-radius: 10px;
   overflow: hidden;
