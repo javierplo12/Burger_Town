@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
         const products = await response.json();
         displayProducts(products);
-        ready(); // Initialize the event listeners for dynamically added buttons
+        ready(); 
     } catch (error) {
         console.error('Error fetching products:', error);
     }

@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         activateSlide(currentIndex);
     }
 
-    // Cambiar automáticamente a la siguiente diapositiva cada intervalTime milisegundos
+    // Cambiar automáticamente a la siguiente diapositiva
     setInterval(nextSlide, intervalTime);
 
     // Agregar event listener a los puntos
