@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
       // Si no todos los campos están llenos, y evita continuar con el pago
       if (!fieldsFilled) {
         event.preventDefault();
-        alert("Por favor, completa todos los campos antes de continuar.");
+        alert("Please complete all fields before continuing.");
       } else {
         // Muestra la alerta y redirige solo si todos los campos están llenos
         alert("Your order has been completed and will soon arrive at the indicated location.");
