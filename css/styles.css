@@ -32,13 +32,11 @@ a {
   text-decoration: none;
 }
 
-/*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1120px;
   margin-inline: 1.5rem;
 }
 
-/*=============== HEADER & NAV ===============*/
 .header {
   top: 0;
   left: 0;
@@ -88,7 +86,6 @@ a {
   color: var(--first-color);
 }
 
-/* Navigation for mobile devices */
 @media screen and (max-width: 1023px) {
   .nav__menu {
     position: fixed;
@@ -123,13 +120,11 @@ a {
   right: 1.5rem;
 }
 
-/* Show menu */
 .show-menu {
   top: 0;
   z-index: 1;
 }
 
-/* For large devices */
 @media screen and (min-width: 1023px) {
   .nav {
     height: calc(var(--header-height) + 2rem);
@@ -154,23 +149,20 @@ a {
   }
 }
 
-/* Estilos para el fondo negro que ocupa toda la página */
 body {
   font-family: 'myFont', sans-serif;
-  margin: 0; /* Elimina el margen predeterminado del body */
-  padding: 0; /* Elimina el padding predeterminado del body */
-  height: 100%; /* Ocupa toda la altura disponible */
+  margin: 0; 
+  padding: 0; 
+  height: 100%; 
 }
 
-/* Estilos para el contenedor del video */
 .video-container {
   position: relative;
   max-width: 100%;
-  height: 100vh; /* Ajustado a la altura de la pantalla */
+  height: 100vh; 
   overflow: hidden;
 }
 
-/* Estilos para el video de fondo */
 .video-background {
   position: absolute;
   top: 0;
@@ -181,7 +173,6 @@ body {
   z-index: -1; /* Coloca el video detrás de otros elementos */
 }
 
-/* Estilos para el contenido */
 .contenido {
   position: absolute;
   width: 100%;
@@ -189,30 +180,26 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.514); /* Fondo difuminado */
+  background: rgba(0, 0, 0, 0.514);
 }
 
-/* Estilos para el texto */
 .texto {
   text-align: center;
   color: whitesmoke;
   padding: 20px;
 }
 
-/* Estilos para el texto del título */
 .texto h1 {
   font-size: 100px;
   margin-bottom: 20px;
 }
 
-/* Consulta de medios para pantallas aún más pequeñas */
 @media screen and (max-width: 768px) {
   .texto h1 {
     font-size: 65px;
   }
 }
 
-/* Estilos del gradiente */
 .gradient-container-video {
   position: absolute;
   bottom: 0;
@@ -234,11 +221,8 @@ body {
   margin-top: 5px; 
   text-align: center;
   box-shadow: black;
-  
-
 }
 
-/* Estilos para el texto del párrafo */
 .texto p {
   font-size: 24px;
   margin: 0;
@@ -306,7 +290,6 @@ body {
   text-align: center;
 }
 
-
 @media screen and (max-width: 850px) {
   .menu {
     flex-direction: column;
@@ -336,17 +319,17 @@ body {
   background-color: darkred;
   overflow-x: hidden; 
   overflow-y: hidden; 
-  -webkit-overflow-scrolling: touch; /* Añadido para un desplazamiento suave en iOS */
+  -webkit-overflow-scrolling: touch; 
 }
 
 .carousel-item {
-  flex: 0 0 33.33%; /* Cambiado a 33.33% para mostrar tres elementos por fila en pantallas grandes */
-  max-width: calc(100% / 3); /* Limita el ancho máximo para evitar que se hagan más pequeños */
+  flex: 0 0 33.33%; 
+  max-width: calc(100% / 3); 
   padding: 0 10px;
   box-sizing: border-box;
   text-align: center;
   background-color: darkred;
-  scroll-snap-align: start; /* Alinea el inicio de cada elemento con el inicio del contenedor */
+  scroll-snap-align: start; 
 }
 
 .carousel-item img {
@@ -389,18 +372,17 @@ body {
   transform: scale(1.05) rotate(-1deg);
 }
 
-/* Media Queries */
 @media screen and (max-width: 768px) {
   .carousel-slide {
     overflow-x: auto;
-    flex-wrap: nowrap; /* Añadido para evitar que los elementos se envuelvan */
+    flex-wrap: nowrap; 
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
   }
 
   .carousel-item {
-    flex: 0 0 50%; /* Cambiado a 50% para mostrar dos elementos por fila en pantallas medianas */
-    max-width: 50%; /* Limita el ancho máximo */
+    flex: 0 0 50%; 
+    max-width: 50%; 
   }
 
   .carousel-item h2 {
@@ -408,7 +390,7 @@ body {
   }
   
   .productos-destacados {
-    font-size: 40px; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+    font-size: 40px; 
     text-align: center;
   }
 

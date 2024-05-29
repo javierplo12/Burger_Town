@@ -31,19 +31,16 @@
                  </li>
               </ul>
 
-              <!-- Close button -->
               <div class="nav__close" id="nav-close">
                  <i class="ri-close-line"></i>
               </div>
            </div>
 
            <div class="nav__actions">
-              <!-- Login button -->
               <a href="../public/sing-in.html">
                  <i class="ri-user-line nav__login" id="login-btn"></i>
               </a>
 
-              <!-- Toggle button -->
               <div class="nav__toggle" id="nav-toggle">
                  <i class="ri-menu-line"></i>
               </div>
@@ -73,7 +70,7 @@
                                 <button class="app-form-button form-button" id="loginButton">LOGIN</button>
                             </div>
                         </div>
-                        <div id="messageContainer"></div> <!-- Elemento para mostrar el mensaje -->
+                        <div id="messageContainer"></div> 
                     </div>
                 </div>
             </div>
@@ -110,7 +107,7 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script>
         document.getElementById('loginButton').addEventListener('click', function (event) {
-            event.preventDefault(); // Previene el comportamiento por defecto del botón
+            event.preventDefault(); 
     
             var email = document.querySelector('.app-form-control[placeholder="EMAIL"]').value;
             var password = document.querySelector('.app-form-control[placeholder="PASSWORD"]').value;
@@ -134,7 +131,7 @@
                     if (data.status === 'success') {
                         messageContainer.innerHTML = "<p>Log in successfull. Redirecting...</p>";
                         setTimeout(function () {
-                            window.location.href = '/public/index.html'; // Redirige a la página principal después de 2 segundos
+                            window.location.href = '/public/index.html'; // Redirige a la página principal
                         }, 2000);
                     } else {
                         messageContainer.innerHTML = "<p>" + data.message + "</p>";
