@@ -90,7 +90,7 @@ function agregarItemAlCarrito(titulo, precio, imagenSrc) {
 
     for (let nombreItemCarrito of nombresItemsCarrito) {
         if (nombreItemCarrito.innerText === titulo) {
-            alert("El producto ya está en el carrito. Puedes eliminarlo o agregar uno más.");
+            alert("The product is already in the cart. You can delete it or add one more.");
             return;
         }
     }
