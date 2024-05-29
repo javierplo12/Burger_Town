@@ -33,13 +33,11 @@ a {
   text-decoration: none;
 }
 
-/*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1120px;
   margin-inline: 1.5rem;
 }
 
-/*=============== HEADER & NAV ===============*/
 .header {
   top: 0;
   left: 0;
@@ -89,7 +87,6 @@ a {
   color: var(--first-color);
 }
 
-/* Navigation for mobile devices */
 @media screen and (max-width: 1023px) {
   .nav__menu {
     position: fixed;
@@ -124,13 +121,11 @@ a {
   right: 1.5rem;
 }
 
-/* Show menu */
 .show-menu {
   top: 0;
   z-index: 1;
 }
 
-/* For large devices */
 @media screen and (min-width: 1023px) {
   .nav {
     height: calc(var(--header-height) + 2rem);
@@ -155,14 +150,13 @@ a {
   }
 }
   
-  /* Estilos para el fondo negro que ocupa toda la página */
   body {
     font-family: 'myFont', sans-serif;
-    background-color: rgba(0, 0, 0, 0); /* Cambiado a transparente */
-    color: whitesmoke; /* Color del texto en el fondo negro */
-    margin: 0; /* Elimina el margen predeterminado del body */
-    padding: 0; /* Elimina el padding predeterminado del body */
-    height: 100%; /* Ocupa toda la altura disponible */
+    background-color: rgba(0, 0, 0, 0); 
+    color: whitesmoke; 
+    margin: 0; 
+    padding: 0; 
+    height: 100%; 
   }
   
   /* Empieza el css del footer */
@@ -245,14 +239,14 @@ a {
   }
 
   .about-us p {
-    font-size: 24px; /* Tamaño del texto */
+    font-size: 24px; 
     margin-top: 25px;
-    color: black; /* Color del texto */
+    color: black; 
   }
   
   .about-us h2 {
-    font-size: 50px; /* Tamaño del título */
-    color: black; /* Color del texto */
+    font-size: 50px; 
+    color: black; 
     text-align: center;
   }
 
@@ -267,14 +261,14 @@ a {
   }
 
   .our-history p {
-    font-size: 24px; /* Tamaño del texto */
+    font-size: 24px; 
     margin-top: 25px;
-    color: whitesmoke; /* Color del texto */
+    color: whitesmoke; 
   }
   
   .our-history h2 {
-    font-size: 50px; /* Tamaño del título */
-    color: whitesmoke; /* Color del texto */
+    font-size: 50px; 
+    color: whitesmoke; 
     text-align: center;
   }
   
@@ -286,8 +280,8 @@ a {
   }
 
   .image-container img {
-    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
-    max-height: 400px; /* Altura automática para mantener la proporción */
+    max-width: 100%; 
+    max-height: 400px; 
     width: auto;
     padding: 20px;
   }

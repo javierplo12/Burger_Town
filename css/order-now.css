@@ -33,13 +33,11 @@ a {
   text-decoration: none;
 }
 
-/*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1120px;
   margin-inline: 1.5rem;
 }
 
-/*=============== HEADER & NAV ===============*/
 .header {
   top: 0;
   left: 0;
@@ -89,7 +87,6 @@ a {
   color: var(--first-color);
 }
 
-/* Navigation for mobile devices */
 @media screen and (max-width: 1023px) {
   .nav__menu {
     position: fixed;
@@ -124,13 +121,11 @@ a {
   right: 1.5rem;
 }
 
-/* Show menu */
 .show-menu {
   top: 0;
   z-index: 1;
 }
 
-/* For large devices */
 @media screen and (min-width: 1023px) {
   .nav {
     height: calc(var(--header-height) + 2rem);
@@ -166,7 +161,6 @@ body {
   margin: auto;
   display: flex;
   justify-content: space-between;
-  /* oculto lo que queda fuera del .contenedor */
   contain: paint;
   align-items: center;
 }
@@ -189,7 +183,6 @@ body {
   font-size: 80px;
 }
 
-/* SECCION CONTENEDOR DE ITEMS */
 .contenedor-items{
   width: 100%;
   display: grid;
@@ -215,7 +208,7 @@ body {
   display: flex;
   flex-direction: column;
   max-width: 300px;
-  height: 550px; /* Añadido para que todos los recuadros tengan la misma altura */
+  height: 550px; 
   border: 1px solid #666;
   border-radius: 20px;
   transition: .3s;
@@ -225,7 +218,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-grow: 1; /* Permite que la imagen crezca para llenar el espacio disponible */
+  flex-grow: 1; 
   max-width: 300px;
   max-height: 300px;
 }
@@ -248,7 +241,7 @@ body {
   font-size: 25px;
   justify-content: center;
   align-items: center;
-  height: 150px; /* Añadido para altura uniforme */
+  height: 150px; 
   padding: 10px;
 }
 
@@ -258,7 +251,7 @@ body {
   font-size: 20px;
   justify-content: center;
   align-items: center;
-  height: 150px; /* Añadido para altura uniforme */
+  height: 150px; 
   padding: 10px;
 }
 
@@ -269,7 +262,7 @@ body {
   font-size: 20px;
   justify-content: center;
   align-items: center;
-  height: 40px; /* Añadido para altura uniforme */
+  height: 40px; 
 }
 
 .boton-item {
@@ -288,7 +281,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 10px;
-  height: 50px; /* Añadido para altura uniforme */
+  height: 50px; 
 }
 
 /* CSS para el carrito */
@@ -301,10 +294,9 @@ body {
   margin-bottom: auto;
   position: sticky !important;
   top: 0;
-  transition: .3s;
-  /* Estilos para ocultar */
- 
+  transition: .3s; 
 }
+
 .header-carrito{
   background-color: #000;
   color: #fff;
@@ -360,12 +352,12 @@ body {
 }
 .sumar-cantidad {
   background-color: transparent;
-  border: none; /* Sin borde */
+  border: none; 
 }
 .restar-cantidad{
  
     background-color: transparent;
-    border: none; /* Sin borde */
+    border: none; 
   }
   
 

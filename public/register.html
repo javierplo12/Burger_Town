@@ -72,7 +72,7 @@
                                 <button class="app-form-button form-button" id="registerButton">REGISTER</button>
                             </div>
                         </div>
-                        <div id="messageContainer"></div> <!-- Elemento para mostrar el mensaje -->
+                        <div id="messageContainer"></div> 
                     </div>
                 </div>
             </div>
@@ -109,7 +109,7 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script>
         document.getElementById('registerButton').addEventListener('click', function(event) {
-            event.preventDefault(); // Previene el comportamiento por defecto del botón
+            event.preventDefault(); 
 
             var username = document.querySelector('.app-form-control[placeholder="USERNAME"]').value;
             var email = document.querySelector('.app-form-control[placeholder="EMAIL"]').value;
@@ -147,7 +147,7 @@
                 .then(response => response.text())
                 .then(data => {
                     messageContainer.innerHTML = `<p>${data}</p>`;
-                    if (data.trim() === 'Successfully registered.') { // Asegúrate de que el mensaje coincide
+                    if (data.trim() === 'Successfully registered.') { 
                         setTimeout(function() {
                             window.location.href = '/public/sing-in.html';
                         }, 2000);
